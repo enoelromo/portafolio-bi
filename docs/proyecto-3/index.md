@@ -2,14 +2,41 @@
 
 [← Volver al inicio](../index.md)
 
-## 🎯 Objetivo
-Prototipo de dashboard (dataset demo) con KPIs y filtros.
+## 🎯 Resumen
+Prototipo de dashboard (dataset anonimizado) para analizar ventas y comportamiento de clientes/productos.
+Se alimenta desde el DWH y las **vistas materializadas** de Proyecto 1.
 
-## 📸 Capturas (súbelas a `docs/proyecto-3/img/`)
-- `![KPI](./img/kpi_principal.png)`
-- `![Ventas por categoría](./img/ventas_por_categoria.png)`
-- `![Filtros](./img/filtros.png)`
+**KPIs clave**
+- Ventas totales | Ticket promedio | Nº de transacciones
+- Top categorías y productos | Clientes activos/inactivos
+- Comparativos día/mes vs. período anterior
 
-## (Opcional) Enlace a Power BI Service
-Si publicas un reporte público, pega el enlace aquí.
+---
 
+## 📸 Capturas
+
+### 1) KPI principal
+![KPI principal](./img/kpi_principal.png)
+
+---
+
+### 2) Ventas por categoría
+![Ventas por categoría](./img/ventas_por_categoria.png)
+
+---
+
+### 3) Panel de filtros
+![Filtros del reporte](./img/filtros.png)
+
+---
+
+## ⚙️ Origen de datos (resumen)
+- Vistas: `mv_ventas_dia`, `mv_ventas_mes`, `mv_resumen_clientes_dia`, `mv_resumen_clientes_mes`.
+- Actualización: por `proc_refresh_all_views()` al final del pipeline (ver Proyecto 2).
+
+## 🔒 Notas de seguridad
+Datos y nombres anonimizados (Cliente 001, Producto 001). Sin credenciales ni endpoints reales.
+
+## 🚀 Próximos pasos
+- Publicación en Power BI Service/Qlik (área pública) y enlace aquí.
+- Parámetros (rango de fechas) y RLS si aplica.
