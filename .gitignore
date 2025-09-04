@@ -1,1 +1,19 @@
 
+# Archivos grandes / sensibles
+*.pbix
+*.bak
+*.dump
+*.env
+secrets*.txt
+*.key
+*.pem
+
+# SO y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Datos/temporales
+/tmp/
+*.log
