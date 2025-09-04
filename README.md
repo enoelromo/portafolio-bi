@@ -1,11 +1,11 @@
 # Portafolio BI — Tu Nombre
 
-Bienvenido/a a mi portafolio de **Business Intelligence**. Aquí presento un caso end-to-end:
+Bienvenido/a a mi portafolio de **Business Intelligence**. Caso end-to-end:
 - **Data Warehouse en PostgreSQL** (modelado, ETL con procedimientos y logging)
 - **Orquestación** (de cron a **n8n**)
 - **Dashboards** sobre vistas materializadas
 
-> 💡 Este repositorio es público y está pensado para perfiles técnicos y no técnicos. Las credenciales y datos sensibles fueron **anonimizados**.
+> 💡 Repo público pensado para perfiles técnicos y no técnicos. Todo está **anonimizado**.
 
 **🔗 Versión web (GitHub Pages):** https://TUUSUARIO.github.io/portafolio-bi/
 
