@@ -32,3 +32,21 @@ CALL public.proc_refresh_all_views();
 
 ## 📄 Workflow (JSON en repo)
 https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_2_Orquestacion/n8n/workflow_etl.json
+
+...
+
+# Proyecto 2 — Orquestación (cron → n8n)
+
+[← Volver al inicio](../index.md)
+
+## 📸 Capturas
+
+**Flujo n8n**
+![Flujo n8n](./img/01_n8n_flow.png)
+
+**Trigger (cron)**
+![Trigger cron](./img/02_n8n_cron.png)
+
+**Nodo Postgres**
+![Nodo Postgres](./img/03_n8n_postgres_node.png)
+
