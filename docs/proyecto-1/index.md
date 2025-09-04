@@ -36,3 +36,24 @@ Replicación desde el servidor de producción hacia un **Data Warehouse** para a
 ## ✅ Resultados
 - Cargas parciales < **5s** (según volumen).
 - `REFRESH MATERIALIZED VIEW CONCURRENTLY` para latencia baja.
+
+...
+
+# Proyecto 1 — Data Warehouse & ETL (PostgreSQL)
+
+[← Volver al inicio](../index.md)
+
+## 📸 Capturas
+
+**Actividad de BD**
+![Actividad](./img/06_pgadmin_activity.png)
+
+**Objetos (MVs / SPs)**
+![Objetos](./img/07_pgadmin_objects.png)
+
+**Log con error de conexión**
+![Log error](./img/04_logs_connection_issue.png)
+
+**Log OK**
+![Log ok](./img/05_logs_ok.png)
+
