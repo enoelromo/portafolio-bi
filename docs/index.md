@@ -1,7 +1,14 @@
-# Portafolio BI — Tu Nombre
+# Portafolio BI — Eric Noël
 
-**Prueba:** si ves esta página online, GitHub Pages está funcionando.
+> Vitrina pública (GitHub Pages). Todo el contenido navegable vive dentro de `/docs`.
 
-- Ir al proyecto 1 → ../Proyecto_1_DataWarehouse_ETL/README.md
-- Ir al proyecto 2 → ../Proyecto_2_Orquestacion/README.md
-- Ir al proyecto 3 → ../Proyecto_3_Dashboard/README.md
+## Proyectos
+
+- **Proyecto 1 — Data Warehouse & ETL (PostgreSQL)**  
+  [Ver detalle →](./proyecto-1/index.md)
+
+- **Proyecto 2 — Orquestación (de cron a n8n)**  
+  [Ver detalle →](./proyecto-2/index.md)
+
+- **Proyecto 3 — Dashboard BI**  
+  [Ver detalle →](./proyecto-3/index.md)
