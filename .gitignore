@@ -1,19 +1,15 @@
-
-# Archivos grandes / sensibles
-*.pbix
-*.bak
-*.dump
-*.env
-secrets*.txt
-*.key
-*.pem
-
-# SO y editores
+# SO
 .DS_Store
 Thumbs.db
+
+# Editores
 .vscode/
 .idea/
 
-# Datos/temporales
-/tmp/
+# Archivos temporales
 *.log
+*.zip
+
+# Si más adelante usas un build (Node, etc.), añade:
+# node_modules/
+# dist/
