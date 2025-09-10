@@ -1,1 +1,89 @@
 
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BI End-to-End — Eric Noël</title>
+  <link rel="stylesheet" href="/portafolio-bi/assets/style.css">
+  <script defer src="/portafolio-bi/assets/app.js"></script>
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a class="brand" href="/portafolio-bi/">Eric Noël — BI</a>
+  <nav class="nav"><a href="/portafolio-bi/#proyectos">Proyectos</a><a class="btn" href="mailto:TU_EMAIL">Contáctame</a></nav>
+</div></header>
+
+<section class="hero"><div class="container">
+  <h1>BI End-to-End</h1>
+  <p class="lead">Un solo proyecto dividido en 3 etapas: DWH en PostgreSQL → Orquestación en n8n → Dashboard.</p>
+  <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">PL/pgSQL</span><span class="chip">n8n</span><span class="chip">Materialized Views</span><span class="chip">Power BI / Qlik</span></div>
+</div></section>
+
+<main class="container" data-tabs>
+  <div class="tabs">
+    <button class="tab" data-target="#etapa-1">Etapa 1 · DWH & ETL</button>
+    <button class="tab" data-target="#etapa-2">Etapa 2 · Orquestación (n8n)</button>
+    <button class="tab" data-target="#etapa-3">Etapa 3 · Dashboard</button>
+  </div>
+
+  <div class="tabpanels">
+    <!-- ETAPA 1 -->
+    <section class="panel" id="etapa-1">
+      <h2>DWH & ETL (PostgreSQL)</h2>
+      <p class="lead">Replicación controlada + transformaciones con procedimientos y <i>logging</i> por paso. Índices y vistas materializadas para baja latencia.</p>
+      <ul>
+        <li><b>PostgreSQL</b> por solidez, extensiones (<code>dblink</code>) y <code>REFRESH MATERIALIZED VIEW CONCURRENTLY</code>.</li>
+        <li><b>PL/pgSQL</b> para control de flujo y registro en <code>dw_logs_procedures</code>.</li>
+        <li>Índices por selectividad (fecha, <code>businessId</code>, <code>customerId</code>).</li>
+        <li>Alternativas: SQL Server+SSIS (licencia), BigQuery (serverless, costo por consulta).</li>
+      </ul>
+      <p>Código: 
+        <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_1_DataWarehouse_ETL/sql/proc_month_bill_billdetail_anon.sql">Bill+Detail</a> ·
+        <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_1_DataWarehouse_ETL/sql/proc_month_order_orderproduct_anon.sql">Order+OrderProduct</a> ·
+        <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_1_DataWarehouse_ETL/sql/proc_refresh_all_views.sql">Refresh MVs</a>
+      </p>
+      <div class="gallery">
+        <img src="/portafolio-bi/bi/img/06_pgadmin_activity.png" alt="Actividad">
+        <img src="/portafolio-bi/bi/img/07_pgadmin_objects.png" alt="Objetos">
+        <img src="/portafolio-bi/bi/img/04_logs_connection_issue.png" alt="Log error">
+        <img src="/portafolio-bi/bi/img/05_logs_ok.png" alt="Log ok">
+      </div>
+    </section>
+
+    <!-- ETAPA 2 -->
+    <section class="panel" id="etapa-2">
+      <h2>Orquestación (de cron a n8n)</h2>
+      <p class="lead">Reemplazo de cron por n8n: programaciones, reintentos, notificaciones y auditoría visual.</p>
+      <pre><code>CALL public.proc_month_user_data(0);
+CALL public.proc_month_business_all(0);
+CALL public.proc_month_product_group(0);
+CALL public.proc_month_order_orderproduct(0);
+CALL public.proc_month_bill_billdetail(0);
+CALL public.proc_refresh_all_views();</code></pre>
+      <p>Workflow JSON: <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_2_Orquestacion/n8n/workflow_etl.json">ver en GitHub</a></p>
+      <div class="gallery">
+        <img src="/portafolio-bi/bi/img/01_n8n_flow.png" alt="Flujo n8n">
+        <img src="/portafolio-bi/bi/img/02_n8n_cron.png" alt="Trigger cron">
+        <img src="/portafolio-bi/bi/img/03_n8n_postgres_node.png" alt="Nodo Postgres">
+      </div>
+    </section>
+
+    <!-- ETAPA 3 -->
+    <section class="panel" id="etapa-3">
+      <h2>Dashboard</h2>
+      <p class="lead">KPIs, comparativos y filtros sobre MVs (<code>mv_ventas_dia/mes</code>, <code>mv_resumen_clientes_dia/mes</code>). Datos anonimizados.</p>
+      <div class="gallery">
+        <img src="/portafolio-bi/bi/img/kpi_principal.png" alt="KPI">
+        <img src="/portafolio-bi/bi/img/ventas_por_categoria.png" alt="Ventas por categoría">
+        <img src="/portafolio-bi/bi/img/filtros.png" alt="Filtros">
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container">
+  <span>© <span id="y"></span> Eric Noël</span>
+  <a href="/portafolio-bi/">Inicio</a>
+</div></footer>
+</body>
+</html>
