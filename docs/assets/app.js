@@ -404,3 +404,17 @@ function localize(key){
   };
   return (map[lang] && map[lang][key]) || map.es[key];
 }
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  function applyI18nHtml(lang) {
+    document.querySelectorAll("[data-i18n-html]").forEach(el => {
+      const key = el.getAttribute("data-i18n-html");
+      const val = (t[lang] && t[lang][key]) || el.innerHTML;
+      if (val) el.innerHTML = val;
+    });
+  }
+  // Llama a applyI18nHtml(langActual) donde ya llamas a applyI18n(langActual)
+});
+
