@@ -12,6 +12,12 @@
   <nav class="nav">
     <a href="/portafolio-bi/#proyectos" data-i18n="nav.projects">Proyectos</a>
     <a class="btn" href="/portafolio-bi/#contacto" data-i18n="nav.contact">Contáctame</a>
+    <a class="icon-btn" href="https://www.linkedin.com/in/eric-alexander-noel-romo-1ab60416a/" target="_blank" aria-label="LinkedIn" title="LinkedIn" data-i18n="nav.linkedin">
+      <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5H4.5V22H.5zM8.5 8.5H12.2V10.3h.05c.51-.97 1.76-2 3.62-2 3.87 0 4.58 2.55 4.58 5.87V22h-4V15.1c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V22h-4z"/></svg>
+    </a>
+    <a class="icon-btn" href="YOUR_GOOGLE_DRIVE_CV_LINK" target="_blank" aria-label="CV" title="CV" data-i18n="nav.cv">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+    </a>
     <select id="lang" aria-label="Idioma"><option value="es">ES</option><option value="en">EN</option><option value="fr">FR</option></select>
   </nav>
 </div></header>
@@ -30,15 +36,10 @@
   </div>
 
   <div class="tabpanels">
-    <!-- ETAPA 1 -->
     <section class="panel" id="etapa-1">
       <h2 data-i18n="bi.e1.title">DWH & ETL (PostgreSQL)</h2>
-      <p class="lead" data-i18n="bi.e1.desc">
-        Replicación controlada + transformaciones con procedimientos y logging por paso. Índices y vistas materializadas para baja latencia.
-      </p>
-      <ul class="bullets" data-i18n-html="bi.e1.bullets">
-        <!-- se llena por i18n -->
-      </ul>
+      <p class="lead" data-i18n="bi.e1.desc">Replicación controlada + transformaciones con procedimientos y logging por paso. Índices y vistas materializadas para baja latencia.</p>
+      <ul class="bullets" data-i18n-html="bi.e1.bullets"></ul>
       <p class="subtle">
         Código:
         <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_1_DataWarehouse_ETL/sql/proc_month_bill_billdetail_anon.sql">Bill+Detail</a> ·
@@ -53,12 +54,9 @@
       </div>
     </section>
 
-    <!-- ETAPA 2 -->
     <section class="panel" id="etapa-2">
       <h2 data-i18n="bi.e2.title">Orquestación (de cron a n8n)</h2>
-      <p class="lead" data-i18n="bi.e2.desc">
-        Reemplazo de cron por n8n: programaciones, reintentos, notificaciones y auditoría visual.
-      </p>
+      <p class="lead" data-i18n="bi.e2.desc">Reemplazo de cron por n8n: programaciones, reintentos, notificaciones y auditoría visual.</p>
       <ul class="bullets" data-i18n-html="bi.e2.bullets"></ul>
       <pre><code>CALL public.proc_month_user_data(0);
 CALL public.proc_month_business_all(0);
@@ -74,12 +72,9 @@ CALL public.proc_refresh_all_views();</code></pre>
       </div>
     </section>
 
-    <!-- ETAPA 3 -->
     <section class="panel" id="etapa-3">
       <h2 data-i18n="bi.e3.title">Dashboard</h2>
-      <p class="lead" data-i18n="bi.e3.desc">
-        KPIs, comparativos y filtros sobre MVs (mv_ventas_dia/mes, mv_resumen_clientes_dia/mes). Datos anonimizados.
-      </p>
+      <p class="lead" data-i18n="bi.e3.desc">KPIs, comparativos y filtros sobre MVs (mv_ventas_dia/mes, mv_resumen_clientes_dia/mes). Datos anonimizados.</p>
       <ul class="bullets" data-i18n-html="bi.e3.bullets"></ul>
       <div class="gallery">
         <img src="/portafolio-bi/bi/img/kpi_principal.png" alt="KPI">
