@@ -4,14 +4,20 @@ a{color:var(--brand);text-decoration:none}img{max-width:100%;display:block}
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
 .site-header{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 .site-header .container{display:flex;align-items:center;justify-content:space-between;height:62px}
-.brand{font-weight:700;color:#fff}.nav a{margin-left:14px}.btn{display:inline-block;background:var(--brand);color:#001025;font-weight:700;border-radius:10px;padding:.55rem .9rem}
+.brand{font-weight:700;color:#fff}
+.nav a{margin-left:14px}
+#lang{margin-left:12px;background:#131c36;border:1px solid var(--border);color:#cfe5ff;border-radius:8px;padding:.35rem .5rem}
+.btn{display:inline-block;background:var(--brand);color:#001025;font-weight:700;border-radius:10px;padding:.55rem .9rem}
 .btn.ghost{background:transparent;border:1px solid var(--brand);color:var(--text)}
 .hero{padding:56px 0;background:linear-gradient(180deg,#0b1020,#0c142e)}
 .lead{color:var(--muted)}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.chip{border:1px solid var(--border);background:#152141;color:var(--brand-2);padding:.3rem .55rem;border-radius:999px}
-.section{padding:40px 0}.grid.cards{display:grid;gap:22px;grid-template-columns:repeat(3,1fr)}@media(max-width:980px){.grid.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.grid.cards{grid-template-columns:1fr}}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.card-media{background:#0a1224}.card-body{padding:16px}.card-body p{color:var(--muted)}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.tags span{border:1px solid var(--border);background:#131c36;color:#cfe5ff;border-radius:999px;padding:.2rem .5rem;font-size:.82rem}
-.card.ghost{opacity:.75;display:flex;justify-content:center}
+.section{padding:40px 0}
+.grid.cards{display:grid;gap:22px;grid-template-columns:repeat(3,1fr)}
+@media(max-width:980px){.grid.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.grid.cards{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 3px 16px rgba(0,0,0,.2)}
+.card-media{background:#0a1224}.card-body{padding:16px}.card-body p{color:var(--muted)}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.tags span{border:1px solid var(--border);background:#131c36;color:#cfe5ff;border-radius:999px;padding:.2rem .5rem;font-size:.82rem}
+.card.ghost{opacity:.78;display:flex;justify-content:center}
 .site-footer{padding:20px 0;background:#0b0f22;border-top:1px solid var(--border)}
 .site-footer .container{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
 
@@ -22,10 +28,20 @@ a{color:var(--brand);text-decoration:none}img{max-width:100%;display:block}
 .carousel .prev,.carousel .next{position:absolute;top:50%;transform:translateY(-50%);border:0;background:rgba(0,0,0,.4);color:#fff;font-size:24px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;cursor:pointer}
 .carousel .prev{left:8px}.carousel .next{right:8px}
 
-/* Pestañas (BI) */
+/* Tabs (BI) */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
 .tab{border:1px solid var(--border);background:#131c36;color:#cfe5ff;border-radius:999px;padding:.4rem .8rem;cursor:pointer}
 .tab.active{background:var(--brand);color:#00102a;border-color:transparent}
 .tabpanels .panel{display:none;margin-top:14px}
 .tabpanels .panel.active{display:block}
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}@media(max-width:720px){.gallery{grid-template-columns:1fr}}
+
+/* Formulario */
+.form{max-width:760px;background:#0e152a;border:1px solid var(--border);border-radius:14px;padding:16px;margin-top:12px}
+.form-row{display:flex;flex-direction:column;margin-bottom:12px}
+.form-row label{font-weight:600;margin-bottom:6px}
+.form-row input,.form-row textarea{background:#131c36;border:1px solid var(--border);border-radius:10px;color:#eaf2ff;padding:.6rem .7rem}
+.form-row input:focus,.form-row textarea:focus{outline:none;border-color:#2c5cff;box-shadow:0 0 0 3px rgba(76,140,255,.15)}
+.form-actions{display:flex;align-items:center;gap:12px}
+.notice{color:#a8ffc8}
+.subtle{color:var(--muted)}
