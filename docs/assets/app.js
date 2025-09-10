@@ -38,7 +38,7 @@ document.querySelectorAll('[data-tabs]').forEach(initTabs);
 // ===== i18n =====
 const t = {
   es: {
-    brand: "Eric Noël — BI",
+    brand: "Inicio",
     "nav.projects": "Proyectos",
     "nav.contact": "Contáctame",
     "nav.linkedin": "LinkedIn",
@@ -139,7 +139,7 @@ const t = {
   },
 
   en: {
-    brand: "Eric Noël — BI",
+    brand: "Home",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
     "nav.linkedin": "LinkedIn",
@@ -239,7 +239,7 @@ const t = {
   },
 
   fr: {
-    brand: "Eric Noël — BI",
+    brand: "Accueil",
     "nav.projects": "Projets",
     "nav.contact": "Contact",
     "nav.linkedin": "LinkedIn",
