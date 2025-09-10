@@ -8,20 +8,21 @@
 </head>
 <body data-page="bi">
 
- <header class="site-header">
+<header class="site-header">
   <div class="container header">
     <div class="header-left">
       <a class="brand" href="/portafolio-bi/" data-i18n="brand">Inicio</a>
       <a class="icon-btn" href="https://www.linkedin.com/in/eric-no%C3%ABl-1ab60416a/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
         <img src="/portafolio-bi/assets/icons/linkedin.png" alt="LinkedIn" />
       </a>
-      <a class="icon-btn" href="https://drive.google.com/drive/folders/1m9ZEI6ZMaWivZS0kR5SY_bu6aTX4Y3aA?usp=sharing" target="_blank" aria-label="CV" title="CV">
+      <!-- Mejor enlazar directo al PDF del CV -->
+      <a class="icon-btn" href="https://drive.google.com/file/d/TU_ID_DE_ARCHIVO/view?usp=sharing" target="_blank" aria-label="CV" title="CV">
         <img src="/portafolio-bi/assets/icons/cv.png" alt="CV" />
       </a>
     </div>
     <nav class="header-right nav">
-      <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
-      <a class="btn" href="#contacto" data-i18n="nav.contact">Contáctame</a>
+      <a href="/portafolio-bi/#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a class="btn" href="/portafolio-bi/#contacto" data-i18n="nav.contact">Contáctame</a>
       <select id="lang" aria-label="Idioma">
         <option value="es">ES</option><option value="en">EN</option><option value="fr">FR</option>
       </select>
@@ -32,7 +33,13 @@
 <section class="hero"><div class="container">
   <h1 data-i18n="bi.title">BI End-to-End</h1>
   <p class="lead" data-i18n="bi.lead">Un solo proyecto en 3 etapas: DWH en PostgreSQL → Orquestación en n8n → Dashboard.</p>
-  <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">PL/pgSQL</span><span class="chip">n8n</span><span class="chip">Materialized Views</span><span class="chip">Power BI / Qlik</span></div>
+  <div class="chips">
+    <span class="chip">PostgreSQL</span>
+    <span class="chip">PL/pgSQL</span>
+    <span class="chip">n8n</span>
+    <span class="chip">Materialized Views</span>
+    <span class="chip">Power BI / Qlik</span>
+  </div>
 </div></section>
 
 <main class="container" data-tabs>
@@ -54,10 +61,10 @@
         <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_1_DataWarehouse_ETL/sql/proc_refresh_all_views.sql">Refresh MVs</a>
       </p>
       <div class="gallery">
-        <img src="/portafolio-bi/bi/img/06_pgadmin_activity.png" alt="Actividad">
-        <img src="/portafolio-bi/bi/img/07_pgadmin_objects.png" alt="Objetos">
-        <img src="/portafolio-bi/bi/img/04_logs_connection_issue.png" alt="Log error">
-        <img src="/portafolio-bi/bi/img/05_logs_ok.png" alt="Log ok">
+        <img loading="lazy" src="/portafolio-bi/bi/img/06_pgadmin_activity.png" alt="Actividad en pgAdmin">
+        <img loading="lazy" src="/portafolio-bi/bi/img/07_pgadmin_objects.png" alt="Objetos en pgAdmin">
+        <img loading="lazy" src="/portafolio-bi/bi/img/04_logs_connection_issue.png" alt="Log de conexión fallida">
+        <img loading="lazy" src="/portafolio-bi/bi/img/05_logs_ok.png" alt="Log de ejecución OK">
       </div>
     </section>
 
@@ -73,9 +80,9 @@ CALL public.proc_month_bill_billdetail(0);
 CALL public.proc_refresh_all_views();</code></pre>
       <p class="subtle">Workflow JSON: <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_2_Orquestacion/n8n/workflow_etl.json">ver en GitHub</a></p>
       <div class="gallery">
-        <img src="/portafolio-bi/bi/img/01_n8n_flow.png" alt="Flujo n8n">
-        <img src="/portafolio-bi/bi/img/02_n8n_cron.png" alt="Trigger cron">
-        <img src="/portafolio-bi/bi/img/03_n8n_postgres_node.png" alt="Nodo Postgres">
+        <img loading="lazy" src="/portafolio-bi/bi/img/01_n8n_flow.png" alt="Flujo n8n">
+        <img loading="lazy" src="/portafolio-bi/bi/img/02_n8n_cron.png" alt="Trigger cron">
+        <img loading="lazy" src="/portafolio-bi/bi/img/03_n8n_postgres_node.png" alt="Nodo Postgres">
       </div>
     </section>
 
@@ -84,9 +91,9 @@ CALL public.proc_refresh_all_views();</code></pre>
       <p class="lead" data-i18n="bi.e3.desc">KPIs, comparativos y filtros sobre MVs (mv_ventas_dia/mes, mv_resumen_clientes_dia/mes). Datos anonimizados.</p>
       <ul class="bullets" data-i18n-html="bi.e3.bullets"></ul>
       <div class="gallery">
-        <img src="/portafolio-bi/bi/img/kpi_principal.png" alt="KPI">
-        <img src="/portafolio-bi/bi/img/ventas_por_categoria.png" alt="Ventas por categoría">
-        <img src="/portafolio-bi/bi/img/filtros.png" alt="Filtros">
+        <img loading="lazy" src="/portafolio-bi/bi/img/kpi_principal.png" alt="KPI principal">
+        <img loading="lazy" src="/portafolio-bi/bi/img/ventas_por_categoria.png" alt="Ventas por categoría">
+        <img loading="lazy" src="/portafolio-bi/bi/img/filtros.png" alt="Filtros del dashboard">
       </div>
     </section>
   </div>
