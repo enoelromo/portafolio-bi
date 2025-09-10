@@ -1,9 +1,8 @@
-// ===== Configura tu email aquí =====
-const CONTACT_EMAIL = "enoelromo@gmail.com"; // <-- cámbialo
-// Si quieres enviar sin abrir el cliente de correo, pon un endpoint de Formspree:
-// window.FORM_ENDPOINT = "https://formspree.io/f/XXXXXXXX";
+// ===== Config =====
+const CONTACT_EMAIL = "enoelromo@gmail.com"; // destinatario mailto
+// Si prefieres un backend (Formspree u otro), define window.FORM_ENDPOINT
 
-// ===== Año en footer =====
+// ===== Util =====
 document.addEventListener('DOMContentLoaded', () => {
   const y = document.getElementById('y');
   if (y) y.textContent = new Date().getFullYear();
@@ -11,29 +10,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ===== Carruseles =====
 function initCarousel(el){
-  const slides=el.querySelector('.slides'); if(!slides) return;
-  const imgs=slides.querySelectorAll('img'); let i=0;
-  const go=n=>{ i=(n+imgs.length)%imgs.length; slides.style.transform=`translateX(-${i*100}%)`; };
+  const slides = el.querySelector('.slides'); if(!slides) return;
+  const imgs = slides.querySelectorAll('img'); let i=0;
+  const go = n => { i=(n+imgs.length)%imgs.length; slides.style.transform=`translateX(-${i*100}%)`; };
   el.querySelector('.prev')?.addEventListener('click',()=>go(i-1));
   el.querySelector('.next')?.addEventListener('click',()=>go(i+1));
   if(el.dataset.autoplay==='true') setInterval(()=>go(i+1),4000);
 }
-document.querySelectorAll('.carousel').forEach(initCarousel);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.carousel').forEach(initCarousel);
+});
 
-// ===== Tabs (pestañas) =====
-function initTabs(root){
-  const tabs=[...root.querySelectorAll('.tab')];
-  const panels=[...root.querySelectorAll('.panel')];
-  const activate=(id)=>{
-    tabs.forEach(t=>t.classList.toggle('active', t.dataset.target===id));
-    panels.forEach(p=>p.classList.toggle('active', '#'+p.id===id));
-    history.replaceState(null,'',id);
-  };
-  tabs.forEach(t=>t.addEventListener('click',()=>activate(t.dataset.target)));
-  const initial = (location.hash && panels.some(p=>('#'+p.id)===location.hash)) ? location.hash : tabs[0]?.dataset.target;
-  if(initial) activate(initial);
-}
-document.querySelectorAll('[data-tabs]').forEach(initTabs);
+// ===== Tabs accesibles (página BI) =====
+(function () {
+  function initTabs(root=document){
+    const tablist = root.querySelector('.tabs[role="tablist"]');
+    if(!tablist) return;
+    const tabs   = Array.from(tablist.querySelectorAll('.tab[role="tab"]'));
+    const panels = tabs.map(t => root.querySelector('#'+t.getAttribute('aria-controls'))).filter(Boolean);
+
+    function selectTab(idx, updateHash=true, focusTab=true){
+      tabs.forEach((t,i)=> {
+        const sel = i===idx;
+        t.setAttribute('aria-selected', String(sel));
+        t.tabIndex = sel ? 0 : -1;
+        if(sel && focusTab) t.focus({preventScroll:true});
+      });
+      panels.forEach((p,i)=> p.toggleAttribute('hidden', i!==idx));
+      const panelId = panels[idx]?.id;
+      if(updateHash && panelId){
+        history.replaceState(null,'',`${location.pathname}#${panelId}`);
+      }
+    }
+
+    tabs.forEach((t,i)=> t.addEventListener('click',()=>selectTab(i,false,false)));
+
+    tablist.addEventListener('keydown',(e)=>{
+      const cur = tabs.findIndex(t=>t.getAttribute('aria-selected')==='true');
+      if(e.key==='ArrowRight'){ e.preventDefault(); selectTab((cur+1)%tabs.length); }
+      else if(e.key==='ArrowLeft'){ e.preventDefault(); selectTab((cur-1+tabs.length)%tabs.length); }
+      else if(e.key==='Home'){ e.preventDefault(); selectTab(0); }
+      else if(e.key==='End'){ e.preventDefault(); selectTab(tabs.length-1); }
+    });
+
+    const fromHash = (() => {
+      const id=(location.hash||'').slice(1);
+      return panels.findIndex(p=>p.id===id);
+    })();
+    if(fromHash>=0) selectTab(fromHash,false,false);
+    else {
+      const def = tabs.findIndex(t=>t.getAttribute('aria-selected')==='true') || 0;
+      selectTab(def,false,false);
+    }
+    window.addEventListener('hashchange',()=>{
+      const id=(location.hash||'').slice(1);
+      const i=panels.findIndex(p=>p.id===id);
+      if(i>=0) selectTab(i,false,false);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if(document.body.getAttribute('data-page')==='bi') initTabs(document);
+  });
+})();
 
 // ===== i18n =====
 const t = {
@@ -52,8 +91,7 @@ const t = {
     "hero.quick.2": "Pipelines ETL incrementales y orquestación (SQL, cron, n8n, Visual Studio/SSIS) con monitoreo y reintentos.",
     "hero.quick.3": "Reporting y autoservicio: Power BI, Qlik, SAP BO; KPIs, comparativos y automatización (NPrinting/SSRS).",
     "hero.quick.4": "Gobierno de datos: documentación técnica, trazabilidad y auditoría; backups y operación en Windows/Linux.",
-    "hero.quick.5": "Soft skills: análisis, autonomía, rigor y priorización; trabajo con equipos de negocio y TI."
-
+    "hero.quick.5": "Soft skills: análisis, autonomía, rigor y priorización; trabajo con equipos de negocio y TI.",
 
     "projects.title": "Proyectos",
     "card.bi.title": "BI End-to-End (3 etapas)",
@@ -84,7 +122,7 @@ const t = {
     "bi.e1.title": "DWH & ETL (PostgreSQL)",
     "bi.e1.desc": "Replicación controlada + transformaciones con procedimientos y logging por paso. Índices y vistas materializadas para baja latencia.",
     "bi.e1.bullets": `
-      <li><b>PostgreSQL</b>: robusto, extensiones (<code>dblink</code>), <code>REFRESH MATERIALIZED VIEW CONCURRENTLY</code>.</li>
+      <li><b>PostgreSQL</b>: robusto, extensiones (<code>dblink</code>) y <code>REFRESH MATERIALIZED VIEW CONCURRENTLY</code>.</li>
       <li><b>PL/pgSQL</b>: control de flujo + trazabilidad (<code>dw_logs_procedures</code>).</li>
       <li><b>Índices</b> por selectividad (fechas, <code>businessId</code>, <code>customerId</code>).</li>
       <li><b>Alternativas</b>: SQL Server + SSIS (licencias), BigQuery (serverless, pago por consulta).</li>
@@ -104,7 +142,6 @@ const t = {
       <li><b>Buenas prácticas</b>: parámetros de fecha y RLS si aplica.</li>
     `,
 
-    /* Apps */
     "app.servicios.title": "Servicios — plataforma web",
     "app.servicios.lead": "MVP centrado en agilidad y seguridad: Next.js + Supabase + PWA.",
     "app.servicios.stack": "Stack inicial",
@@ -157,8 +194,7 @@ const t = {
     "hero.quick.2": "Incremental ETL pipelines & orchestration (SQL, cron, n8n, Visual Studio/SSIS) with monitoring and retries.",
     "hero.quick.3": "Reporting & self-service: Power BI, Qlik, SAP BO; KPIs, comparisons and automation (NPrinting/SSRS).",
     "hero.quick.4": "Data governance: technical docs, traceability & audit; backups and operations on Windows/Linux.",
-    "hero.quick.5": "Soft skills: analytical, autonomous, detail-oriented; partner with business and IT stakeholders."
-
+    "hero.quick.5": "Soft skills: analytical, autonomous, detail-oriented; partner with business and IT stakeholders.",
 
     "projects.title": "Projects",
     "card.bi.title": "BI End-to-End (3 stages)",
@@ -189,7 +225,7 @@ const t = {
     "bi.e1.title": "DWH & ETL (PostgreSQL)",
     "bi.e1.desc": "Controlled replication + stored procedures with step logging. Indexes + MVs for low latency.",
     "bi.e1.bullets": `
-      <li><b>PostgreSQL</b>: robust, extensions (<code>dblink</code>), <code>REFRESH MATERIALIZED VIEW CONCURRENTLY</code>.</li>
+      <li><b>PostgreSQL</b>: robust, extensions (<code>dblink</code>) and <code>REFRESH MATERIALIZED VIEW CONCURRENTLY</code>.</li>
       <li><b>PL/pgSQL</b>: flow control + traceability (<code>dw_logs_procedures</code>).</li>
       <li><b>Indexes</b> by selectivity (dates, <code>businessId</code>, <code>customerId</code>).</li>
       <li><b>Alternatives</b>: SQL Server + SSIS (licensing), BigQuery (serverless, pay-per-query).</li>
@@ -261,8 +297,7 @@ const t = {
     "hero.quick.2": "Pipelines ETL incrémentiels & orchestration (SQL, cron, n8n, Visual Studio/SSIS) avec suivi et relances.",
     "hero.quick.3": "Reporting & self-service : Power BI, Qlik, SAP BO ; KPI, comparatifs et automatisation (NPrinting/SSRS).",
     "hero.quick.4": "Gouvernance des données : documentation, traçabilité & audit ; sauvegardes et exploitation Windows/Linux.",
-    "hero.quick.5": "Soft skills : esprit d’analyse, autonomie, rigueur & priorisation ; collaboration métiers/IT."
-
+    "hero.quick.5": "Soft skills : analyse, autonomie, rigueur & priorisation ; collaboration métiers/IT.",
 
     "projects.title": "Projets",
     "card.bi.title": "BI End-to-End (3 étapes)",
@@ -293,7 +328,7 @@ const t = {
     "bi.e1.title": "DWH & ETL (PostgreSQL)",
     "bi.e1.desc": "Réplication contrôlée + procédures stockées avec logs par étape. Index + vues matérialisées.",
     "bi.e1.bullets": `
-      <li><b>PostgreSQL</b> : robuste, extensions (<code>dblink</code>), <code>REFRESH MATERIALIZED VIEW CONCURRENTLY</code>.</li>
+      <li><b>PostgreSQL</b> : robuste, extensions (<code>dblink</code>) et <code>REFRESH MATERIALIZED VIEW CONCURRENTLY</code>.</li>
       <li><b>PL/pgSQL</b> : contrôle du flux + traçabilité (<code>dw_logs_procedures</code>).</li>
       <li><b>Index</b> selon la sélectivité (dates, <code>businessId</code>, <code>customerId</code>).</li>
       <li><b>Alternatives</b> : SQL Server + SSIS (licences), BigQuery (serverless, facturation à la requête).</li>
@@ -354,27 +389,32 @@ const t = {
 function applyI18n(lang){
   const dict = t[lang] || t.es;
   document.documentElement.lang = lang;
+
+  // texto plano
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const key = el.getAttribute('data-i18n');
     if (dict[key]) el.textContent = dict[key];
   });
+  // html (listas, etc.)
   document.querySelectorAll('[data-i18n-html]').forEach(el=>{
     const key = el.getAttribute('data-i18n-html');
     if (dict[key]) el.innerHTML = dict[key];
   });
+
   localStorage.setItem('lang', lang);
 }
 
-(function initLang(){
+document.addEventListener('DOMContentLoaded', () => {
   const select = document.getElementById('lang');
   const saved = localStorage.getItem('lang') || 'es';
   if (select){ select.value = saved; select.addEventListener('change', e=>applyI18n(e.target.value)); }
   applyI18n(saved);
-})();
+});
 
-// ===== Formulario =====
-const form = document.getElementById('contactForm');
-if (form){
+// ===== Formulario (mailto por defecto) =====
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
   form.addEventListener('submit', async (e)=>{
     e.preventDefault();
     const fd = new FormData(form);
@@ -394,7 +434,8 @@ if (form){
       }
     }catch(err){ msg.textContent = localize('form.err'); }
   });
-}
+});
+
 function localize(key){
   const lang = localStorage.getItem('lang') || 'es';
   const map = {
@@ -404,17 +445,3 @@ function localize(key){
   };
   return (map[lang] && map[lang][key]) || map.es[key];
 }
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  function applyI18nHtml(lang) {
-    document.querySelectorAll("[data-i18n-html]").forEach(el => {
-      const key = el.getAttribute("data-i18n-html");
-      const val = (t[lang] && t[lang][key]) || el.innerHTML;
-      if (val) el.innerHTML = val;
-    });
-  }
-  // Llama a applyI18nHtml(langActual) donde ya llamas a applyI18n(langActual)
-});
-
