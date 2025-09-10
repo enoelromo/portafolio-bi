@@ -1,1 +1,84 @@
 
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio — Eric Noël</title>
+  <link rel="stylesheet" href="/portafolio-bi/assets/style.css" />
+  <script defer src="/portafolio-bi/assets/app.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/portafolio-bi/">Eric Noël — BI</a>
+    <nav class="nav">
+      <a href="#proyectos">Proyectos</a>
+      <a class="btn" href="mailto:TU_EMAIL">Contáctame</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Portafolio</h1>
+    <p class="lead">Un caso **End-to-End** de Business Intelligence y dos apps en camino.</p>
+    <div class="chips">
+      <span class="chip">PostgreSQL</span><span class="chip">ETL</span><span class="chip">n8n</span>
+      <span class="chip">Materialized Views</span><span class="chip">Power BI / Qlik</span>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos" class="section container">
+  <h2>Proyectos</h2>
+  <div class="grid cards">
+    <!-- BI E2E (un solo proyecto con 3 etapas) -->
+    <article class="card">
+      <div class="card-media">
+        <div class="carousel" data-autoplay="true">
+          <div class="slides">
+            <img src="/portafolio-bi/bi/img/06_pgadmin_activity.png" alt="Actividad">
+            <img src="/portafolio-bi/bi/img/01_n8n_flow.png" alt="n8n">
+            <img src="/portafolio-bi/bi/img/kpi_principal.png" alt="Dashboard">
+          </div>
+          <button class="prev">‹</button><button class="next">›</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>BI End-to-End (3 etapas)</h3>
+        <p>DWH en PostgreSQL → Orquestación en n8n → Dashboard (Power BI/Qlik). Datos anonimizados.</p>
+        <div class="tags"><span>PostgreSQL</span><span>n8n</span><span>Visualización</span></div>
+        <a class="btn" href="/portafolio-bi/bi/">Ver etapas</a>
+      </div>
+    </article>
+
+    <!-- App 1 -->
+    <article class="card ghost">
+      <div class="card-body">
+        <h3>App “Vecinos” — servicios & eventos</h3>
+        <p>Publicaciones, reservas y organización de reuniones. (Próximamente)</p>
+        <a class="btn ghost" href="/portafolio-bi/apps/vecinos/">Ver avance</a>
+      </div>
+    </article>
+
+    <!-- App 2 -->
+    <article class="card ghost">
+      <div class="card-body">
+        <h3>App Finanzas — gastos/ingresos unificados</h3>
+        <p>ETL de bancos + analítica personal/negocio. (Próximamente)</p>
+        <a class="btn ghost" href="/portafolio-bi/apps/finanzas/">Ver avance</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© <span id="y"></span> Eric Noël</span>
+    <a href="https://github.com/enoelromo/portafolio-bi">GitHub</a>
+    <a href="mailto:TU_EMAIL">Email</a>
+  </div>
+</footer>
+</body>
+</html>
