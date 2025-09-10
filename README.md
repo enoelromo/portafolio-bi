@@ -1,22 +1,30 @@
 # Portafolio BI — Eric Noël
 
-Bienvenido/a a mi portafolio de **Business Intelligence**. Caso end-to-end:
-- **Data Warehouse en PostgreSQL** (modelado, ETL con procedimientos y logging)
-- **Orquestación** (de cron a **n8n**)
-- **Dashboards** sobre vistas materializadas
+Sitio público: https://enoelromo.github.io/portafolio-bi/
 
-> 💡 Repo público pensado para perfiles técnicos y no técnicos. Todo está **anonimizado**.
+Este repositorio contiene un portafolio estático (GitHub Pages) con:
+- Un caso end-to-end de BI (DW en PostgreSQL + orquestación en n8n + dashboard en preparación).
+- Dos apps personales (Servicios y Finanzas) en fase de diseño/roadmap.
 
-**🔗 Versión web (GitHub Pages):** https://enoelromo.github.io/portafolio-bi/
+## Estructura
 
-## 🧭 Navegación rápida
-- [Proyecto 1 — Data Warehouse & ETL (PostgreSQL)](./Proyecto_1_DataWarehouse_ETL/README.md)
-- [Proyecto 2 — Orquestación (de cron a n8n)](./Proyecto_2_Orquestacion/README.md)
-- [Proyecto 3 — Dashboard BI](./Proyecto_3_Dashboard/README.md)
+docs/ # sitio publicado (GitHub Pages)
+assets/
+app.js # textos e i18n (ES/EN/FR)
+style.css # estilos
+icons/ # íconos (linkedin.png, cv.png)
+index.html # home
+bi/index.html # proyecto BI
+apps/servicios/index.html
+apps/finanzas/index.html
 
-## 🛠 Tech Stack
-PostgreSQL · SQL avanzado (CTE, ventanas) · Vistas materializadas · Índices · Logging · n8n · cron · Power BI · Qlik · Excel
 
-## 📬 Contacto
-- LinkedIn: https://www.linkedin.com/in/eric-no%C3%ABl-1ab60416a/
-- Email: enoelromo@gmail.com
+## Edición rápida
+- **Textos / i18n**: `docs/assets/app.js` (objeto `t`).
+- **Enlaces LinkedIn / CV**: header de `docs/index.html`, `docs/bi/index.html`, `docs/apps/servicios/index.html`, `docs/apps/finanzas/index.html`.
+- **Íconos**: coloca `linkedin.png` y `cv.png` en `docs/assets/icons/`. Tamaño sugerido: **128×128** (se redimensionan a ~20px).
+
+## Licencia
+- **Código (HTML/CSS/JS)**: MIT — ver `LICENSE`.
+- **Contenido (textos e imágenes del portafolio)**: CC BY-NC-ND 4.0 (no comercial, sin obras derivadas, con atribución).
+
