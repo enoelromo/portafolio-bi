@@ -16,6 +16,9 @@ a{color:var(--brand);text-decoration:none}img{max-width:100%;display:block}
 .btn{display:inline-block;background:var(--brand);color:#001025;font-weight:700;border-radius:10px;padding:.55rem .9rem}
 .btn.ghost{background:transparent;border:1px solid var(--brand);color:var(--text)}
 
+/* PNG icons in header buttons */
+.icon-btn img{width:20px;height:20px;object-fit:contain;display:block}
+
 /* NUEVO: layout izquierda/derecha en header */
 .site-header .container.header{
   display:flex;align-items:center;justify-content:space-between;height:62px
