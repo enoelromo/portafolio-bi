@@ -123,7 +123,7 @@ const t = {
     `,
     "app.servicios.note": "En evolución: el alcance puede ajustarse sin revelar ideas clave.",
 
-    "app.finanzas.title": "Finanzas — gastos/ingresos unificados",
+    "app.finanzas.title": "Finanzas — gastos/ingresos",
     "app.finanzas.lead": "Backend en Python para ingesta PDF/OCR, normalización y API.",
     "app.finanzas.stack": "Stack inicial",
     "app.finanzas.stack.bullets": `
