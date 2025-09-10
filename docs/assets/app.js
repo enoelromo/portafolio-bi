@@ -46,6 +46,7 @@ const t = {
 
     "hero.title": "Portafolio — Eric Noël",
     "hero.lead": "Caso real end-to-end: Data Warehouse en PostgreSQL y orquestación con n8n. Dashboard público en preparación. Además, dos apps propias en camino.",
+    "hero.note": "Este portafolio reúne proyectos personales, colaboraciones y trabajos para clientes. Para ver experiencia completa, roles y otras tecnologías, revisa mi CV o LinkedIn (arriba).",
     "hero.quick.title": "En resumen",
     "hero.quick.1": "Modelado y replicación selectiva con PL/pgSQL + logging paso a paso.",
     "hero.quick.2": "Rendimiento: índices compuestos y vistas materializadas concurrentes (ETL < 5 s/mes).",
@@ -148,6 +149,7 @@ const t = {
 
     "hero.title": "Portfolio — Eric Noël",
     "hero.lead": "Real end-to-end case: PostgreSQL Data Warehouse and n8n orchestration. Public dashboard in progress. Plus two personal apps in the works.",
+    "hero.note": "This portfolio includes personal projects, collaborations and client work. For full experience, roles and additional technologies, see my CV or LinkedIn (top).",
     "hero.quick.title": "At a glance",
     "hero.quick.1": "Modeling & selective replication with PL/pgSQL + step-by-step logging.",
     "hero.quick.2": "Performance: composite indexes & concurrent MVs (ETL < 5 s/month).",
@@ -249,6 +251,7 @@ const t = {
 
     "hero.title": "Portfolio BI — Eric Noël",
     "hero.lead": "Cas réel de bout en bout : Data Warehouse PostgreSQL et orchestration n8n. Dashboard public en préparation. Deux applis perso en cours.",
+    "hero.note": "Ce portfolio regroupe des projets personnels, des collaborations et des missions client. Pour l’expérience complète et d’autres technologies, consultez mon CV ou LinkedIn (en haut).",
     "hero.quick.title": "En bref",
     "hero.quick.1": "Modélisation & réplication sélective avec PL/pgSQL + logs étape par étape.",
     "hero.quick.2": "Performance : index composés & vues matérialisées concurrentes (ETL < 5 s/mois).",
