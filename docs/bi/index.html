@@ -15,7 +15,6 @@
       <a class="icon-btn" href="https://www.linkedin.com/in/eric-no%C3%ABl-1ab60416a/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
         <img src="/portafolio-bi/assets/icons/linkedin.png" alt="LinkedIn" />
       </a>
-      <!-- Mejor enlazar directo al PDF del CV -->
       <a class="icon-btn" href="https://drive.google.com/drive/folders/1m9ZEI6ZMaWivZS0kR5SY_bu6aTX4Y3aA?usp=sharing" target="_blank" aria-label="CV" title="CV">
         <img src="/portafolio-bi/assets/icons/cv.png" alt="CV" />
       </a>
@@ -34,23 +33,22 @@
   <h1 data-i18n="bi.title">BI End-to-End</h1>
   <p class="lead" data-i18n="bi.lead">Un solo proyecto en 3 etapas: DWH en PostgreSQL → Orquestación en n8n → Dashboard.</p>
   <div class="chips">
-    <span class="chip">PostgreSQL</span>
-    <span class="chip">PL/pgSQL</span>
-    <span class="chip">n8n</span>
-    <span class="chip">Materialized Views</span>
-    <span class="chip">Power BI / Qlik</span>
+    <span class="chip">PostgreSQL</span><span class="chip">PL/pgSQL</span><span class="chip">n8n</span>
+    <span class="chip">Materialized Views</span><span class="chip">Power BI / Qlik</span>
   </div>
 </div></section>
 
 <main class="container" data-tabs>
-  <div class="tabs">
-    <button class="tab" data-target="#etapa-1" data-i18n="bi.tab1">Etapa 1 · DWH & ETL</button>
-    <button class="tab" data-target="#etapa-2" data-i18n="bi.tab2">Etapa 2 · Orquestación (n8n)</button>
-    <button class="tab" data-target="#etapa-3" data-i18n="bi.tab3">Etapa 3 · Dashboard</button>
+  <!-- Tabs accesibles -->
+  <div class="tabs" role="tablist" aria-label="Etapas">
+    <button class="tab" id="tab-e1" role="tab" aria-controls="etapa-1" aria-selected="true" data-i18n="bi.tab1">Etapa 1 · DWH & ETL</button>
+    <button class="tab" id="tab-e2" role="tab" aria-controls="etapa-2" aria-selected="false" data-i18n="bi.tab2">Etapa 2 · Orquestación (n8n)</button>
+    <button class="tab" id="tab-e3" role="tab" aria-controls="etapa-3" aria-selected="false" data-i18n="bi.tab3">Etapa 3 · Dashboard</button>
   </div>
 
   <div class="tabpanels">
-    <section class="panel" id="etapa-1">
+    <!-- ETAPA 1 -->
+    <section class="panel" id="etapa-1" role="tabpanel" aria-labelledby="tab-e1">
       <h2 data-i18n="bi.e1.title">DWH & ETL (PostgreSQL)</h2>
       <p class="lead" data-i18n="bi.e1.desc">Replicación controlada + transformaciones con procedimientos y logging por paso. Índices y vistas materializadas para baja latencia.</p>
       <ul class="bullets" data-i18n-html="bi.e1.bullets"></ul>
@@ -68,7 +66,8 @@
       </div>
     </section>
 
-    <section class="panel" id="etapa-2">
+    <!-- ETAPA 2 -->
+    <section class="panel" id="etapa-2" role="tabpanel" aria-labelledby="tab-e2" hidden>
       <h2 data-i18n="bi.e2.title">Orquestación (de cron a n8n)</h2>
       <p class="lead" data-i18n="bi.e2.desc">Reemplazo de cron por n8n: programaciones, reintentos, notificaciones y auditoría visual.</p>
       <ul class="bullets" data-i18n-html="bi.e2.bullets"></ul>
@@ -86,7 +85,8 @@ CALL public.proc_refresh_all_views();</code></pre>
       </div>
     </section>
 
-    <section class="panel" id="etapa-3">
+    <!-- ETAPA 3 -->
+    <section class="panel" id="etapa-3" role="tabpanel" aria-labelledby="tab-e3" hidden>
       <h2 data-i18n="bi.e3.title">Dashboard</h2>
       <p class="lead" data-i18n="bi.e3.desc">KPIs, comparativos y filtros sobre MVs (mv_ventas_dia/mes, mv_resumen_clientes_dia/mes). Datos anonimizados.</p>
       <ul class="bullets" data-i18n-html="bi.e3.bullets"></ul>
