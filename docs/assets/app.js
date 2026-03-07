@@ -99,11 +99,11 @@ const t = {
     "card.bi.cta": "Ver etapas",
 
     "card.servicios.title": "Olivovilo — gestion empresarial",
-    "card.servicios.desc": "Plataforma de nomina, RRHH y gastos para empresas en Ecuador. Next.js + Supabase + Vercel. En produccion.",
+    "card.servicios.desc": "Nomina, RRHH y gastos para Ecuador. Next.js + Supabase + Vercel.",
     "card.servicios.cta": "Ver proyecto",
 
     "card.finanzas.title": "Floo — finanzas personales",
-    "card.finanzas.desc": "App multi-moneda y multi-idioma (EN/ES/FR) para gestionar gastos e ingresos. Next.js + PostgreSQL + Vercel. En produccion.",
+    "card.finanzas.desc": "Multi-moneda, multi-idioma (EN/ES/FR). Next.js + PostgreSQL + Vercel.",
     "card.finanzas.cta": "Ver proyecto",
 
     "contact.title": "Conversemos",
@@ -225,11 +225,11 @@ const t = {
     "card.bi.cta": "View stages",
 
     "card.servicios.title": "Olivovilo — business management",
-    "card.servicios.desc": "Payroll, HR and expense platform for companies in Ecuador. Next.js + Supabase + Vercel. In production.",
+    "card.servicios.desc": "Payroll, HR and expenses for Ecuador. Next.js + Supabase + Vercel.",
     "card.servicios.cta": "View project",
 
     "card.finanzas.title": "Floo — personal finance",
-    "card.finanzas.desc": "Multi-currency and multi-language app (EN/ES/FR) for tracking expenses and income. Next.js + PostgreSQL + Vercel. In production.",
+    "card.finanzas.desc": "Multi-currency, multi-language (EN/ES/FR). Next.js + PostgreSQL + Vercel.",
     "card.finanzas.cta": "View project",
 
     "contact.title": "Let’s talk",
@@ -351,11 +351,11 @@ const t = {
     "card.bi.cta": "Voir les étapes",
 
     "card.servicios.title": "Olivovilo — gestion d'entreprise",
-    "card.servicios.desc": "Plateforme de paie, RH et depenses pour les entreprises en Equateur. Next.js + Supabase + Vercel. En production.",
+    "card.servicios.desc": "Paie, RH et depenses pour l'Equateur. Next.js + Supabase + Vercel.",
     "card.servicios.cta": "Voir le projet",
 
     "card.finanzas.title": "Floo — finances personnelles",
-    "card.finanzas.desc": "App multi-devises et multilingue (EN/ES/FR) pour gerer depenses et revenus. Next.js + PostgreSQL + Vercel. En production.",
+    "card.finanzas.desc": "Multi-devises, multilingue (EN/ES/FR). Next.js + PostgreSQL + Vercel.",
     "card.finanzas.cta": "Voir le projet",
 
     "contact.title": "Échangeons",

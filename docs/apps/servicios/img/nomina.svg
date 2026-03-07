@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" fill="none">
+  <rect width="800" height="420" rx="12" fill="#0b1020"/>
+  <!-- Header -->
+  <rect x="20" y="16" width="760" height="48" rx="10" fill="#11172b" stroke="#1c2745" stroke-width="1"/>
+  <text x="40" y="46" font-family="system-ui" font-size="16" font-weight="700" fill="#e8edf7">Rol de Pago — Marzo 2026</text>
+  <rect x="620" y="28" width="80" height="24" rx="6" fill="#1a3a5c"/>
+  <text x="636" y="46" font-family="system-ui" font-size="11" fill="#4bb7ff">Exportar</text>
+  <rect x="710" y="28" width="56" height="24" rx="6" fill="#22543d"/>
+  <text x="720" y="46" font-family="system-ui" font-size="11" fill="#8affc1">Pagar</text>
+
+  <!-- Employee info -->
+  <rect x="20" y="80" width="760" height="60" rx="10" fill="#11172b" stroke="#1c2745" stroke-width="1"/>
+  <text x="40" y="104" font-family="system-ui" font-size="11" fill="#a8b1c7">Empleado</text>
+  <text x="40" y="124" font-family="system-ui" font-size="14" font-weight="600" fill="#e8edf7">Maria Elena Lopez Carrillo</text>
+  <text x="280" y="104" font-family="system-ui" font-size="11" fill="#a8b1c7">Cargo</text>
+  <text x="280" y="124" font-family="system-ui" font-size="14" font-weight="600" fill="#e8edf7">Contadora Senior</text>
+  <text x="480" y="104" font-family="system-ui" font-size="11" fill="#a8b1c7">Departamento</text>
+  <text x="480" y="124" font-family="system-ui" font-size="14" font-weight="600" fill="#e8edf7">Administracion</text>
+  <text x="660" y="104" font-family="system-ui" font-size="11" fill="#a8b1c7">Fecha ingreso</text>
+  <text x="660" y="124" font-family="system-ui" font-size="14" font-weight="600" fill="#e8edf7">15/03/2022</text>
+
+  <!-- Ingresos -->
+  <rect x="20" y="156" width="370" height="244" rx="10" fill="#11172b" stroke="#1c2745" stroke-width="1"/>
+  <text x="40" y="182" font-family="system-ui" font-size="13" font-weight="700" fill="#8affc1">INGRESOS</text>
+  <!-- Table header -->
+  <text x="40" y="210" font-family="system-ui" font-size="10" font-weight="600" fill="#a8b1c7">Concepto</text>
+  <text x="300" y="210" font-family="system-ui" font-size="10" font-weight="600" fill="#a8b1c7" text-anchor="end">Monto</text>
+  <line x1="40" y1="218" x2="370" y2="218" stroke="#1c2745" stroke-width="1"/>
+  <!-- Rows -->
+  <text x="40" y="238" font-family="system-ui" font-size="11" fill="#e8edf7">Sueldo base</text>
+  <text x="350" y="238" font-family="system-ui" font-size="11" fill="#e8edf7" text-anchor="end">$1,200.00</text>
+  <text x="40" y="260" font-family="system-ui" font-size="11" fill="#e8edf7">Horas extra (12h)</text>
+  <text x="350" y="260" font-family="system-ui" font-size="11" fill="#e8edf7" text-anchor="end">$150.00</text>
+  <text x="40" y="282" font-family="system-ui" font-size="11" fill="#e8edf7">Decimo tercero (mens.)</text>
+  <text x="350" y="282" font-family="system-ui" font-size="11" fill="#e8edf7" text-anchor="end">$100.00</text>
+  <text x="40" y="304" font-family="system-ui" font-size="11" fill="#e8edf7">Decimo cuarto (mens.)</text>
+  <text x="350" y="304" font-family="system-ui" font-size="11" fill="#e8edf7" text-anchor="end">$37.50</text>
+  <text x="40" y="326" font-family="system-ui" font-size="11" fill="#e8edf7">Fondos de reserva</text>
+  <text x="350" y="326" font-family="system-ui" font-size="11" fill="#e8edf7" text-anchor="end">$100.00</text>
+  <line x1="40" y1="340" x2="370" y2="340" stroke="#1c2745" stroke-width="1"/>
+  <text x="40" y="362" font-family="system-ui" font-size="12" font-weight="700" fill="#8affc1">Total ingresos</text>
+  <text x="350" y="362" font-family="system-ui" font-size="14" font-weight="700" fill="#8affc1" text-anchor="end">$1,587.50</text>
+
+  <!-- Egresos -->
+  <rect x="410" y="156" width="370" height="168" rx="10" fill="#11172b" stroke="#1c2745" stroke-width="1"/>
+  <text x="430" y="182" font-family="system-ui" font-size="13" font-weight="700" fill="#ff6b6b">EGRESOS</text>
+  <text x="430" y="210" font-family="system-ui" font-size="10" font-weight="600" fill="#a8b1c7">Concepto</text>
+  <text x="690" y="210" font-family="system-ui" font-size="10" font-weight="600" fill="#a8b1c7" text-anchor="end">Monto</text>
+  <line x1="430" y1="218" x2="760" y2="218" stroke="#1c2745" stroke-width="1"/>
+  <text x="430" y="238" font-family="system-ui" font-size="11" fill="#e8edf7">Aporte IESS (9.45%)</text>
+  <text x="740" y="238" font-family="system-ui" font-size="11" fill="#e8edf7" text-anchor="end">$113.40</text>
+  <text x="430" y="260" font-family="system-ui" font-size="11" fill="#e8edf7">Anticipo</text>
+  <text x="740" y="260" font-family="system-ui" font-size="11" fill="#e8edf7" text-anchor="end">$200.00</text>
+  <text x="430" y="282" font-family="system-ui" font-size="11" fill="#e8edf7">Prestamo empresa</text>
+  <text x="740" y="282" font-family="system-ui" font-size="11" fill="#e8edf7" text-anchor="end">$50.00</text>
+  <line x1="430" y1="296" x2="760" y2="296" stroke="#1c2745" stroke-width="1"/>
+  <text x="430" y="316" font-family="system-ui" font-size="12" font-weight="700" fill="#ff6b6b">Total egresos</text>
+  <text x="740" y="316" font-family="system-ui" font-size="14" font-weight="700" fill="#ff6b6b" text-anchor="end">$363.40</text>
+
+  <!-- Neto a recibir -->
+  <rect x="410" y="340" width="370" height="60" rx="10" fill="#152141" stroke="#4bb7ff" stroke-width="2"/>
+  <text x="430" y="368" font-family="system-ui" font-size="14" font-weight="600" fill="#a8b1c7">NETO A RECIBIR</text>
+  <text x="740" y="372" font-family="system-ui" font-size="26" font-weight="700" fill="#4bb7ff" text-anchor="end">$1,224.10</text>
+</svg>

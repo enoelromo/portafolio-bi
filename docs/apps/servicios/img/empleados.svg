@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" fill="none">
+  <rect width="800" height="420" rx="12" fill="#0b1020"/>
+  <!-- Header -->
+  <rect x="20" y="16" width="760" height="48" rx="10" fill="#11172b" stroke="#1c2745" stroke-width="1"/>
+  <text x="40" y="46" font-family="system-ui" font-size="16" font-weight="700" fill="#e8edf7">Empleados</text>
+  <rect x="600" y="28" width="100" height="24" rx="6" fill="transparent" stroke="#1c2745" stroke-width="1"/>
+  <text x="620" y="46" font-family="system-ui" font-size="11" fill="#a8b1c7">Buscar...</text>
+  <rect x="710" y="28" width="56" height="24" rx="6" fill="#1a3a5c"/>
+  <text x="718" y="46" font-family="system-ui" font-size="11" fill="#4bb7ff">+ Nuevo</text>
+
+  <!-- Stats row -->
+  <rect x="20" y="80" width="180" height="56" rx="10" fill="#11172b" stroke="#1c2745" stroke-width="1"/>
+  <text x="36" y="102" font-family="system-ui" font-size="10" fill="#a8b1c7">Total activos</text>
+  <text x="36" y="124" font-family="system-ui" font-size="20" font-weight="700" fill="#4bb7ff">24</text>
+  <text x="68" y="124" font-family="system-ui" font-size="11" fill="#8affc1">+2 este mes</text>
+
+  <rect x="212" y="80" width="180" height="56" rx="10" fill="#11172b" stroke="#1c2745" stroke-width="1"/>
+  <text x="228" y="102" font-family="system-ui" font-size="10" fill="#a8b1c7">Departamentos</text>
+  <text x="228" y="124" font-family="system-ui" font-size="20" font-weight="700" fill="#8affc1">5</text>
+
+  <rect x="404" y="80" width="180" height="56" rx="10" fill="#11172b" stroke="#1c2745" stroke-width="1"/>
+  <text x="420" y="102" font-family="system-ui" font-size="10" fill="#a8b1c7">Costo mensual</text>
+  <text x="420" y="124" font-family="system-ui" font-size="20" font-weight="700" fill="#ffd93d">$18,450</text>
+
+  <rect x="596" y="80" width="184" height="56" rx="10" fill="#11172b" stroke="#1c2745" stroke-width="1"/>
+  <text x="612" y="102" font-family="system-ui" font-size="10" fill="#a8b1c7">Aporte IESS total</text>
+  <text x="612" y="124" font-family="system-ui" font-size="20" font-weight="700" fill="#ff6b6b">$3,490</text>
+
+  <!-- Table -->
+  <rect x="20" y="152" width="760" height="252" rx="10" fill="#11172b" stroke="#1c2745" stroke-width="1"/>
+  <!-- Table header -->
+  <text x="40" y="178" font-family="system-ui" font-size="10" font-weight="700" fill="#a8b1c7">NOMBRE</text>
+  <text x="240" y="178" font-family="system-ui" font-size="10" font-weight="700" fill="#a8b1c7">CARGO</text>
+  <text x="420" y="178" font-family="system-ui" font-size="10" font-weight="700" fill="#a8b1c7">DEPARTAMENTO</text>
+  <text x="580" y="178" font-family="system-ui" font-size="10" font-weight="700" fill="#a8b1c7">SUELDO</text>
+  <text x="680" y="178" font-family="system-ui" font-size="10" font-weight="700" fill="#a8b1c7">ESTADO</text>
+  <line x1="40" y1="188" x2="760" y2="188" stroke="#1c2745" stroke-width="1"/>
+
+  <!-- Row 1 -->
+  <circle cx="52" cy="212" r="12" fill="#1a3a5c"/>
+  <text x="48" y="216" font-family="system-ui" font-size="10" font-weight="700" fill="#4bb7ff">ML</text>
+  <text x="72" y="216" font-family="system-ui" font-size="11" fill="#e8edf7">Maria Lopez</text>
+  <text x="240" y="216" font-family="system-ui" font-size="11" fill="#a8b1c7">Contadora Sr.</text>
+  <text x="420" y="216" font-family="system-ui" font-size="11" fill="#a8b1c7">Administracion</text>
+  <text x="580" y="216" font-family="system-ui" font-size="11" fill="#e8edf7">$1,200</text>
+  <rect x="672" y="202" width="56" height="20" rx="10" fill="#22543d"/>
+  <text x="684" y="216" font-family="system-ui" font-size="10" fill="#8affc1">Activo</text>
+
+  <!-- Row 2 -->
+  <circle cx="52" cy="248" r="12" fill="#1a3a5c"/>
+  <text x="46" y="252" font-family="system-ui" font-size="10" font-weight="700" fill="#4bb7ff">CM</text>
+  <text x="72" y="252" font-family="system-ui" font-size="11" fill="#e8edf7">Carlos Mendez</text>
+  <text x="240" y="252" font-family="system-ui" font-size="11" fill="#a8b1c7">Desarrollador</text>
+  <text x="420" y="252" font-family="system-ui" font-size="11" fill="#a8b1c7">Tecnologia</text>
+  <text x="580" y="252" font-family="system-ui" font-size="11" fill="#e8edf7">$1,500</text>
+  <rect x="672" y="238" width="56" height="20" rx="10" fill="#22543d"/>
+  <text x="684" y="252" font-family="system-ui" font-size="10" fill="#8affc1">Activo</text>
+
+  <!-- Row 3 -->
+  <circle cx="52" cy="284" r="12" fill="#1a3a5c"/>
+  <text x="48" y="288" font-family="system-ui" font-size="10" font-weight="700" fill="#4bb7ff">AR</text>
+  <text x="72" y="288" font-family="system-ui" font-size="11" fill="#e8edf7">Ana Ramirez</text>
+  <text x="240" y="288" font-family="system-ui" font-size="11" fill="#a8b1c7">Jefa Ventas</text>
+  <text x="420" y="288" font-family="system-ui" font-size="11" fill="#a8b1c7">Ventas</text>
+  <text x="580" y="288" font-family="system-ui" font-size="11" fill="#e8edf7">$1,800</text>
+  <rect x="672" y="274" width="56" height="20" rx="10" fill="#22543d"/>
+  <text x="684" y="288" font-family="system-ui" font-size="10" fill="#8affc1">Activo</text>
+
+  <!-- Row 4 -->
+  <circle cx="52" cy="320" r="12" fill="#1a3a5c"/>
+  <text x="48" y="324" font-family="system-ui" font-size="10" font-weight="700" fill="#4bb7ff">JP</text>
+  <text x="72" y="324" font-family="system-ui" font-size="11" fill="#e8edf7">Juan Perez</text>
+  <text x="240" y="324" font-family="system-ui" font-size="11" fill="#a8b1c7">Analista RRHH</text>
+  <text x="420" y="324" font-family="system-ui" font-size="11" fill="#a8b1c7">RRHH</text>
+  <text x="580" y="324" font-family="system-ui" font-size="11" fill="#e8edf7">$950</text>
+  <rect x="672" y="310" width="56" height="20" rx="10" fill="#22543d"/>
+  <text x="684" y="324" font-family="system-ui" font-size="10" fill="#8affc1">Activo</text>
+
+  <!-- Row 5 -->
+  <circle cx="52" cy="356" r="12" fill="#1a3a5c"/>
+  <text x="48" y="360" font-family="system-ui" font-size="10" font-weight="700" fill="#4bb7ff">LG</text>
+  <text x="72" y="360" font-family="system-ui" font-size="11" fill="#e8edf7">Laura Garcia</text>
+  <text x="240" y="360" font-family="system-ui" font-size="11" fill="#a8b1c7">Operadora</text>
+  <text x="420" y="360" font-family="system-ui" font-size="11" fill="#a8b1c7">Operaciones</text>
+  <text x="580" y="360" font-family="system-ui" font-size="11" fill="#e8edf7">$680</text>
+  <rect x="672" y="346" width="72" height="20" rx="10" fill="#543d22"/>
+  <text x="680" y="360" font-family="system-ui" font-size="10" fill="#ffd93d">Periodo prueba</text>
+
+  <!-- Pagination -->
+  <text x="40" y="396" font-family="system-ui" font-size="10" fill="#a8b1c7">Mostrando 1-5 de 24</text>
+  <rect x="700" y="382" width="24" height="20" rx="4" fill="#1c2745"/>
+  <text x="708" y="396" font-family="system-ui" font-size="10" fill="#4bb7ff">1</text>
+  <rect x="730" y="382" width="24" height="20" rx="4" fill="transparent" stroke="#1c2745" stroke-width="1"/>
+  <text x="738" y="396" font-family="system-ui" font-size="10" fill="#a8b1c7">2</text>
+</svg>
