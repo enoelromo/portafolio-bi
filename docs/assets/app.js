@@ -70,7 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    if(document.body.getAttribute('data-page')==='bi') initTabs(document);
+    const pg = document.body.getAttribute('data-page');
+    if(['bi','olivovilo','floo'].includes(pg)) initTabs(document);
   });
 })();
 
@@ -144,62 +145,76 @@ const t = {
 
     "app.servicios.title": "Olivovilo — gestion empresarial",
     "app.servicios.lead": "Plataforma SaaS de nomina, RRHH y gastos para empresas en Ecuador. En produccion.",
-    "app.servicios.stack": "Stack tecnologico",
-    "app.servicios.stack.bullets": `
-      <li><b>Frontend</b>: TypeScript + Next.js 15 (App Router, SSR/SSG) · Tailwind CSS · shadcn/ui.</li>
-      <li><b>Backend</b>: Supabase (PostgreSQL + Auth + RLS) · Server Actions.</li>
-      <li><b>Deploy</b>: Vercel (CI/CD automatico desde GitHub).</li>
-      <li><b>Email</b>: Resend con dominio propio y DKIM/SPF/DMARC.</li>
-      <li><b>Seguridad</b>: Cloudflare DNS + DNSSEC · Domain Lock.</li>
+    "app.servicios.tab1": "Producto",
+    "app.servicios.tab2": "Stack & Arquitectura",
+    "app.servicios.tab3": "Seguridad & Infra",
+    "app.servicios.p.title": "Que hace Olivovilo",
+    "app.servicios.p.desc": "Plataforma todo-en-uno para gestionar nomina ecuatoriana, empleados, gastos y operaciones de negocio.",
+    "app.servicios.p.bullets": `
+      <li><b>Nomina ecuatoriana</b>: IESS (9.45% personal / 11.15% patronal), decimos 13ro y 14to, fondos de reserva, horas extra.</li>
+      <li><b>Roles de pago</b>: generacion automatica con desglose de ingresos, egresos y neto a recibir.</li>
+      <li><b>Empleados</b>: registro, contratos, departamentos, cargos y estados (activo, prueba, inactivo).</li>
+      <li><b>Gastos</b>: categorias, estados de pago y reportes por periodo.</li>
+      <li><b>Dashboard</b>: KPIs en tiempo real con graficos interactivos (Recharts).</li>
+      <li><b>Multi-empresa</b>: cada cuenta puede gestionar varias empresas.</li>
+      <li><b>3 planes</b>: Semilla ($15/mes), Olivo ($35/mes), Cosecha ($65/mes).</li>
     `,
-    "app.servicios.features": "Funcionalidades principales",
-    "app.servicios.features.bullets": `
-      <li><b>Nomina ecuatoriana</b>: calculo automatico de IESS, decimos, fondos de reserva, horas extra y anticipos.</li>
-      <li><b>Roles de pago</b>: generacion de roles con desglose completo y estados de pago.</li>
-      <li><b>Gestion de empleados</b>: registro, contratos, departamentos y cargos.</li>
-      <li><b>Gastos empresariales</b>: seguimiento con categorias, estados y reportes.</li>
-      <li><b>Dashboard</b>: metricas en tiempo real con graficos interactivos (Recharts).</li>
-      <li><b>Multi-empresa</b>: soporte para multiples empresas por cuenta.</li>
-      <li><b>Landing publica</b>: pagina de marketing con planes, FAQ, changelog y seccion legal.</li>
+    "app.servicios.s.title": "Stack & Arquitectura",
+    "app.servicios.s.desc": "Decisiones tecnicas clave y por que se tomaron.",
+    "app.servicios.s.bullets": `
+      <li><b>Next.js 15</b> App Router: SSR/SSG, Server Actions, rendimiento y SEO optimizado.</li>
+      <li><b>Supabase</b>: PostgreSQL + Auth + Storage. Row Level Security para aislamiento por empresa.</li>
+      <li><b>Tailwind CSS + shadcn/ui</b>: sistema de diseño consistente con tema oklch personalizado.</li>
+      <li><b>Vercel</b>: CI/CD automatico desde GitHub, preview por PR, Edge Functions.</li>
+      <li><b>Recharts</b>: graficos interactivos para dashboard y reportes.</li>
     `,
-    "app.servicios.why": "Decisiones de arquitectura",
-    "app.servicios.why.bullets": `
-      <li>Next.js App Router para rendimiento y SEO optimizado.</li>
-      <li>Supabase RLS para aislamiento de datos por empresa desde la base de datos.</li>
-      <li>Vercel para deploys automaticos con preview por PR.</li>
-      <li>Dominio propio con configuracion DNS completa (DKIM, SPF, DMARC, DNSSEC).</li>
+    "app.servicios.i.title": "Seguridad & Infraestructura",
+    "app.servicios.i.desc": "Configuracion de seguridad y despliegue.",
+    "app.servicios.i.bullets": `
+      <li><b>Cloudflare</b>: DNS, DNSSEC habilitado, Domain Lock (proteccion contra transferencia).</li>
+      <li><b>Email</b>: Resend con dominio propio + DKIM, SPF y DMARC configurados.</li>
+      <li><b>Supabase RLS</b>: cada query se filtra automaticamente por company_id a nivel de BD.</li>
+      <li><b>HTTPS</b>: forzado en todo el dominio via Cloudflare + Vercel.</li>
+      <li><b>Cookie consent</b>: banner de cookies esenciales con persistencia en localStorage.</li>
     `,
-    "app.servicios.note": "Proyecto en produccion. Algunas funcionalidades estan en desarrollo continuo.",
 
     "app.finanzas.title": "Floo — finanzas personales",
     "app.finanzas.lead": "App multi-moneda y multi-idioma para gestionar gastos e ingresos personales. En produccion.",
-    "app.finanzas.stack": "Stack tecnologico",
-    "app.finanzas.stack.bullets": `
-      <li><b>Frontend</b>: TypeScript + Next.js 15 (App Router) · Tailwind CSS · shadcn/ui.</li>
-      <li><b>Backend</b>: PostgreSQL (Supabase) · API Routes · JWT con cookies HttpOnly.</li>
-      <li><b>Auth</b>: registro con email + verificacion por codigo de 6 digitos · reset de contrasena.</li>
-      <li><b>Deploy</b>: Vercel · dominio personalizado bajo olivovilo.com.</li>
-      <li><b>Seguridad</b>: Cloudflare Turnstile (CAPTCHA) · bcrypt · rate limiting · honeypot.</li>
-    `,
-    "app.finanzas.features": "Funcionalidades principales",
-    "app.finanzas.features.bullets": `
-      <li><b>Multi-moneda</b>: soporte para USD, EUR y mas, con conversion automatica.</li>
+    "app.finanzas.tab1": "Producto",
+    "app.finanzas.tab2": "Auth & Seguridad",
+    "app.finanzas.tab3": "Stack & i18n",
+    "app.finanzas.p.title": "Que hace Floo",
+    "app.finanzas.p.desc": "App de finanzas personales con soporte multi-moneda (USD, EUR, etc.), multi-idioma (EN/ES/FR) e importacion CSV.",
+    "app.finanzas.p.bullets": `
+      <li><b>Multi-moneda</b>: USD, EUR y mas, con conversion automatica entre divisas.</li>
       <li><b>Multi-idioma</b>: interfaz completa en ingles, espanol y frances (next-intl).</li>
-      <li><b>Transacciones</b>: registro de gastos e ingresos con categorias y etiquetas.</li>
-      <li><b>Importacion CSV</b>: carga masiva de transacciones desde extractos bancarios.</li>
-      <li><b>Dashboard</b>: resumen financiero con graficos y tendencias.</li>
-      <li><b>Insights</b>: analisis de patrones de gasto y salud financiera.</li>
-      <li><b>Onboarding</b>: flujo guiado para nuevos usuarios con creacion automatica de cuentas.</li>
-      <li><b>Tema oscuro/claro</b>: toggle de tema con persistencia.</li>
+      <li><b>Transacciones</b>: gastos e ingresos con categorias, etiquetas y filtros.</li>
+      <li><b>Importacion CSV</b>: carga masiva desde extractos bancarios de cualquier banco.</li>
+      <li><b>Dashboard</b>: resumen financiero con graficos de tendencia y desglose por categoria.</li>
+      <li><b>Insights</b>: score de salud financiera, patrones de gasto y recomendaciones.</li>
+      <li><b>Onboarding</b>: flujo guiado que crea cuentas automaticamente al importar.</li>
     `,
-    "app.finanzas.why": "Decisiones de arquitectura",
-    "app.finanzas.why.bullets": `
-      <li>Auth propio (no Supabase Auth) para control total del flujo de verificacion.</li>
-      <li>JWT en cookies HttpOnly para seguridad contra XSS.</li>
-      <li>next-intl con deteccion automatica del idioma del navegador (Accept-Language con q-values).</li>
-      <li>Tokens SHA-256 hasheados en BD para verificacion de email segura.</li>
+    "app.finanzas.a.title": "Auth & Seguridad",
+    "app.finanzas.a.desc": "Sistema de autenticacion propio con multiples capas de seguridad.",
+    "app.finanzas.a.bullets": `
+      <li><b>Auth propio</b>: no usa Supabase Auth — control total del flujo de registro y verificacion.</li>
+      <li><b>Verificacion email</b>: codigo de 6 digitos hasheado con SHA-256 en BD. Expira en 1 hora.</li>
+      <li><b>JWT + HttpOnly cookies</b>: proteccion contra XSS. Token firmado con secreto del servidor.</li>
+      <li><b>Cloudflare Turnstile</b>: CAPTCHA invisible en registro (anti-bot).</li>
+      <li><b>bcrypt</b>: hash de contrasenas con salt automatico.</li>
+      <li><b>Rate limiting</b>: proteccion contra fuerza bruta en login.</li>
+      <li><b>Honeypot</b>: campo oculto para detectar bots en formularios.</li>
     `,
-    "app.finanzas.note": "Proyecto en produccion. Nuevas funcionalidades en desarrollo continuo."
+    "app.finanzas.t.title": "Stack & Internacionalizacion",
+    "app.finanzas.t.desc": "Arquitectura tecnica y sistema de idiomas automatico.",
+    "app.finanzas.t.bullets": `
+      <li><b>Next.js 15</b> App Router + API Routes: SSR para SEO, API para auth y datos.</li>
+      <li><b>PostgreSQL</b> (Supabase): transacciones, cuentas, tokens — todo relacional.</li>
+      <li><b>next-intl</b>: deteccion automatica del idioma via Accept-Language con q-values.</li>
+      <li><b>Tema oscuro/claro</b>: toggle con persistencia en cookie, sin flash.</li>
+      <li><b>Tailwind CSS + shadcn/ui</b>: componentes accesibles y responsive.</li>
+      <li><b>Vercel</b>: deploy automatico, subdominio floo.olivovilo.com.</li>
+    `
   },
 
   en: {
@@ -269,63 +284,77 @@ const t = {
     `,
 
     "app.servicios.title": "Olivovilo — business management",
-    "app.servicios.lead": "SaaS platform for payroll, HR and expenses for companies in Ecuador. In production.",
-    "app.servicios.stack": "Tech stack",
-    "app.servicios.stack.bullets": `
-      <li><b>Frontend</b>: TypeScript + Next.js 15 (App Router, SSR/SSG) · Tailwind CSS · shadcn/ui.</li>
-      <li><b>Backend</b>: Supabase (PostgreSQL + Auth + RLS) · Server Actions.</li>
-      <li><b>Deploy</b>: Vercel (automatic CI/CD from GitHub).</li>
-      <li><b>Email</b>: Resend with custom domain and DKIM/SPF/DMARC.</li>
-      <li><b>Security</b>: Cloudflare DNS + DNSSEC · Domain Lock.</li>
+    "app.servicios.lead": "SaaS payroll, HR and expense platform for companies in Ecuador. In production.",
+    "app.servicios.tab1": "Product",
+    "app.servicios.tab2": "Stack & Architecture",
+    "app.servicios.tab3": "Security & Infra",
+    "app.servicios.p.title": "What Olivovilo does",
+    "app.servicios.p.desc": "All-in-one platform for Ecuadorian payroll, employees, expenses and business operations.",
+    "app.servicios.p.bullets": `
+      <li><b>Ecuadorian payroll</b>: IESS (9.45% employee / 11.15% employer), 13th & 14th salary, reserve funds, overtime.</li>
+      <li><b>Pay stubs</b>: auto-generated with income, deductions and net pay breakdown.</li>
+      <li><b>Employees</b>: registration, contracts, departments, positions and statuses.</li>
+      <li><b>Expenses</b>: categories, payment statuses and period reports.</li>
+      <li><b>Dashboard</b>: real-time KPIs with interactive charts (Recharts).</li>
+      <li><b>Multi-company</b>: each account can manage multiple companies.</li>
+      <li><b>3 plans</b>: Semilla ($15/mo), Olivo ($35/mo), Cosecha ($65/mo).</li>
     `,
-    "app.servicios.features": "Key features",
-    "app.servicios.features.bullets": `
-      <li><b>Ecuadorian payroll</b>: automatic calculation of social security (IESS), bonuses, reserve funds, overtime and advances.</li>
-      <li><b>Pay stubs</b>: generation with full breakdown and payment status tracking.</li>
-      <li><b>Employee management</b>: registration, contracts, departments and positions.</li>
-      <li><b>Business expenses</b>: tracking with categories, statuses and reports.</li>
-      <li><b>Dashboard</b>: real-time metrics with interactive charts (Recharts).</li>
-      <li><b>Multi-company</b>: support for multiple companies per account.</li>
-      <li><b>Public landing</b>: marketing page with plans, FAQ, changelog and legal section.</li>
+    "app.servicios.s.title": "Stack & Architecture",
+    "app.servicios.s.desc": "Key technical decisions and why they were made.",
+    "app.servicios.s.bullets": `
+      <li><b>Next.js 15</b> App Router: SSR/SSG, Server Actions, performance and optimized SEO.</li>
+      <li><b>Supabase</b>: PostgreSQL + Auth + Storage. Row Level Security for per-company isolation.</li>
+      <li><b>Tailwind CSS + shadcn/ui</b>: consistent design system with custom oklch theme.</li>
+      <li><b>Vercel</b>: automatic CI/CD from GitHub, preview per PR, Edge Functions.</li>
+      <li><b>Recharts</b>: interactive charts for dashboard and reports.</li>
     `,
-    "app.servicios.why": "Architecture decisions",
-    "app.servicios.why.bullets": `
-      <li>Next.js App Router for performance and optimized SEO.</li>
-      <li>Supabase RLS for data isolation per company at the database level.</li>
-      <li>Vercel for automatic deploys with preview per PR.</li>
-      <li>Custom domain with full DNS configuration (DKIM, SPF, DMARC, DNSSEC).</li>
+    "app.servicios.i.title": "Security & Infrastructure",
+    "app.servicios.i.desc": "Security configuration and deployment.",
+    "app.servicios.i.bullets": `
+      <li><b>Cloudflare</b>: DNS, DNSSEC enabled, Domain Lock (transfer protection).</li>
+      <li><b>Email</b>: Resend with custom domain + DKIM, SPF and DMARC configured.</li>
+      <li><b>Supabase RLS</b>: every query auto-filtered by company_id at DB level.</li>
+      <li><b>HTTPS</b>: enforced across the entire domain via Cloudflare + Vercel.</li>
+      <li><b>Cookie consent</b>: essential cookies banner with localStorage persistence.</li>
     `,
-    "app.servicios.note": "In production. Some features are under continuous development.",
 
     "app.finanzas.title": "Floo — personal finance",
     "app.finanzas.lead": "Multi-currency and multi-language app for managing personal expenses and income. In production.",
-    "app.finanzas.stack": "Tech stack",
-    "app.finanzas.stack.bullets": `
-      <li><b>Frontend</b>: TypeScript + Next.js 15 (App Router) · Tailwind CSS · shadcn/ui.</li>
-      <li><b>Backend</b>: PostgreSQL (Supabase) · API Routes · JWT with HttpOnly cookies.</li>
-      <li><b>Auth</b>: email registration + 6-digit code verification · password reset.</li>
-      <li><b>Deploy</b>: Vercel · custom subdomain under olivovilo.com.</li>
-      <li><b>Security</b>: Cloudflare Turnstile (CAPTCHA) · bcrypt · rate limiting · honeypot.</li>
-    `,
-    "app.finanzas.features": "Key features",
-    "app.finanzas.features.bullets": `
-      <li><b>Multi-currency</b>: support for USD, EUR and more, with automatic conversion.</li>
+    "app.finanzas.tab1": "Product",
+    "app.finanzas.tab2": "Auth & Security",
+    "app.finanzas.tab3": "Stack & i18n",
+    "app.finanzas.p.title": "What Floo does",
+    "app.finanzas.p.desc": "Personal finance app with multi-currency (USD, EUR, etc.), multi-language (EN/ES/FR) and CSV import.",
+    "app.finanzas.p.bullets": `
+      <li><b>Multi-currency</b>: USD, EUR and more, with automatic conversion between currencies.</li>
       <li><b>Multi-language</b>: full interface in English, Spanish and French (next-intl).</li>
-      <li><b>Transactions</b>: expense and income tracking with categories and tags.</li>
-      <li><b>CSV import</b>: bulk upload from bank statements.</li>
-      <li><b>Dashboard</b>: financial summary with charts and trends.</li>
-      <li><b>Insights</b>: spending pattern analysis and financial health score.</li>
-      <li><b>Onboarding</b>: guided flow for new users with automatic account creation.</li>
-      <li><b>Dark/light theme</b>: theme toggle with persistence.</li>
+      <li><b>Transactions</b>: expenses and income with categories, tags and filters.</li>
+      <li><b>CSV import</b>: bulk upload from any bank statement.</li>
+      <li><b>Dashboard</b>: financial summary with trend charts and category breakdown.</li>
+      <li><b>Insights</b>: financial health score, spending patterns and recommendations.</li>
+      <li><b>Onboarding</b>: guided flow that auto-creates accounts on import.</li>
     `,
-    "app.finanzas.why": "Architecture decisions",
-    "app.finanzas.why.bullets": `
-      <li>Custom auth (not Supabase Auth) for full control over verification flow.</li>
-      <li>JWT in HttpOnly cookies for XSS protection.</li>
-      <li>next-intl with automatic browser language detection (Accept-Language with q-values).</li>
-      <li>SHA-256 hashed tokens in DB for secure email verification.</li>
+    "app.finanzas.a.title": "Auth & Security",
+    "app.finanzas.a.desc": "Custom authentication system with multiple security layers.",
+    "app.finanzas.a.bullets": `
+      <li><b>Custom auth</b>: not Supabase Auth — full control over registration and verification flow.</li>
+      <li><b>Email verification</b>: 6-digit code hashed with SHA-256 in DB. Expires in 1 hour.</li>
+      <li><b>JWT + HttpOnly cookies</b>: XSS protection. Server-signed token.</li>
+      <li><b>Cloudflare Turnstile</b>: invisible CAPTCHA on registration (anti-bot).</li>
+      <li><b>bcrypt</b>: password hashing with automatic salt.</li>
+      <li><b>Rate limiting</b>: brute force protection on login.</li>
+      <li><b>Honeypot</b>: hidden field to detect bots in forms.</li>
     `,
-    "app.finanzas.note": "In production. New features under continuous development."
+    "app.finanzas.t.title": "Stack & Internationalization",
+    "app.finanzas.t.desc": "Technical architecture and automatic language system.",
+    "app.finanzas.t.bullets": `
+      <li><b>Next.js 15</b> App Router + API Routes: SSR for SEO, API for auth and data.</li>
+      <li><b>PostgreSQL</b> (Supabase): transactions, accounts, tokens — fully relational.</li>
+      <li><b>next-intl</b>: automatic language detection via Accept-Language with q-values.</li>
+      <li><b>Dark/light theme</b>: toggle with cookie persistence, no flash.</li>
+      <li><b>Tailwind CSS + shadcn/ui</b>: accessible and responsive components.</li>
+      <li><b>Vercel</b>: automatic deploy, subdomain floo.olivovilo.com.</li>
+    `
   },
 
   fr: {
@@ -396,62 +425,76 @@ const t = {
 
     "app.servicios.title": "Olivovilo — gestion d’entreprise",
     "app.servicios.lead": "Plateforme SaaS de paie, RH et depenses pour les entreprises en Equateur. En production.",
-    "app.servicios.stack": "Stack technique",
-    "app.servicios.stack.bullets": `
-      <li><b>Frontend</b> : TypeScript + Next.js 15 (App Router, SSR/SSG) · Tailwind CSS · shadcn/ui.</li>
-      <li><b>Backend</b> : Supabase (PostgreSQL + Auth + RLS) · Server Actions.</li>
-      <li><b>Deploy</b> : Vercel (CI/CD automatique depuis GitHub).</li>
-      <li><b>Email</b> : Resend avec domaine propre et DKIM/SPF/DMARC.</li>
-      <li><b>Securite</b> : Cloudflare DNS + DNSSEC · Domain Lock.</li>
+    "app.servicios.tab1": "Produit",
+    "app.servicios.tab2": "Stack & Architecture",
+    "app.servicios.tab3": "Securite & Infra",
+    "app.servicios.p.title": "Ce que fait Olivovilo",
+    "app.servicios.p.desc": "Plateforme tout-en-un pour la paie equatorienne, les employes, les depenses et les operations.",
+    "app.servicios.p.bullets": `
+      <li><b>Paie equatorienne</b> : IESS (9,45% employe / 11,15% employeur), 13e & 14e salaire, fonds de reserve, heures sup.</li>
+      <li><b>Fiches de paie</b> : generation automatique avec detail des revenus, deductions et net a percevoir.</li>
+      <li><b>Employes</b> : inscription, contrats, departements, postes et statuts.</li>
+      <li><b>Depenses</b> : categories, statuts de paiement et rapports par periode.</li>
+      <li><b>Dashboard</b> : KPIs en temps reel avec graphiques interactifs (Recharts).</li>
+      <li><b>Multi-entreprise</b> : chaque compte peut gerer plusieurs entreprises.</li>
+      <li><b>3 plans</b> : Semilla (15$/mois), Olivo (35$/mois), Cosecha (65$/mois).</li>
     `,
-    "app.servicios.features": "Fonctionnalites principales",
-    "app.servicios.features.bullets": `
-      <li><b>Paie equatorienne</b> : calcul automatique des cotisations (IESS), primes, fonds de reserve, heures sup et avances.</li>
-      <li><b>Fiches de paie</b> : generation avec detail complet et suivi du statut de paiement.</li>
-      <li><b>Gestion des employes</b> : inscription, contrats, departements et postes.</li>
-      <li><b>Depenses entreprise</b> : suivi par categories, statuts et rapports.</li>
-      <li><b>Dashboard</b> : metriques en temps reel avec graphiques interactifs (Recharts).</li>
-      <li><b>Multi-entreprise</b> : support de plusieurs entreprises par compte.</li>
-      <li><b>Landing publique</b> : page marketing avec plans, FAQ, changelog et section legale.</li>
+    "app.servicios.s.title": "Stack & Architecture",
+    "app.servicios.s.desc": "Decisions techniques cles et leurs justifications.",
+    "app.servicios.s.bullets": `
+      <li><b>Next.js 15</b> App Router : SSR/SSG, Server Actions, performance et SEO optimise.</li>
+      <li><b>Supabase</b> : PostgreSQL + Auth + Storage. Row Level Security pour l’isolation par entreprise.</li>
+      <li><b>Tailwind CSS + shadcn/ui</b> : systeme de design coherent avec theme oklch personnalise.</li>
+      <li><b>Vercel</b> : CI/CD automatique depuis GitHub, preview par PR, Edge Functions.</li>
+      <li><b>Recharts</b> : graphiques interactifs pour le dashboard et les rapports.</li>
     `,
-    "app.servicios.why": "Decisions d’architecture",
-    "app.servicios.why.bullets": `
-      <li>Next.js App Router pour la performance et le SEO optimise.</li>
-      <li>Supabase RLS pour l’isolation des donnees par entreprise au niveau base de donnees.</li>
-      <li>Vercel pour des deploys automatiques avec preview par PR.</li>
-      <li>Domaine propre avec configuration DNS complete (DKIM, SPF, DMARC, DNSSEC).</li>
+    "app.servicios.i.title": "Securite & Infrastructure",
+    "app.servicios.i.desc": "Configuration de securite et deploiement.",
+    "app.servicios.i.bullets": `
+      <li><b>Cloudflare</b> : DNS, DNSSEC active, Domain Lock (protection contre le transfert).</li>
+      <li><b>Email</b> : Resend avec domaine propre + DKIM, SPF et DMARC configures.</li>
+      <li><b>Supabase RLS</b> : chaque requete filtree automatiquement par company_id au niveau BD.</li>
+      <li><b>HTTPS</b> : force sur tout le domaine via Cloudflare + Vercel.</li>
+      <li><b>Cookie consent</b> : banniere de cookies essentiels avec persistance localStorage.</li>
     `,
-    "app.servicios.note": "En production. Certaines fonctionnalites sont en developpement continu.",
 
     "app.finanzas.title": "Floo — finances personnelles",
     "app.finanzas.lead": "App multi-devises et multilingue pour gerer les depenses et revenus personnels. En production.",
-    "app.finanzas.stack": "Stack technique",
-    "app.finanzas.stack.bullets": `
-      <li><b>Frontend</b> : TypeScript + Next.js 15 (App Router) · Tailwind CSS · shadcn/ui.</li>
-      <li><b>Backend</b> : PostgreSQL (Supabase) · API Routes · JWT avec cookies HttpOnly.</li>
-      <li><b>Auth</b> : inscription par email + verification par code a 6 chiffres · reinitialisation du mot de passe.</li>
-      <li><b>Deploy</b> : Vercel · sous-domaine personnalise sous olivovilo.com.</li>
-      <li><b>Securite</b> : Cloudflare Turnstile (CAPTCHA) · bcrypt · rate limiting · honeypot.</li>
-    `,
-    "app.finanzas.features": "Fonctionnalites principales",
-    "app.finanzas.features.bullets": `
-      <li><b>Multi-devises</b> : support USD, EUR et plus, avec conversion automatique.</li>
+    "app.finanzas.tab1": "Produit",
+    "app.finanzas.tab2": "Auth & Securite",
+    "app.finanzas.tab3": "Stack & i18n",
+    "app.finanzas.p.title": "Ce que fait Floo",
+    "app.finanzas.p.desc": "App de finances personnelles avec multi-devises (USD, EUR, etc.), multilingue (EN/ES/FR) et import CSV.",
+    "app.finanzas.p.bullets": `
+      <li><b>Multi-devises</b> : USD, EUR et plus, avec conversion automatique entre devises.</li>
       <li><b>Multilingue</b> : interface complete en anglais, espagnol et francais (next-intl).</li>
-      <li><b>Transactions</b> : suivi des depenses et revenus avec categories et etiquettes.</li>
-      <li><b>Import CSV</b> : chargement en masse depuis des releves bancaires.</li>
-      <li><b>Dashboard</b> : resume financier avec graphiques et tendances.</li>
-      <li><b>Insights</b> : analyse des habitudes de depenses et score de sante financiere.</li>
-      <li><b>Onboarding</b> : parcours guide pour les nouveaux utilisateurs avec creation automatique de comptes.</li>
-      <li><b>Theme sombre/clair</b> : bascule de theme avec persistance.</li>
+      <li><b>Transactions</b> : depenses et revenus avec categories, etiquettes et filtres.</li>
+      <li><b>Import CSV</b> : chargement en masse depuis des releves bancaires de n’importe quelle banque.</li>
+      <li><b>Dashboard</b> : resume financier avec graphiques de tendance et repartition par categorie.</li>
+      <li><b>Insights</b> : score de sante financiere, habitudes de depenses et recommandations.</li>
+      <li><b>Onboarding</b> : parcours guide qui cree automatiquement les comptes a l’import.</li>
     `,
-    "app.finanzas.why": "Decisions d’architecture",
-    "app.finanzas.why.bullets": `
-      <li>Auth personnalise (pas Supabase Auth) pour un controle total du flux de verification.</li>
-      <li>JWT dans des cookies HttpOnly pour la protection contre les XSS.</li>
-      <li>next-intl avec detection automatique de la langue du navigateur (Accept-Language avec q-values).</li>
-      <li>Tokens hashes SHA-256 en base pour une verification d’email securisee.</li>
+    "app.finanzas.a.title": "Auth & Securite",
+    "app.finanzas.a.desc": "Systeme d’authentification personnalise avec plusieurs couches de securite.",
+    "app.finanzas.a.bullets": `
+      <li><b>Auth personnalise</b> : pas Supabase Auth — controle total du flux d’inscription et de verification.</li>
+      <li><b>Verification email</b> : code a 6 chiffres hashe SHA-256 en BD. Expire en 1 heure.</li>
+      <li><b>JWT + cookies HttpOnly</b> : protection XSS. Token signe cote serveur.</li>
+      <li><b>Cloudflare Turnstile</b> : CAPTCHA invisible a l’inscription (anti-bot).</li>
+      <li><b>bcrypt</b> : hashage des mots de passe avec salt automatique.</li>
+      <li><b>Rate limiting</b> : protection contre la force brute au login.</li>
+      <li><b>Honeypot</b> : champ cache pour detecter les bots dans les formulaires.</li>
     `,
-    "app.finanzas.note": "En production. Nouvelles fonctionnalites en developpement continu."
+    "app.finanzas.t.title": "Stack & Internationalisation",
+    "app.finanzas.t.desc": "Architecture technique et systeme de langues automatique.",
+    "app.finanzas.t.bullets": `
+      <li><b>Next.js 15</b> App Router + API Routes : SSR pour le SEO, API pour l’auth et les donnees.</li>
+      <li><b>PostgreSQL</b> (Supabase) : transactions, comptes, tokens — entierement relationnel.</li>
+      <li><b>next-intl</b> : detection automatique de la langue via Accept-Language avec q-values.</li>
+      <li><b>Theme sombre/clair</b> : bascule avec persistance cookie, sans flash.</li>
+      <li><b>Tailwind CSS + shadcn/ui</b> : composants accessibles et responsifs.</li>
+      <li><b>Vercel</b> : deploy automatique, sous-domaine floo.olivovilo.com.</li>
+    `
   }
 };
 

@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="/portafolio-bi/assets/style.css">
   <script defer src="/portafolio-bi/assets/app.js"></script>
 </head>
-<body>
+<body data-page="floo">
+
 <header class="site-header">
   <div class="container header">
     <div class="header-left">
@@ -31,19 +32,70 @@
 <section class="hero"><div class="container">
   <h1 data-i18n="app.finanzas.title">Floo — finanzas personales</h1>
   <p class="lead" data-i18n="app.finanzas.lead">App multi-moneda y multi-idioma para gestionar gastos e ingresos personales. En produccion.</p>
+  <div class="chips">
+    <span class="chip">Next.js 15</span><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span>
+    <span class="chip">Tailwind CSS</span><span class="chip">Vercel</span><span class="chip">JWT</span>
+    <span class="chip">next-intl</span><span class="chip">Turnstile</span>
+  </div>
+  <div style="margin-top:16px">
+    <a class="btn" href="https://floo.olivovilo.com" target="_blank">Ver sitio en vivo</a>
+  </div>
 </div></section>
 
-<main class="section container">
-  <h3 data-i18n="app.finanzas.stack">Stack tecnologico</h3>
-  <ul class="bullets" data-i18n-html="app.finanzas.stack.bullets"></ul>
+<main class="container" data-tabs>
+  <div class="tabs" role="tablist" aria-label="Secciones">
+    <button class="tab" id="tab-fl1" role="tab" aria-controls="fl-producto" aria-selected="true" data-i18n="app.finanzas.tab1">Producto</button>
+    <button class="tab" id="tab-fl2" role="tab" aria-controls="fl-auth" aria-selected="false" data-i18n="app.finanzas.tab2">Auth & Seguridad</button>
+    <button class="tab" id="tab-fl3" role="tab" aria-controls="fl-stack" aria-selected="false" data-i18n="app.finanzas.tab3">Stack & i18n</button>
+  </div>
 
-  <h3 data-i18n="app.finanzas.features">Funcionalidades principales</h3>
-  <ul class="bullets" data-i18n-html="app.finanzas.features.bullets"></ul>
+  <div class="tabpanels">
+    <!-- PRODUCTO -->
+    <section class="panel" id="fl-producto" role="tabpanel" aria-labelledby="tab-fl1">
+      <h2 data-i18n="app.finanzas.p.title">Que hace Floo</h2>
+      <p class="lead" data-i18n="app.finanzas.p.desc">App de finanzas personales con soporte multi-moneda (USD, EUR, etc.), multi-idioma (EN/ES/FR) e importacion CSV.</p>
+      <ul class="bullets" data-i18n-html="app.finanzas.p.bullets"></ul>
+      <div class="gallery">
+        <img loading="lazy" src="/portafolio-bi/apps/finanzas/img/login.png" alt="Landing de Floo">
+        <img loading="lazy" src="/portafolio-bi/apps/finanzas/img/register.png" alt="Registro con Turnstile">
+        <img loading="lazy" src="/portafolio-bi/apps/finanzas/img/verify.png" alt="Verificacion por codigo">
+      </div>
+    </section>
 
-  <h3 data-i18n="app.finanzas.why">Decisiones de arquitectura</h3>
-  <ul class="bullets" data-i18n-html="app.finanzas.why.bullets"></ul>
+    <!-- AUTH -->
+    <section class="panel" id="fl-auth" role="tabpanel" aria-labelledby="tab-fl2" hidden>
+      <h2 data-i18n="app.finanzas.a.title">Auth & Seguridad</h2>
+      <p class="lead" data-i18n="app.finanzas.a.desc">Sistema de autenticacion propio (no Supabase Auth) con multiples capas de seguridad.</p>
+      <ul class="bullets" data-i18n-html="app.finanzas.a.bullets"></ul>
+      <pre><code>// Verificacion: codigo de 6 digitos hasheado con SHA-256
+const token = generateShortCode(); // "842019"
+const hashed = sha256(token);
+await db.insert(auth_tokens, { token_hash: hashed, type: 'email_verify' });
 
-  <p class="subtle" style="margin-top:8px" data-i18n="app.finanzas.note">Proyecto en produccion. Nuevas funcionalidades en desarrollo continuo.</p>
+// JWT en cookies HttpOnly (proteccion XSS)
+cookies().set('session', jwt, {
+  httpOnly: true, secure: true, sameSite: 'lax', maxAge: 86400
+});</code></pre>
+    </section>
+
+    <!-- STACK -->
+    <section class="panel" id="fl-stack" role="tabpanel" aria-labelledby="tab-fl3" hidden>
+      <h2 data-i18n="app.finanzas.t.title">Stack & Internacionalizacion</h2>
+      <p class="lead" data-i18n="app.finanzas.t.desc">Arquitectura tecnica y sistema de idiomas automatico.</p>
+      <ul class="bullets" data-i18n-html="app.finanzas.t.bullets"></ul>
+      <pre><code>// Deteccion automatica de idioma con Accept-Language + q-values
+// "fr-FR,fr;q=0.9,en-US;q=0.8,es;q=0.7" → fr (q=1.0 wins)
+function parseAcceptLanguage(header: string): Locale {
+  const entries = header.split(",").map(part => {
+    const [lang, ...rest] = part.trim().split(";");
+    const q = rest.find(r => r.trim().startsWith("q="));
+    return { lang: lang.slice(0,2), q: q ? parseFloat(q.slice(2)) : 1 };
+  });
+  entries.sort((a, b) => b.q - a.q);
+  return entries.find(e => locales.includes(e.lang))?.lang || "en";
+}</code></pre>
+    </section>
+  </div>
 </main>
 
 <footer class="site-footer"><div class="container">

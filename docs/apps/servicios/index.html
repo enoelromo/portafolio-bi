@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="/portafolio-bi/assets/style.css">
   <script defer src="/portafolio-bi/assets/app.js"></script>
 </head>
-<body>
+<body data-page="olivovilo">
+
 <header class="site-header">
   <div class="container header">
     <div class="header-left">
@@ -31,19 +32,57 @@
 <section class="hero"><div class="container">
   <h1 data-i18n="app.servicios.title">Olivovilo — gestion empresarial</h1>
   <p class="lead" data-i18n="app.servicios.lead">Plataforma SaaS de nomina, RRHH y gastos para empresas en Ecuador. En produccion.</p>
+  <div class="chips">
+    <span class="chip">Next.js 15</span><span class="chip">TypeScript</span><span class="chip">Supabase</span>
+    <span class="chip">Tailwind CSS</span><span class="chip">Vercel</span><span class="chip">Resend</span>
+    <span class="chip">Cloudflare</span>
+  </div>
+  <div style="margin-top:16px">
+    <a class="btn" href="https://olivovilo.com" target="_blank">Ver sitio en vivo</a>
+  </div>
 </div></section>
 
-<main class="section container">
-  <h3 data-i18n="app.servicios.stack">Stack tecnologico</h3>
-  <ul class="bullets" data-i18n-html="app.servicios.stack.bullets"></ul>
+<main class="container" data-tabs>
+  <div class="tabs" role="tablist" aria-label="Secciones">
+    <button class="tab" id="tab-ov1" role="tab" aria-controls="ov-producto" aria-selected="true" data-i18n="app.servicios.tab1">Producto</button>
+    <button class="tab" id="tab-ov2" role="tab" aria-controls="ov-stack" aria-selected="false" data-i18n="app.servicios.tab2">Stack & Arquitectura</button>
+    <button class="tab" id="tab-ov3" role="tab" aria-controls="ov-seguridad" aria-selected="false" data-i18n="app.servicios.tab3">Seguridad & Infra</button>
+  </div>
 
-  <h3 data-i18n="app.servicios.features">Funcionalidades principales</h3>
-  <ul class="bullets" data-i18n-html="app.servicios.features.bullets"></ul>
+  <div class="tabpanels">
+    <!-- PRODUCTO -->
+    <section class="panel" id="ov-producto" role="tabpanel" aria-labelledby="tab-ov1">
+      <h2 data-i18n="app.servicios.p.title">Que hace Olivovilo</h2>
+      <p class="lead" data-i18n="app.servicios.p.desc">Plataforma todo-en-uno para gestionar nomina ecuatoriana, empleados, gastos y operaciones de negocio.</p>
+      <ul class="bullets" data-i18n-html="app.servicios.p.bullets"></ul>
+      <div class="gallery">
+        <img loading="lazy" src="/portafolio-bi/apps/servicios/img/landing.png" alt="Landing de Olivovilo">
+        <img loading="lazy" src="/portafolio-bi/apps/servicios/img/features.png" alt="Funcionalidades">
+        <img loading="lazy" src="/portafolio-bi/apps/servicios/img/pricing.png" alt="Planes y precios">
+      </div>
+    </section>
 
-  <h3 data-i18n="app.servicios.why">Decisiones de arquitectura</h3>
-  <ul class="bullets" data-i18n-html="app.servicios.why.bullets"></ul>
+    <!-- STACK -->
+    <section class="panel" id="ov-stack" role="tabpanel" aria-labelledby="tab-ov2" hidden>
+      <h2 data-i18n="app.servicios.s.title">Stack & Arquitectura</h2>
+      <p class="lead" data-i18n="app.servicios.s.desc">Decisiones tecnicas clave y por que se tomaron.</p>
+      <ul class="bullets" data-i18n-html="app.servicios.s.bullets"></ul>
+      <pre><code>// Ejemplo: Row Level Security en Supabase
+CREATE POLICY "employees_by_company" ON employees
+  FOR ALL USING (company_id = auth.jwt() ->> 'company_id');
 
-  <p class="subtle" style="margin-top:8px" data-i18n="app.servicios.note">Proyecto en produccion. Algunas funcionalidades estan en desarrollo continuo.</p>
+// Calculo automatico de IESS (9.45% personal + 11.15% patronal)
+const iessPersonal = salarioBase * 0.0945;
+const iessPatronal = salarioBase * 0.1115;</code></pre>
+    </section>
+
+    <!-- SEGURIDAD -->
+    <section class="panel" id="ov-seguridad" role="tabpanel" aria-labelledby="tab-ov3" hidden>
+      <h2 data-i18n="app.servicios.i.title">Seguridad & Infraestructura</h2>
+      <p class="lead" data-i18n="app.servicios.i.desc">Configuracion de seguridad y despliegue.</p>
+      <ul class="bullets" data-i18n-html="app.servicios.i.bullets"></ul>
+    </section>
+  </div>
 </main>
 
 <footer class="site-footer"><div class="container">
