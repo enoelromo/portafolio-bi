@@ -35,6 +35,7 @@
   <div class="chips">
     <span class="chip">PostgreSQL</span><span class="chip">PL/pgSQL</span><span class="chip">n8n</span>
     <span class="chip">Materialized Views</span><span class="chip">Power BI / Qlik</span>
+    <span class="chip">Índices</span><span class="chip">ETL Incremental</span><span class="chip">dblink</span>
   </div>
 </div></section>
 
@@ -52,8 +53,13 @@
       <h2 data-i18n="bi.e1.title">DWH & ETL (PostgreSQL)</h2>
       <p class="lead" data-i18n="bi.e1.desc">Replicación controlada + transformaciones con procedimientos y logging por paso. Índices y vistas materializadas para baja latencia.</p>
       <ul class="bullets" data-i18n-html="bi.e1.bullets"></ul>
+      <pre><code>-- Ejemplo: procedimiento con logging por paso
+CALL public.proc_month_bill_billdetail(0);
+-- Resultado: INSERT INTO dw_logs_procedures
+--   (procedure_name, step, rows_affected, duration_ms)
+-- VALUES ('proc_month_bill_billdetail', 'upsert', 1247, 342);</code></pre>
       <p class="subtle">
-        Código:
+        Código fuente:
         <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_1_DataWarehouse_ETL/sql/proc_month_bill_billdetail_anon.sql">Bill+Detail</a> ·
         <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_1_DataWarehouse_ETL/sql/proc_month_order_orderproduct_anon.sql">Order+OrderProduct</a> ·
         <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_1_DataWarehouse_ETL/sql/proc_refresh_all_views.sql">Refresh MVs</a>
@@ -71,7 +77,8 @@
       <h2 data-i18n="bi.e2.title">Orquestación (de cron a n8n)</h2>
       <p class="lead" data-i18n="bi.e2.desc">Reemplazo de cron por n8n: programaciones, reintentos, notificaciones y auditoría visual.</p>
       <ul class="bullets" data-i18n-html="bi.e2.bullets"></ul>
-      <pre><code>CALL public.proc_month_user_data(0);
+      <pre><code>-- Pipeline ETL completo ejecutado por n8n
+CALL public.proc_month_user_data(0);
 CALL public.proc_month_business_all(0);
 CALL public.proc_month_product_group(0);
 CALL public.proc_month_order_orderproduct(0);
@@ -90,6 +97,11 @@ CALL public.proc_refresh_all_views();</code></pre>
       <h2 data-i18n="bi.e3.title">Dashboard</h2>
       <p class="lead" data-i18n="bi.e3.desc">KPIs, comparativos y filtros sobre MVs (mv_ventas_dia/mes, mv_resumen_clientes_dia/mes). Datos anonimizados.</p>
       <ul class="bullets" data-i18n-html="bi.e3.bullets"></ul>
+      <pre><code>-- Vistas materializadas optimizadas para el dashboard
+REFRESH MATERIALIZED VIEW CONCURRENTLY mv_ventas_dia;
+REFRESH MATERIALIZED VIEW CONCURRENTLY mv_ventas_mes;
+REFRESH MATERIALIZED VIEW CONCURRENTLY mv_resumen_clientes_dia;
+REFRESH MATERIALIZED VIEW CONCURRENTLY mv_resumen_clientes_mes;</code></pre>
       <div class="gallery">
         <img loading="lazy" src="/portafolio-bi/bi/img/kpi_principal.png" alt="KPI principal">
         <img loading="lazy" src="/portafolio-bi/bi/img/ventas_por_categoria.png" alt="Ventas por categoría">
@@ -102,6 +114,7 @@ CALL public.proc_refresh_all_views();</code></pre>
 <footer class="site-footer"><div class="container">
   <span>© <span id="y"></span> Eric Noël</span>
   <a href="/portafolio-bi/">Inicio</a>
+  <a href="https://github.com/enoelromo/portafolio-bi" target="_blank">GitHub</a>
 </div></footer>
 </body>
 </html>
