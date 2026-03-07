@@ -31,36 +31,36 @@
 
 <section class="hero">
   <div class="container">
-    <h1 data-i18n="hero.title">Portafolio — Eric Noël</h1>
-    <p class="lead" data-i18n="hero.lead">Caso real end-to-end: Data Warehouse en PostgreSQL y orquestación con n8n. Dashboard público en preparación. Además, dos apps propias en camino.</p>
+    <h1 data-i18n="hero.title">Eric Noël — Data & BI</h1>
+    <p class="lead" data-i18n="hero.lead">Ingeniero de datos con Master en Big Data. Diseño data warehouses, pipelines ETL y dashboards. Automatizo flujos y construyo infraestructura de datos que escala.</p>
 
     <div class="chips">
       <span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">SQL Server</span>
       <span class="chip">PL/pgSQL</span><span class="chip">Índices</span><span class="chip">Materialized Views</span>
       <span class="chip">ETL</span><span class="chip">n8n</span><span class="chip">Power BI</span>
       <span class="chip">Qlik</span><span class="chip">SAP BO</span><span class="chip">Excel (avanzado)</span>
+      <span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase</span>
       <span class="chip">Windows / Linux</span>
     </div>
 
-    <p class="subtle" data-i18n="hero.note">Este portafolio reúne proyectos personales, colaboraciones y trabajos para clientes. Para ver experiencia completa, roles y otras tecnologías, revisa mi CV o LinkedIn (arriba).</p>
-
-    <h3 style="margin:14px 0 6px" data-i18n="hero.quick.title">En resumen</h3>
+    <h3 style="margin:18px 0 6px" data-i18n="hero.quick.title">En resumen</h3>
     <ul class="bullets" data-i18n-html="hero.quick.list">
-      <!-- se rellena por i18n (o dejamos elementos sueltos) -->
       <li data-i18n="hero.quick.1">Modelado dimensional…</li>
       <li data-i18n="hero.quick.2">ETL…</li>
       <li data-i18n="hero.quick.3">Reporting…</li>
       <li data-i18n="hero.quick.4">Gobierno de datos…</li>
       <li data-i18n="hero.quick.5">Soft skills…</li>
     </ul>
+
+    <p class="subtle" data-i18n="hero.note">Proyectos personales, colaboraciones y trabajos para clientes. Para experiencia completa, roles y formacion, revisa mi CV o LinkedIn.</p>
   </div>
 </section>
 
+<!-- PROYECTO PRINCIPAL -->
 <section id="proyectos" class="section container">
-  <h2 data-i18n="projects.title">Proyectos</h2>
-  <div class="grid cards">
-    <!-- BI E2E -->
-    <article class="card">
+  <h2 data-i18n="projects.title">Proyecto principal</h2>
+  <div class="grid cards" style="grid-template-columns:1fr">
+    <article class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:0">
       <div class="card-media">
         <div class="carousel" data-autoplay="true">
           <div class="slides">
@@ -73,12 +73,22 @@
       </div>
       <div class="card-body">
         <h3 data-i18n="card.bi.title">BI End-to-End (3 etapas)</h3>
-        <p data-i18n="card.bi.desc">DWH en PostgreSQL → Orquestación en n8n → Dashboard (Power BI/Qlik). Datos anonimizados.</p>
-        <div class="tags"><span>PostgreSQL</span><span>n8n</span><span>Visualización</span></div>
+        <p data-i18n="card.bi.desc">Data Warehouse en PostgreSQL → Orquestacion con n8n → Dashboard (Power BI/Qlik). Datos anonimizados de produccion.</p>
+        <div class="tags">
+          <span>PostgreSQL</span><span>PL/pgSQL</span><span>n8n</span>
+          <span>Materialized Views</span><span>Power BI</span><span>Qlik</span>
+        </div>
         <a class="btn" href="/portafolio-bi/bi/" data-i18n="card.bi.cta">Ver etapas</a>
       </div>
     </article>
+  </div>
+</section>
 
+<!-- PROYECTOS PERSONALES -->
+<section class="section container">
+  <h2 data-i18n="projects.personal">Proyectos personales — apps en produccion</h2>
+  <p class="subtle" style="margin-bottom:18px" data-i18n="projects.personal.note">Aplicaciones propias que demuestran capacidad full-stack: arquitectura, deploy, seguridad y operacion.</p>
+  <div class="grid cards" style="grid-template-columns:repeat(2,1fr)">
     <!-- Olivovilo -->
     <article class="card">
       <div class="card-media">

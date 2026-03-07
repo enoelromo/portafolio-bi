@@ -54,6 +54,15 @@ img{max-width:100%;display:block}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
 .tags span{border:1px solid var(--border);background:#131c36;color:#cfe5ff;border-radius:999px;padding:.2rem .5rem;font-size:.78rem}
 
+/* Featured card (horizontal layout) */
+.card[style*="grid-template-columns"] .card-media{border-radius:16px 0 0 16px}
+.card[style*="grid-template-columns"] .carousel img{height:100%;min-height:260px}
+@media(max-width:720px){
+  .card[style*="grid-template-columns"]{display:flex!important;flex-direction:column!important}
+  .card[style*="grid-template-columns"] .card-media{border-radius:16px 16px 0 0}
+  .card[style*="grid-template-columns"] .carousel img{height:210px;min-height:unset}
+}
+
 /* Carousel */
 .carousel{position:relative;overflow:hidden}
 .carousel .slides{display:flex;transition:transform .5s ease}
