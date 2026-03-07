@@ -98,13 +98,13 @@ const t = {
     "card.bi.desc": "DWH en PostgreSQL → Orquestación en n8n → Dashboard (Power BI/Qlik). Datos anonimizados.",
     "card.bi.cta": "Ver etapas",
 
-    "card.servicios.title": "Servicios — plataforma web",
-    "card.servicios.desc": "MVP con Next.js + Supabase + PWA. (En preparación)",
-    "card.servicios.cta": "Ver avance",
+    "card.servicios.title": "Olivovilo — gestion empresarial",
+    "card.servicios.desc": "Plataforma de nomina, RRHH y gastos para empresas en Ecuador. Next.js + Supabase + Vercel. En produccion.",
+    "card.servicios.cta": "Ver proyecto",
 
-    "card.finanzas.title": "Finanzas — gastos/ingresos unificados",
-    "card.finanzas.desc": "Python + FastAPI + PostgreSQL + ETL PDF/OCR. (En preparación)",
-    "card.finanzas.cta": "Ver avance",
+    "card.finanzas.title": "Floo — finanzas personales",
+    "card.finanzas.desc": "App multi-moneda y multi-idioma (EN/ES/FR) para gestionar gastos e ingresos. Next.js + PostgreSQL + Vercel. En produccion.",
+    "card.finanzas.cta": "Ver proyecto",
 
     "contact.title": "Conversemos",
     "contact.lead": "Cuéntame de tu reto (técnico o de negocio). Respondo normalmente el mismo día.",
@@ -142,41 +142,64 @@ const t = {
       <li><b>Buenas prácticas</b>: parámetros de fecha y RLS si aplica.</li>
     `,
 
-    "app.servicios.title": "Servicios — plataforma web",
-    "app.servicios.lead": "MVP centrado en agilidad y seguridad: Next.js + Supabase + PWA.",
-    "app.servicios.stack": "Stack inicial",
+    "app.servicios.title": "Olivovilo — gestion empresarial",
+    "app.servicios.lead": "Plataforma SaaS de nomina, RRHH y gastos para empresas en Ecuador. En produccion.",
+    "app.servicios.stack": "Stack tecnologico",
     "app.servicios.stack.bullets": `
-      <li><b>Frontend</b>: TypeScript + Next.js (SSR/SSG) · PWA.</li>
-      <li><b>Datos</b>: Supabase (Postgres + Auth + RLS) · Storage.</li>
-      <li><b>Comms</b>: Email (Resend/SendGrid) · Telegram · (futuro) WhatsApp API.</li>
-      <li><b>Pagos</b>: (futuro) Stripe suscripciones.</li>
-      <li><b>Automatización</b>: n8n en VPS.</li>
+      <li><b>Frontend</b>: TypeScript + Next.js 15 (App Router, SSR/SSG) · Tailwind CSS · shadcn/ui.</li>
+      <li><b>Backend</b>: Supabase (PostgreSQL + Auth + RLS) · Server Actions.</li>
+      <li><b>Deploy</b>: Vercel (CI/CD automatico desde GitHub).</li>
+      <li><b>Email</b>: Resend con dominio propio y DKIM/SPF/DMARC.</li>
+      <li><b>Seguridad</b>: Cloudflare DNS + DNSSEC · Domain Lock.</li>
     `,
-    "app.servicios.why": "¿Por qué así?",
+    "app.servicios.features": "Funcionalidades principales",
+    "app.servicios.features.bullets": `
+      <li><b>Nomina ecuatoriana</b>: calculo automatico de IESS, decimos, fondos de reserva, horas extra y anticipos.</li>
+      <li><b>Roles de pago</b>: generacion de roles con desglose completo y estados de pago.</li>
+      <li><b>Gestion de empleados</b>: registro, contratos, departamentos y cargos.</li>
+      <li><b>Gastos empresariales</b>: seguimiento con categorias, estados y reportes.</li>
+      <li><b>Dashboard</b>: metricas en tiempo real con graficos interactivos (Recharts).</li>
+      <li><b>Multi-empresa</b>: soporte para multiples empresas por cuenta.</li>
+      <li><b>Landing publica</b>: pagina de marketing con planes, FAQ, changelog y seccion legal.</li>
+    `,
+    "app.servicios.why": "Decisiones de arquitectura",
     "app.servicios.why.bullets": `
-      <li>Mover rápido sin perder base: server + DB + auth listos.</li>
-      <li>Coste bajo al inicio, escalable después.</li>
-      <li>RLS para privacidad desde el día 1.</li>
+      <li>Next.js App Router para rendimiento y SEO optimizado.</li>
+      <li>Supabase RLS para aislamiento de datos por empresa desde la base de datos.</li>
+      <li>Vercel para deploys automaticos con preview por PR.</li>
+      <li>Dominio propio con configuracion DNS completa (DKIM, SPF, DMARC, DNSSEC).</li>
     `,
-    "app.servicios.note": "En evolución: el alcance puede ajustarse sin revelar ideas clave.",
+    "app.servicios.note": "Proyecto en produccion. Algunas funcionalidades estan en desarrollo continuo.",
 
-    "app.finanzas.title": "Finanzas — gastos/ingresos",
-    "app.finanzas.lead": "Backend en Python para ingesta PDF/OCR, normalización y API.",
-    "app.finanzas.stack": "Stack inicial",
+    "app.finanzas.title": "Floo — finanzas personales",
+    "app.finanzas.lead": "App multi-moneda y multi-idioma para gestionar gastos e ingresos personales. En produccion.",
+    "app.finanzas.stack": "Stack tecnologico",
     "app.finanzas.stack.bullets": `
-      <li><b>Backend</b>: Python + FastAPI · Uvicorn.</li>
-      <li><b>Datos</b>: PostgreSQL · SQLAlchemy + Alembic.</li>
-      <li><b>ETL</b>: pdfplumber/Camelot/PyMuPDF (+ Tesseract si OCR).</li>
-      <li><b>Jobs</b>: Celery/RQ + Redis (según volumen).</li>
-      <li><b>BI</b>: Superset/Metabase + vistas materializadas.</li>
+      <li><b>Frontend</b>: TypeScript + Next.js 15 (App Router) · Tailwind CSS · shadcn/ui.</li>
+      <li><b>Backend</b>: PostgreSQL (Supabase) · API Routes · JWT con cookies HttpOnly.</li>
+      <li><b>Auth</b>: registro con email + verificacion por codigo de 6 digitos · reset de contrasena.</li>
+      <li><b>Deploy</b>: Vercel · dominio personalizado bajo olivovilo.com.</li>
+      <li><b>Seguridad</b>: Cloudflare Turnstile (CAPTCHA) · bcrypt · rate limiting · honeypot.</li>
     `,
-    "app.finanzas.why": "¿Por qué así?",
+    "app.finanzas.features": "Funcionalidades principales",
+    "app.finanzas.features.bullets": `
+      <li><b>Multi-moneda</b>: soporte para USD, EUR y mas, con conversion automatica.</li>
+      <li><b>Multi-idioma</b>: interfaz completa en ingles, espanol y frances (next-intl).</li>
+      <li><b>Transacciones</b>: registro de gastos e ingresos con categorias y etiquetas.</li>
+      <li><b>Importacion CSV</b>: carga masiva de transacciones desde extractos bancarios.</li>
+      <li><b>Dashboard</b>: resumen financiero con graficos y tendencias.</li>
+      <li><b>Insights</b>: analisis de patrones de gasto y salud financiera.</li>
+      <li><b>Onboarding</b>: flujo guiado para nuevos usuarios con creacion automatica de cuentas.</li>
+      <li><b>Tema oscuro/claro</b>: toggle de tema con persistencia.</li>
+    `,
+    "app.finanzas.why": "Decisiones de arquitectura",
     "app.finanzas.why.bullets": `
-      <li>Python facilita parsing y normalización compleja.</li>
-      <li>FastAPI es rápido y bien tipado.</li>
-      <li>Postgres prepara analítica sin sobre-ingeniería.</li>
+      <li>Auth propio (no Supabase Auth) para control total del flujo de verificacion.</li>
+      <li>JWT en cookies HttpOnly para seguridad contra XSS.</li>
+      <li>next-intl con deteccion automatica del idioma del navegador (Accept-Language con q-values).</li>
+      <li>Tokens SHA-256 hasheados en BD para verificacion de email segura.</li>
     `,
-    "app.finanzas.note": "En evolución: enfoque en herramientas, no en la idea."
+    "app.finanzas.note": "Proyecto en produccion. Nuevas funcionalidades en desarrollo continuo."
   },
 
   en: {
@@ -201,13 +224,13 @@ const t = {
     "card.bi.desc": "PostgreSQL DWH → n8n orchestration → Dashboard (Power BI/Qlik). Data anonymized.",
     "card.bi.cta": "View stages",
 
-    "card.servicios.title": "Services — web platform",
-    "card.servicios.desc": "MVP with Next.js + Supabase + PWA. (In progress)",
-    "card.servicios.cta": "Preview",
+    "card.servicios.title": "Olivovilo — business management",
+    "card.servicios.desc": "Payroll, HR and expense platform for companies in Ecuador. Next.js + Supabase + Vercel. In production.",
+    "card.servicios.cta": "View project",
 
-    "card.finanzas.title": "Finance — unified expenses/income",
-    "card.finanzas.desc": "Python + FastAPI + PostgreSQL + PDF/OCR ETL. (In progress)",
-    "card.finanzas.cta": "Preview",
+    "card.finanzas.title": "Floo — personal finance",
+    "card.finanzas.desc": "Multi-currency and multi-language app (EN/ES/FR) for tracking expenses and income. Next.js + PostgreSQL + Vercel. In production.",
+    "card.finanzas.cta": "View project",
 
     "contact.title": "Let’s talk",
     "contact.lead": "Tell me about your challenge. I usually reply the same day.",
@@ -245,41 +268,64 @@ const t = {
       <li><b>Good practices</b>: date parameters and RLS when needed.</li>
     `,
 
-    "app.servicios.title": "Services — web platform",
-    "app.servicios.lead": "MVP focused on speed and security: Next.js + Supabase + PWA.",
-    "app.servicios.stack": "Initial stack",
+    "app.servicios.title": "Olivovilo — business management",
+    "app.servicios.lead": "SaaS platform for payroll, HR and expenses for companies in Ecuador. In production.",
+    "app.servicios.stack": "Tech stack",
     "app.servicios.stack.bullets": `
-      <li><b>Frontend</b>: TypeScript + Next.js (SSR/SSG) · PWA.</li>
-      <li><b>Data</b>: Supabase (Postgres + Auth + RLS) · Storage.</li>
-      <li><b>Comms</b>: Email (Resend/SendGrid) · Telegram · (later) WhatsApp API.</li>
-      <li><b>Payments</b>: (later) Stripe subscriptions.</li>
-      <li><b>Automation</b>: n8n on a VPS.</li>
+      <li><b>Frontend</b>: TypeScript + Next.js 15 (App Router, SSR/SSG) · Tailwind CSS · shadcn/ui.</li>
+      <li><b>Backend</b>: Supabase (PostgreSQL + Auth + RLS) · Server Actions.</li>
+      <li><b>Deploy</b>: Vercel (automatic CI/CD from GitHub).</li>
+      <li><b>Email</b>: Resend with custom domain and DKIM/SPF/DMARC.</li>
+      <li><b>Security</b>: Cloudflare DNS + DNSSEC · Domain Lock.</li>
     `,
-    "app.servicios.why": "Why this?",
+    "app.servicios.features": "Key features",
+    "app.servicios.features.bullets": `
+      <li><b>Ecuadorian payroll</b>: automatic calculation of social security (IESS), bonuses, reserve funds, overtime and advances.</li>
+      <li><b>Pay stubs</b>: generation with full breakdown and payment status tracking.</li>
+      <li><b>Employee management</b>: registration, contracts, departments and positions.</li>
+      <li><b>Business expenses</b>: tracking with categories, statuses and reports.</li>
+      <li><b>Dashboard</b>: real-time metrics with interactive charts (Recharts).</li>
+      <li><b>Multi-company</b>: support for multiple companies per account.</li>
+      <li><b>Public landing</b>: marketing page with plans, FAQ, changelog and legal section.</li>
+    `,
+    "app.servicios.why": "Architecture decisions",
     "app.servicios.why.bullets": `
-      <li>Ship fast without losing a solid base.</li>
-      <li>Low initial cost, scalable later.</li>
-      <li>RLS: privacy from day one.</li>
+      <li>Next.js App Router for performance and optimized SEO.</li>
+      <li>Supabase RLS for data isolation per company at the database level.</li>
+      <li>Vercel for automatic deploys with preview per PR.</li>
+      <li>Custom domain with full DNS configuration (DKIM, SPF, DMARC, DNSSEC).</li>
     `,
-    "app.servicios.note": "Evolving: scope may change without revealing key ideas.",
+    "app.servicios.note": "In production. Some features are under continuous development.",
 
-    "app.finanzas.title": "Finance — unified expenses/income",
-    "app.finanzas.lead": "Python backend for PDF/OCR ingestion, normalization and API.",
-    "app.finanzas.stack": "Initial stack",
+    "app.finanzas.title": "Floo — personal finance",
+    "app.finanzas.lead": "Multi-currency and multi-language app for managing personal expenses and income. In production.",
+    "app.finanzas.stack": "Tech stack",
     "app.finanzas.stack.bullets": `
-      <li><b>Backend</b>: Python + FastAPI · Uvicorn.</li>
-      <li><b>Data</b>: PostgreSQL · SQLAlchemy + Alembic.</li>
-      <li><b>ETL</b>: pdfplumber/Camelot/PyMuPDF (+ Tesseract if OCR needed).</li>
-      <li><b>Jobs</b>: Celery/RQ + Redis (as volume grows).</li>
-      <li><b>BI</b>: Superset/Metabase + materialized views.</li>
+      <li><b>Frontend</b>: TypeScript + Next.js 15 (App Router) · Tailwind CSS · shadcn/ui.</li>
+      <li><b>Backend</b>: PostgreSQL (Supabase) · API Routes · JWT with HttpOnly cookies.</li>
+      <li><b>Auth</b>: email registration + 6-digit code verification · password reset.</li>
+      <li><b>Deploy</b>: Vercel · custom subdomain under olivovilo.com.</li>
+      <li><b>Security</b>: Cloudflare Turnstile (CAPTCHA) · bcrypt · rate limiting · honeypot.</li>
     `,
-    "app.finanzas.why": "Why this?",
+    "app.finanzas.features": "Key features",
+    "app.finanzas.features.bullets": `
+      <li><b>Multi-currency</b>: support for USD, EUR and more, with automatic conversion.</li>
+      <li><b>Multi-language</b>: full interface in English, Spanish and French (next-intl).</li>
+      <li><b>Transactions</b>: expense and income tracking with categories and tags.</li>
+      <li><b>CSV import</b>: bulk upload from bank statements.</li>
+      <li><b>Dashboard</b>: financial summary with charts and trends.</li>
+      <li><b>Insights</b>: spending pattern analysis and financial health score.</li>
+      <li><b>Onboarding</b>: guided flow for new users with automatic account creation.</li>
+      <li><b>Dark/light theme</b>: theme toggle with persistence.</li>
+    `,
+    "app.finanzas.why": "Architecture decisions",
     "app.finanzas.why.bullets": `
-      <li>Python simplifies parsing and normalization.</li>
-      <li>FastAPI is fast and strongly typed.</li>
-      <li>Postgres enables analytics without over-engineering.</li>
+      <li>Custom auth (not Supabase Auth) for full control over verification flow.</li>
+      <li>JWT in HttpOnly cookies for XSS protection.</li>
+      <li>next-intl with automatic browser language detection (Accept-Language with q-values).</li>
+      <li>SHA-256 hashed tokens in DB for secure email verification.</li>
     `,
-    "app.finanzas.note": "Evolving: focus on tools, not on the idea."
+    "app.finanzas.note": "In production. New features under continuous development."
   },
 
   fr: {
@@ -304,13 +350,13 @@ const t = {
     "card.bi.desc": "DWH PostgreSQL → orchestration n8n → dashboard (Power BI/Qlik). Données anonymisées.",
     "card.bi.cta": "Voir les étapes",
 
-    "card.servicios.title": "Services — plateforme web",
-    "card.servicios.desc": "MVP avec Next.js + Supabase + PWA. (En préparation)",
-    "card.servicios.cta": "Aperçu",
+    "card.servicios.title": "Olivovilo — gestion d'entreprise",
+    "card.servicios.desc": "Plateforme de paie, RH et depenses pour les entreprises en Equateur. Next.js + Supabase + Vercel. En production.",
+    "card.servicios.cta": "Voir le projet",
 
-    "card.finanzas.title": "Finance — dépenses/recettes unifiées",
-    "card.finanzas.desc": "Python + FastAPI + PostgreSQL + ETL PDF/OCR. (En préparation)",
-    "card.finanzas.cta": "Aperçu",
+    "card.finanzas.title": "Floo — finances personnelles",
+    "card.finanzas.desc": "App multi-devises et multilingue (EN/ES/FR) pour gerer depenses et revenus. Next.js + PostgreSQL + Vercel. En production.",
+    "card.finanzas.cta": "Voir le projet",
 
     "contact.title": "Échangeons",
     "contact.lead": "Parlez-moi de votre besoin. Je réponds généralement le jour même.",
@@ -348,41 +394,64 @@ const t = {
       <li><b>Bonnes pratiques</b> : paramètres de date et RLS si nécessaire.</li>
     `,
 
-    "app.servicios.title": "Services — plateforme web",
-    "app.servicios.lead": "MVP axé vitesse et sécurité : Next.js + Supabase + PWA.",
-    "app.servicios.stack": "Stack initial",
+    "app.servicios.title": "Olivovilo — gestion d’entreprise",
+    "app.servicios.lead": "Plateforme SaaS de paie, RH et depenses pour les entreprises en Equateur. En production.",
+    "app.servicios.stack": "Stack technique",
     "app.servicios.stack.bullets": `
-      <li><b>Frontend</b> : TypeScript + Next.js (SSR/SSG) · PWA.</li>
-      <li><b>Données</b> : Supabase (Postgres + Auth + RLS) · Storage.</li>
-      <li><b>Comms</b> : Email (Resend/SendGrid) · Telegram · (plus tard) WhatsApp API.</li>
-      <li><b>Paiements</b> : (plus tard) Stripe abonnements.</li>
-      <li><b>Automatisation</b> : n8n sur VPS.</li>
+      <li><b>Frontend</b> : TypeScript + Next.js 15 (App Router, SSR/SSG) · Tailwind CSS · shadcn/ui.</li>
+      <li><b>Backend</b> : Supabase (PostgreSQL + Auth + RLS) · Server Actions.</li>
+      <li><b>Deploy</b> : Vercel (CI/CD automatique depuis GitHub).</li>
+      <li><b>Email</b> : Resend avec domaine propre et DKIM/SPF/DMARC.</li>
+      <li><b>Securite</b> : Cloudflare DNS + DNSSEC · Domain Lock.</li>
     `,
-    "app.servicios.why": "Pourquoi ce choix ?",
+    "app.servicios.features": "Fonctionnalites principales",
+    "app.servicios.features.bullets": `
+      <li><b>Paie equatorienne</b> : calcul automatique des cotisations (IESS), primes, fonds de reserve, heures sup et avances.</li>
+      <li><b>Fiches de paie</b> : generation avec detail complet et suivi du statut de paiement.</li>
+      <li><b>Gestion des employes</b> : inscription, contrats, departements et postes.</li>
+      <li><b>Depenses entreprise</b> : suivi par categories, statuts et rapports.</li>
+      <li><b>Dashboard</b> : metriques en temps reel avec graphiques interactifs (Recharts).</li>
+      <li><b>Multi-entreprise</b> : support de plusieurs entreprises par compte.</li>
+      <li><b>Landing publique</b> : page marketing avec plans, FAQ, changelog et section legale.</li>
+    `,
+    "app.servicios.why": "Decisions d’architecture",
     "app.servicios.why.bullets": `
-      <li>Livrer vite sans perdre une base solide.</li>
-      <li>Coût initial faible, montée en charge ensuite.</li>
-      <li>RLS : confidentialité dès le premier jour.</li>
+      <li>Next.js App Router pour la performance et le SEO optimise.</li>
+      <li>Supabase RLS pour l’isolation des donnees par entreprise au niveau base de donnees.</li>
+      <li>Vercel pour des deploys automatiques avec preview par PR.</li>
+      <li>Domaine propre avec configuration DNS complete (DKIM, SPF, DMARC, DNSSEC).</li>
     `,
-    "app.servicios.note": "Évolutif : le périmètre peut changer sans révéler les idées clés.",
+    "app.servicios.note": "En production. Certaines fonctionnalites sont en developpement continu.",
 
-    "app.finanzas.title": "Finance — dépenses/recettes unifiées",
-    "app.finanzas.lead": "Backend Python pour ingestion PDF/OCR, normalisation et API.",
-    "app.finanzas.stack": "Stack initial",
+    "app.finanzas.title": "Floo — finances personnelles",
+    "app.finanzas.lead": "App multi-devises et multilingue pour gerer les depenses et revenus personnels. En production.",
+    "app.finanzas.stack": "Stack technique",
     "app.finanzas.stack.bullets": `
-      <li><b>Backend</b> : Python + FastAPI · Uvicorn.</li>
-      <li><b>Données</b> : PostgreSQL · SQLAlchemy + Alembic.</li>
-      <li><b>ETL</b> : pdfplumber/Camelot/PyMuPDF (+ Tesseract si OCR).</li>
-      <li><b>Jobs</b> : Celery/RQ + Redis (selon volume).</li>
-      <li><b>BI</b> : Superset/Metabase + vues matérialisées.</li>
+      <li><b>Frontend</b> : TypeScript + Next.js 15 (App Router) · Tailwind CSS · shadcn/ui.</li>
+      <li><b>Backend</b> : PostgreSQL (Supabase) · API Routes · JWT avec cookies HttpOnly.</li>
+      <li><b>Auth</b> : inscription par email + verification par code a 6 chiffres · reinitialisation du mot de passe.</li>
+      <li><b>Deploy</b> : Vercel · sous-domaine personnalise sous olivovilo.com.</li>
+      <li><b>Securite</b> : Cloudflare Turnstile (CAPTCHA) · bcrypt · rate limiting · honeypot.</li>
     `,
-    "app.finanzas.why": "Pourquoi ce choix ?",
+    "app.finanzas.features": "Fonctionnalites principales",
+    "app.finanzas.features.bullets": `
+      <li><b>Multi-devises</b> : support USD, EUR et plus, avec conversion automatique.</li>
+      <li><b>Multilingue</b> : interface complete en anglais, espagnol et francais (next-intl).</li>
+      <li><b>Transactions</b> : suivi des depenses et revenus avec categories et etiquettes.</li>
+      <li><b>Import CSV</b> : chargement en masse depuis des releves bancaires.</li>
+      <li><b>Dashboard</b> : resume financier avec graphiques et tendances.</li>
+      <li><b>Insights</b> : analyse des habitudes de depenses et score de sante financiere.</li>
+      <li><b>Onboarding</b> : parcours guide pour les nouveaux utilisateurs avec creation automatique de comptes.</li>
+      <li><b>Theme sombre/clair</b> : bascule de theme avec persistance.</li>
+    `,
+    "app.finanzas.why": "Decisions d’architecture",
     "app.finanzas.why.bullets": `
-      <li>Python simplifie le parsing et la normalisation.</li>
-      <li>FastAPI est rapide et bien typé.</li>
-      <li>Postgres prépare l’analytique sans sur-ingénierie.</li>
+      <li>Auth personnalise (pas Supabase Auth) pour un controle total du flux de verification.</li>
+      <li>JWT dans des cookies HttpOnly pour la protection contre les XSS.</li>
+      <li>next-intl avec detection automatique de la langue du navigateur (Accept-Language avec q-values).</li>
+      <li>Tokens hashes SHA-256 en base pour une verification d’email securisee.</li>
     `,
-    "app.finanzas.note": "Évolutif : focus sur les outils, pas sur l’idée."
+    "app.finanzas.note": "En production. Nouvelles fonctionnalites en developpement continu."
   }
 };
 
