@@ -11,18 +11,22 @@
 <header class="site-header">
   <div class="container header">
     <nav class="header-right nav">
-      <a class="brand" href="/portafolio-bi/" data-i18n="brand">Inicio</a>
+      <a class="nav-link brand" href="/portafolio-bi/" data-i18n="brand">Inicio</a>
+      <a class="nav-link" href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a class="nav-link" href="#contacto" data-i18n="nav.contact">Contáctame</a>
+      <span class="nav-sep"></span>
       <a class="icon-btn" href="https://www.linkedin.com/in/eric-no%C3%ABl-1ab60416a/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
         <img src="/portafolio-bi/assets/icons/linkedin.png" alt="LinkedIn" />
       </a>
       <a class="icon-btn" href="https://drive.google.com/drive/folders/1m9ZEI6ZMaWivZS0kR5SY_bu6aTX4Y3aA?usp=sharing" target="_blank" aria-label="CV" title="CV">
         <img src="/portafolio-bi/assets/icons/cv.png" alt="CV" />
       </a>
-      <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
-      <a class="btn" href="#contacto" data-i18n="nav.contact">Contáctame</a>
-      <select id="lang" aria-label="Idioma">
-        <option value="es">ES</option><option value="en">EN</option><option value="fr">FR</option>
-      </select>
+      <div class="lang-wrap">
+        <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+        <select id="lang" aria-label="Idioma">
+          <option value="es">ES</option><option value="en">EN</option><option value="fr">FR</option>
+        </select>
+      </div>
     </nav>
   </div>
 </header>
