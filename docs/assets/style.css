@@ -13,10 +13,10 @@ img{max-width:100%;display:block}
 
 /* Header */
 .site-header{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.site-header .container{display:flex;align-items:center;justify-content:space-between;height:62px}
-.brand{font-weight:700;color:#fff;padding-right:6px;font-size:1.05rem}
-.nav{display:flex;align-items:center;gap:12px}
-#lang{margin-left:6px;background:#131c36;border:1px solid var(--border);color:#cfe5ff;border-radius:8px;padding:.35rem .5rem;cursor:pointer;transition:border-color .15s}
+.site-header .container{display:flex;align-items:center;justify-content:center;height:62px}
+.brand{font-weight:700;color:#fff;font-size:1.05rem}
+.nav{display:flex;align-items:center;gap:14px}
+#lang{background:#131c36;border:1px solid var(--border);color:#cfe5ff;border-radius:8px;padding:.35rem .5rem;cursor:pointer;transition:border-color .15s}
 #lang:hover{border-color:var(--brand)}
 .icon-btn{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;border:1px solid var(--border);background:#131c36;transition:border-color .15s,transform .15s}
 .icon-btn:hover{border-color:#2c5cff;transform:translateY(-1px)}
@@ -25,8 +25,8 @@ img{max-width:100%;display:block}
 .btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(75,183,255,.3);color:#001025}
 .btn.ghost{background:transparent;border:1px solid var(--brand);color:var(--text)}
 .btn.ghost:hover{background:rgba(75,183,255,.08)}
-.header-left{display:flex;align-items:center;gap:10px}
-.header-right{display:flex;align-items:center;gap:12px}
+.header-left{display:none}
+.header-right{display:flex;align-items:center;gap:14px}
 
 /* Hero & sections */
 .hero{padding:56px 0 48px;background:linear-gradient(180deg,#0b1020 0%,#0c142e 100%)}
