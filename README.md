@@ -1,30 +1,30 @@
-# Portafolio BI — Eric Noël
+# BI Portfolio — Eric Noël
 
-Sitio público: https://enoelromo.github.io/portafolio-bi/
+Public site: https://enoelromo.github.io/portafolio-bi/
 
-Este repositorio contiene un portafolio estático (GitHub Pages) con:
-- Un caso end-to-end de BI (DW en PostgreSQL + orquestación en n8n + dashboard en preparación).
-- Dos apps personales (Servicios y Finanzas) en fase de diseño/roadmap.
+This repository contains a static portfolio (GitHub Pages) with:
+- An end-to-end BI case study (DW in PostgreSQL + orchestration with n8n + finished dashboard).
+- Two personal apps in production: Olivovilo (services) and Floo (personal finance).
+- Full i18n support (ES/EN/FR) with French as the default language.
 
-## Estructura
+## Structure
 
-docs/ # sitio publicado (GitHub Pages)
+docs/ # published site (GitHub Pages)
 assets/
-app.js # textos e i18n (ES/EN/FR)
-style.css # estilos
-icons/ # íconos (linkedin.png, cv.png)
+app.js # text & i18n (ES/EN/FR)
+style.css # styles
+icons/ # icons (linkedin.png, cv.png)
 index.html # home
-bi/index.html # proyecto BI
+bi/index.html # BI project
 apps/servicios/index.html
 apps/finanzas/index.html
 
 
-## Edición rápida
-- **Textos / i18n**: `docs/assets/app.js` (objeto `t`).
-- **Enlaces LinkedIn / CV**: header de `docs/index.html`, `docs/bi/index.html`, `docs/apps/servicios/index.html`, `docs/apps/finanzas/index.html`.
-- **Íconos**: coloca `linkedin.png` y `cv.png` en `docs/assets/icons/`. Tamaño sugerido: **128×128** (se redimensionan a ~20px).
+## Quick Editing
+- **Text / i18n**: `docs/assets/app.js` (`t` object).
+- **LinkedIn / CV links**: header in `docs/index.html`, `docs/bi/index.html`, `docs/apps/servicios/index.html`, `docs/apps/finanzas/index.html`.
+- **Icons**: place `linkedin.png` and `cv.png` in `docs/assets/icons/`. Suggested size: **128x128** (displayed at ~20px).
 
-## Licencia
-- **Código (HTML/CSS/JS)**: MIT — ver `LICENSE`.
-- **Contenido (textos e imágenes del portafolio)**: CC BY-NC-ND 4.0 (no comercial, sin obras derivadas, con atribución).
-
+## License
+- **Code (HTML/CSS/JS)**: MIT — see `LICENSE`.
+- **Content (portfolio text and images)**: CC BY-NC-ND 4.0 (non-commercial, no derivatives, with attribution).

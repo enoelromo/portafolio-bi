@@ -688,12 +688,56 @@ function applyI18n(lang){
   localStorage.setItem('lang', lang);
 }
 
+// ===== Custom lang switcher =====
+const langFlags = {
+  fr: '<svg viewBox="0 0 640 480" class="lang-flag"><rect width="213" height="480" fill="#002654"/><rect x="213" width="214" height="480" fill="#fff"/><rect x="427" width="213" height="480" fill="#ce1126"/></svg>',
+  es: '<svg viewBox="0 0 640 480" class="lang-flag"><rect width="640" height="480" fill="#c60b1e"/><rect y="120" width="640" height="240" fill="#ffc400"/></svg>',
+  en: '<svg viewBox="0 0 640 480" class="lang-flag"><rect width="640" height="480" fill="#012169"/><path d="M0 0l640 480M640 0L0 480" stroke="#fff" stroke-width="60"/><path d="M0 0l640 480M640 0L0 480" stroke="#c8102e" stroke-width="40"/><path d="M320 0v480M0 240h640" stroke="#fff" stroke-width="100"/><path d="M320 0v480M0 240h640" stroke="#c8102e" stroke-width="60"/></svg>'
+};
+const langLabels = { fr: 'FR', es: 'ES', en: 'EN' };
+const langOrder = ['fr', 'es', 'en'];
+
 document.addEventListener('DOMContentLoaded', () => {
-  const select = document.getElementById('lang');
+  const switcher = document.getElementById('langSwitcher');
+  const current = document.getElementById('langCurrent');
+  const dropdown = document.getElementById('langDropdown');
   const saved = localStorage.getItem('lang') || 'fr';
-  if (select){ select.value = saved; select.addEventListener('change', e=>applyI18n(e.target.value)); }
+
+  if (switcher && current && dropdown) {
+    // Build dropdown options
+    langOrder.forEach(code => {
+      const opt = document.createElement('div');
+      opt.className = 'lang-option';
+      opt.dataset.lang = code;
+      opt.innerHTML = langFlags[code] + ' ' + langLabels[code];
+      opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        applyI18n(code);
+        updateLangUI(code);
+        dropdown.classList.remove('open');
+      });
+      dropdown.appendChild(opt);
+    });
+
+    // Toggle dropdown
+    switcher.addEventListener('click', () => dropdown.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if (!switcher.contains(e.target)) dropdown.classList.remove('open');
+    });
+
+    updateLangUI(saved);
+  }
+
   applyI18n(saved);
 });
+
+function updateLangUI(code) {
+  const current = document.getElementById('langCurrent');
+  if (current) current.innerHTML = langFlags[code] + ' ' + langLabels[code];
+  document.querySelectorAll('.lang-option').forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.lang === code);
+  });
+}
 
 // ===== Formulario (mailto por defecto) =====
 document.addEventListener('DOMContentLoaded', () => {

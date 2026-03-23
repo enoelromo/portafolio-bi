@@ -22,10 +22,17 @@ img{max-width:100%;display:block}
 .icon-btn{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--border);background:#131c36;transition:border-color .15s,transform .15s}
 .icon-btn:hover{border-color:#2c5cff;transform:translateY(-1px)}
 .icon-btn img{width:18px;height:18px;object-fit:contain;display:block}
-.lang-wrap{display:flex;align-items:center;gap:4px;background:#131c36;border:1px solid var(--border);border-radius:8px;padding:.3rem .5rem .3rem .4rem;transition:border-color .15s}
+.lang-wrap{position:relative;display:flex;align-items:center;gap:4px;background:#131c36;border:1px solid var(--border);border-radius:8px;padding:.3rem .5rem .3rem .4rem;transition:border-color .15s;cursor:pointer;user-select:none}
 .lang-wrap:hover{border-color:var(--brand)}
 .lang-icon{width:16px;height:16px;color:var(--muted);flex-shrink:0}
-#lang{background:transparent;border:none;color:#cfe5ff;cursor:pointer;font-size:.85rem;padding:0;outline:none}
+.lang-current{color:#cfe5ff;font-size:.85rem;display:flex;align-items:center;gap:5px}
+.lang-current .lang-flag{width:16px;height:12px;border-radius:2px;flex-shrink:0}
+.lang-dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:#131c36;border:1px solid var(--border);border-radius:8px;overflow:hidden;min-width:100px;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.lang-dropdown.open{display:block}
+.lang-option{display:flex;align-items:center;gap:8px;padding:.45rem .7rem;color:#cfe5ff;font-size:.85rem;cursor:pointer;transition:background .15s}
+.lang-option:hover{background:rgba(75,183,255,.1)}
+.lang-option.active{color:var(--brand)}
+.lang-option .lang-flag{width:16px;height:12px;border-radius:2px;flex-shrink:0}
 .btn{display:inline-block;background:var(--brand);color:#001025;font-weight:700;border-radius:10px;padding:.55rem .9rem;transition:transform .15s,box-shadow .15s;border:none;cursor:pointer;font-size:.9rem}
 .btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(75,183,255,.3);color:#001025}
 .btn.ghost{background:transparent;border:1px solid var(--brand);color:var(--text)}
