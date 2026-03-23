@@ -691,7 +691,7 @@ function applyI18n(lang){
 // ===== Custom lang switcher =====
 const langFlags = {
   fr: '<svg viewBox="0 0 640 480" class="lang-flag"><rect width="213" height="480" fill="#002654"/><rect x="213" width="214" height="480" fill="#fff"/><rect x="427" width="213" height="480" fill="#ce1126"/></svg>',
-  es: '<svg viewBox="0 0 640 480" class="lang-flag"><rect width="640" height="480" fill="#c60b1e"/><rect y="120" width="640" height="240" fill="#ffc400"/></svg>',
+  es: '<svg viewBox="0 0 640 480" class="lang-flag"><rect width="640" height="160" fill="#FFD100"/><rect y="160" width="640" height="160" fill="#0033A0"/><rect y="320" width="640" height="160" fill="#CE1126"/></svg>',
   en: '<svg viewBox="0 0 640 480" class="lang-flag"><rect width="640" height="480" fill="#012169"/><path d="M0 0l640 480M640 0L0 480" stroke="#fff" stroke-width="60"/><path d="M0 0l640 480M640 0L0 480" stroke="#c8102e" stroke-width="40"/><path d="M320 0v480M0 240h640" stroke="#fff" stroke-width="100"/><path d="M320 0v480M0 240h640" stroke="#c8102e" stroke-width="60"/></svg>'
 };
 const langLabels = { fr: 'FR', es: 'ES', en: 'EN' };
