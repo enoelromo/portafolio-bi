@@ -135,11 +135,11 @@ const t = {
     "hero.quick.4": "Gobierno de datos: documentación técnica, trazabilidad y auditoría; backups y operación en Windows/Linux.",
     "hero.quick.5": "Soft skills: análisis, autonomía, rigor y priorización; trabajo con equipos de negocio y TI.",
 
-    "projects.title": "Proyecto principal",
+    "projects.title": "Proyecto para terceros (freelance)",
     "projects.personal": "Proyectos personales — apps en producción",
     "projects.personal.note": "Aplicaciones propias que demuestran capacidad full-stack: arquitectura, deploy, seguridad y operación.",
     "card.bi.title": "BI End-to-End (3 etapas)",
-    "card.bi.desc": "Data Warehouse en PostgreSQL → Orquestación con n8n → Dashboard (Power BI/Qlik). Datos anonimizados de producción.",
+    "card.bi.desc": "Data Warehouse en PostgreSQL → Orquestación con n8n → Dashboard. Datos anonimizados de producción.",
     "card.bi.cta": "Ver etapas",
 
     "card.servicios.title": "Olivovilo — gestión empresarial",
@@ -189,8 +189,7 @@ const t = {
     "bi.e3.title": "Dashboard",
     "bi.e3.desc": "KPIs, comparativos y filtros sobre MVs (mv_ventas_dia/mes, mv_resumen_clientes_dia/mes). Datos anonimizados.",
     "bi.e3.bullets": `
-      <li><b>Power BI / Qlik</b>: prototipado rápido y ecosistema sólido.</li>
-      <li><b>Alternativas</b>: Superset (open source), Metabase (rápido para empezar).</li>
+      <li><b>Alternativas</b>: Power BI, Qlik, Superset (open source), Metabase (rápido para empezar).</li>
       <li><b>Buenas prácticas</b>: parámetros de fecha y RLS si aplica.</li>
     `,
 
@@ -326,11 +325,11 @@ const t = {
     "hero.quick.4": "Data governance: technical docs, traceability & audit; backups and operations on Windows/Linux.",
     "hero.quick.5": "Soft skills: analytical, autonomous, detail-oriented; partner with business and IT stakeholders.",
 
-    "projects.title": "Main project",
+    "projects.title": "Client project (freelance)",
     "projects.personal": "Personal projects — apps in production",
     "projects.personal.note": "Self-built applications that demonstrate full-stack capability: architecture, deployment, security and operations.",
     "card.bi.title": "BI End-to-End (3 stages)",
-    "card.bi.desc": "PostgreSQL Data Warehouse → n8n orchestration → Dashboard (Power BI/Qlik). Production data, anonymized.",
+    "card.bi.desc": "PostgreSQL Data Warehouse → n8n orchestration → Dashboard. Production data, anonymized.",
     "card.bi.cta": "View stages",
 
     "card.servicios.title": "Olivovilo — business management",
@@ -380,8 +379,7 @@ const t = {
     "bi.e3.title": "Dashboard",
     "bi.e3.desc": "KPIs, comparisons and filters over MVs (mv_ventas_dia/mes, mv_resumen_clientes_dia/mes). Data anonymized.",
     "bi.e3.bullets": `
-      <li><b>Power BI / Qlik</b>: fast prototyping and strong ecosystem.</li>
-      <li><b>Alternatives</b>: Superset (open source), Metabase (quick to start).</li>
+      <li><b>Alternatives</b>: Power BI, Qlik, Superset (open source), Metabase (quick to start).</li>
       <li><b>Good practices</b>: date parameters and RLS when needed.</li>
     `,
 
@@ -517,11 +515,11 @@ const t = {
     "hero.quick.4": "Gouvernance des données : documentation, traçabilité & audit ; sauvegardes et exploitation Windows/Linux.",
     "hero.quick.5": "Soft skills : analyse, autonomie, rigueur & priorisation ; collaboration métiers/IT.",
 
-    "projects.title": "Projet principal",
+    "projects.title": "Projet client (freelance)",
     "projects.personal": "Projets personnels — apps en production",
     "projects.personal.note": "Applications personnelles qui démontrent une capacité full-stack : architecture, déploiement, sécurité et opérations.",
     "card.bi.title": "BI End-to-End (3 étapes)",
-    "card.bi.desc": "Data Warehouse PostgreSQL → orchestration n8n → Dashboard (Power BI/Qlik). Données de production, anonymisées.",
+    "card.bi.desc": "Data Warehouse PostgreSQL → orchestration n8n → Dashboard. Données de production, anonymisées.",
     "card.bi.cta": "Voir les étapes",
 
     "card.servicios.title": "Olivovilo — gestion d'entreprise",
@@ -571,8 +569,7 @@ const t = {
     "bi.e3.title": "Dashboard",
     "bi.e3.desc": "KPI, comparatifs et filtres sur des vues matérialisées (mv_ventas_dia/mes, mv_resumen_clientes_dia/mes). Données anonymisées.",
     "bi.e3.bullets": `
-      <li><b>Power BI / Qlik</b> : prototypage rapide, écosystème riche.</li>
-      <li><b>Alternatives</b> : Superset (open-source), Metabase (démarrage rapide).</li>
+      <li><b>Alternatives</b> : Power BI, Qlik, Superset (open-source), Metabase (démarrage rapide).</li>
       <li><b>Bonnes pratiques</b> : paramètres de date et RLS si nécessaire.</li>
     `,
 
