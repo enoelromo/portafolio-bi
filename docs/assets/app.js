@@ -691,7 +691,7 @@ function applyI18n(lang){
 // ===== Custom lang switcher =====
 const langFlags = {
   fr: '<svg viewBox="0 0 640 480" class="lang-flag"><rect width="213" height="480" fill="#002654"/><rect x="213" width="214" height="480" fill="#fff"/><rect x="427" width="213" height="480" fill="#ce1126"/></svg>',
-  es: '<svg viewBox="0 0 640 480" class="lang-flag"><rect width="640" height="240" fill="#FFD100"/><rect y="240" width="640" height="120" fill="#0033A0"/><rect y="360" width="640" height="120" fill="#CE1126"/></svg>',
+  es: '<svg viewBox="0 0 640 480" class="lang-flag"><rect width="640" height="240" fill="#FFD100"/><rect y="240" width="640" height="120" fill="#0033A0"/><rect y="360" width="640" height="120" fill="#CE1126"/><ellipse cx="320" cy="200" rx="42" ry="50" fill="#0033A0" stroke="#FFD100" stroke-width="3"/><path d="M300 175 L320 155 L340 175" fill="none" stroke="#FFD100" stroke-width="3"/><path d="M308 200 Q320 220 332 200" fill="none" stroke="#FFD100" stroke-width="2"/></svg>',
   en: '<svg viewBox="0 0 640 480" class="lang-flag"><rect width="640" height="480" fill="#012169"/><path d="M0 0l640 480M640 0L0 480" stroke="#fff" stroke-width="60"/><path d="M0 0l640 480M640 0L0 480" stroke="#c8102e" stroke-width="40"/><path d="M320 0v480M0 240h640" stroke="#fff" stroke-width="100"/><path d="M320 0v480M0 240h640" stroke="#c8102e" stroke-width="60"/></svg>'
 };
 const langLabels = { fr: 'FR', es: 'ES', en: 'EN' };
