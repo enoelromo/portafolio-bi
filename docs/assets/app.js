@@ -78,6 +78,47 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===== i18n =====
 const t = {
   es: {
+    "title.home": "Portafolio — Eric Noël",
+    "title.bi": "BI End-to-End — Eric Noël",
+    "title.olivovilo": "Olivovilo — Eric Noël",
+    "title.floo": "Floo — Eric Noël",
+
+    "aria.lang": "Idioma",
+    "aria.stages": "Etapas",
+    "aria.sections": "Secciones",
+
+    "chip.indexes": "Índices",
+    "chip.mv": "Vistas materializadas",
+
+    "alt.olivovilo.landing": "Landing",
+    "alt.olivovilo.features": "Funcionalidades",
+    "alt.olivovilo.pricing": "Planes",
+    "alt.floo.landing": "Landing",
+    "alt.floo.register": "Registro",
+    "alt.floo.verify": "Verificación",
+    "alt.bi.activity": "Actividad",
+    "alt.bi.n8n": "n8n",
+    "alt.bi.dashboard": "Dashboard",
+
+    "alt.bi.pgadmin.activity": "Actividad en pgAdmin",
+    "alt.bi.pgadmin.objects": "Objetos en pgAdmin",
+    "alt.bi.log.fail": "Log de conexión fallida",
+    "alt.bi.log.ok": "Log de ejecución OK",
+    "alt.bi.n8n.flow": "Flujo n8n",
+    "alt.bi.n8n.cron": "Trigger cron",
+    "alt.bi.n8n.postgres": "Nodo Postgres",
+    "alt.bi.kpi": "KPI principal",
+    "alt.bi.sales": "Ventas por categoría",
+    "alt.bi.filters": "Filtros del dashboard",
+
+    "alt.servicios.landing": "Landing de Olivovilo",
+    "alt.servicios.features": "Funcionalidades",
+    "alt.servicios.pricing": "Planes y precios",
+
+    "alt.finanzas.landing": "Landing de Floo",
+    "alt.finanzas.register": "Registro con Turnstile",
+    "alt.finanzas.verify": "Verificación por código",
+
     brand: "Inicio",
     "nav.projects": "Proyectos",
     "nav.contact": "Contáctame",
@@ -86,7 +127,7 @@ const t = {
 
     "hero.title": "Eric Noël — Data & BI",
     "hero.lead": "Ingeniero de datos con Master en Big Data. Diseño data warehouses, pipelines ETL y dashboards. Automatizo flujos y construyo infraestructura de datos que escala.",
-    "hero.note": "Proyectos personales, colaboraciones y trabajos para clientes. Para experiencia completa, roles y formacion, revisa mi CV o LinkedIn.",
+    "hero.note": "Proyectos personales, colaboraciones y trabajos para clientes. Para experiencia completa, roles y formación, revisa mi CV o LinkedIn.",
     "hero.quick.title": "En resumen",
     "hero.quick.1": "Modelado dimensional y diseño de DWH (PostgreSQL / SQL Server) orientado a crecimiento y rendimiento.",
     "hero.quick.2": "Pipelines ETL incrementales y orquestación (SQL, cron, n8n, Visual Studio/SSIS) con monitoreo y reintentos.",
@@ -95,14 +136,14 @@ const t = {
     "hero.quick.5": "Soft skills: análisis, autonomía, rigor y priorización; trabajo con equipos de negocio y TI.",
 
     "projects.title": "Proyecto principal",
-    "projects.personal": "Proyectos personales — apps en produccion",
-    "projects.personal.note": "Aplicaciones propias que demuestran capacidad full-stack: arquitectura, deploy, seguridad y operacion.",
+    "projects.personal": "Proyectos personales — apps en producción",
+    "projects.personal.note": "Aplicaciones propias que demuestran capacidad full-stack: arquitectura, deploy, seguridad y operación.",
     "card.bi.title": "BI End-to-End (3 etapas)",
-    "card.bi.desc": "Data Warehouse en PostgreSQL → Orquestacion con n8n → Dashboard (Power BI/Qlik). Datos anonimizados de produccion.",
+    "card.bi.desc": "Data Warehouse en PostgreSQL → Orquestación con n8n → Dashboard (Power BI/Qlik). Datos anonimizados de producción.",
     "card.bi.cta": "Ver etapas",
 
-    "card.servicios.title": "Olivovilo — gestion empresarial",
-    "card.servicios.desc": "Nomina, RRHH y gastos para Ecuador. Next.js + Supabase + Vercel.",
+    "card.servicios.title": "Olivovilo — gestión empresarial",
+    "card.servicios.desc": "Nómina, RRHH y gastos para Ecuador. Next.js + Supabase + Vercel.",
     "card.servicios.cta": "Ver proyecto",
 
     "card.finanzas.title": "Floo — finanzas personales",
@@ -115,7 +156,15 @@ const t = {
     "contact.email": "Email",
     "contact.message": "Mensaje",
     "contact.send": "Enviar",
+    "contact.name.ph": "Tu nombre",
+    "contact.email.ph": "tucorreo@ejemplo.com",
+    "contact.message.ph": "¿Qué necesitas?",
+    "contact.linkedin.value": "Ver perfil",
     "contact.privacy": "Tu mensaje se enviará por email. No guardo tus datos en servidores terceros.",
+
+    "cta.live": "Ver sitio en vivo",
+    "bi.source": "Código fuente:",
+    "bi.workflow": "ver en GitHub",
 
     "bi.title": "BI End-to-End",
     "bi.lead": "Un solo proyecto en 3 etapas: DWH en PostgreSQL → Orquestación en n8n → Dashboard.",
@@ -145,81 +194,122 @@ const t = {
       <li><b>Buenas prácticas</b>: parámetros de fecha y RLS si aplica.</li>
     `,
 
-    "app.servicios.title": "Olivovilo — gestion empresarial",
-    "app.servicios.lead": "Plataforma SaaS de nomina, RRHH y gastos para empresas en Ecuador. En produccion.",
+    "app.servicios.title": "Olivovilo — gestión empresarial",
+    "app.servicios.lead": "Plataforma SaaS de nómina, RRHH y gastos para empresas en Ecuador. En producción.",
     "app.servicios.tab1": "Producto",
     "app.servicios.tab2": "Stack & Arquitectura",
     "app.servicios.tab3": "Seguridad & Infra",
-    "app.servicios.p.title": "Que hace Olivovilo",
-    "app.servicios.p.desc": "Plataforma todo-en-uno para gestionar nomina ecuatoriana, empleados, gastos y operaciones de negocio.",
+    "app.servicios.p.title": "Qué hace Olivovilo",
+    "app.servicios.p.desc": "Plataforma todo-en-uno para gestionar nómina ecuatoriana, empleados, gastos y operaciones de negocio.",
     "app.servicios.p.bullets": `
-      <li><b>Nomina ecuatoriana</b>: IESS (9.45% personal / 11.15% patronal), decimos 13ro y 14to, fondos de reserva, horas extra.</li>
-      <li><b>Roles de pago</b>: generacion automatica con desglose de ingresos, egresos y neto a recibir.</li>
+      <li><b>Nómina ecuatoriana</b>: IESS (9.45% personal / 11.15% patronal), décimos 13ro y 14to, fondos de reserva, horas extra.</li>
+      <li><b>Roles de pago</b>: generación automática con desglose de ingresos, egresos y neto a recibir.</li>
       <li><b>Empleados</b>: registro, contratos, departamentos, cargos y estados (activo, prueba, inactivo).</li>
-      <li><b>Gastos</b>: categorias, estados de pago y reportes por periodo.</li>
-      <li><b>Dashboard</b>: KPIs en tiempo real con graficos interactivos (Recharts).</li>
+      <li><b>Gastos</b>: categorías, estados de pago y reportes por período.</li>
+      <li><b>Dashboard</b>: KPIs en tiempo real con gráficos interactivos (Recharts).</li>
       <li><b>Multi-empresa</b>: cada cuenta puede gestionar varias empresas.</li>
       <li><b>3 planes</b>: Semilla ($15/mes), Olivo ($35/mes), Cosecha ($65/mes).</li>
     `,
     "app.servicios.s.title": "Stack & Arquitectura",
-    "app.servicios.s.desc": "Decisiones tecnicas clave y por que se tomaron.",
+    "app.servicios.s.desc": "Decisiones técnicas clave y por qué se tomaron.",
     "app.servicios.s.bullets": `
       <li><b>Next.js 15</b> App Router: SSR/SSG, Server Actions, rendimiento y SEO optimizado.</li>
       <li><b>Supabase</b>: PostgreSQL + Auth + Storage. Row Level Security para aislamiento por empresa.</li>
       <li><b>Tailwind CSS + shadcn/ui</b>: sistema de diseño consistente con tema oklch personalizado.</li>
-      <li><b>Vercel</b>: CI/CD automatico desde GitHub, preview por PR, Edge Functions.</li>
-      <li><b>Recharts</b>: graficos interactivos para dashboard y reportes.</li>
+      <li><b>Vercel</b>: CI/CD automático desde GitHub, preview por PR, Edge Functions.</li>
+      <li><b>Recharts</b>: gráficos interactivos para dashboard y reportes.</li>
     `,
     "app.servicios.i.title": "Seguridad & Infraestructura",
-    "app.servicios.i.desc": "Configuracion de seguridad y despliegue.",
+    "app.servicios.i.desc": "Configuración de seguridad y despliegue.",
     "app.servicios.i.bullets": `
-      <li><b>Cloudflare</b>: DNS, DNSSEC habilitado, Domain Lock (proteccion contra transferencia).</li>
+      <li><b>Cloudflare</b>: DNS, DNSSEC habilitado, Domain Lock (protección contra transferencia).</li>
       <li><b>Email</b>: Resend con dominio propio + DKIM, SPF y DMARC configurados.</li>
-      <li><b>Supabase RLS</b>: cada query se filtra automaticamente por company_id a nivel de BD.</li>
-      <li><b>HTTPS</b>: forzado en todo el dominio via Cloudflare + Vercel.</li>
+      <li><b>Supabase RLS</b>: cada query se filtra automáticamente por company_id a nivel de BD.</li>
+      <li><b>HTTPS</b>: forzado en todo el dominio vía Cloudflare + Vercel.</li>
       <li><b>Cookie consent</b>: banner de cookies esenciales con persistencia en localStorage.</li>
     `,
 
     "app.finanzas.title": "Floo — finanzas personales",
-    "app.finanzas.lead": "App multi-moneda y multi-idioma para gestionar gastos e ingresos personales. En produccion.",
+    "app.finanzas.lead": "App multi-moneda y multi-idioma para gestionar gastos e ingresos personales. En producción.",
     "app.finanzas.tab1": "Producto",
     "app.finanzas.tab2": "Auth & Seguridad",
     "app.finanzas.tab3": "Stack & i18n",
-    "app.finanzas.p.title": "Que hace Floo",
-    "app.finanzas.p.desc": "App de finanzas personales con soporte multi-moneda (USD, EUR, etc.), multi-idioma (EN/ES/FR) e importacion CSV.",
+    "app.finanzas.p.title": "Qué hace Floo",
+    "app.finanzas.p.desc": "App de finanzas personales con soporte multi-moneda (USD, EUR, etc.), multi-idioma (EN/ES/FR) e importación CSV.",
     "app.finanzas.p.bullets": `
-      <li><b>Multi-moneda</b>: USD, EUR y mas, con conversion automatica entre divisas.</li>
-      <li><b>Multi-idioma</b>: interfaz completa en ingles, espanol y frances (next-intl).</li>
-      <li><b>Transacciones</b>: gastos e ingresos con categorias, etiquetas y filtros.</li>
-      <li><b>Importacion CSV</b>: carga masiva desde extractos bancarios de cualquier banco.</li>
-      <li><b>Dashboard</b>: resumen financiero con graficos de tendencia y desglose por categoria.</li>
+      <li><b>Multi-moneda</b>: USD, EUR y más, con conversión automática entre divisas.</li>
+      <li><b>Multi-idioma</b>: interfaz completa en inglés, español y francés (next-intl).</li>
+      <li><b>Transacciones</b>: gastos e ingresos con categorías, etiquetas y filtros.</li>
+      <li><b>Importación CSV</b>: carga masiva desde extractos bancarios de cualquier banco.</li>
+      <li><b>Dashboard</b>: resumen financiero con gráficos de tendencia y desglose por categoría.</li>
       <li><b>Insights</b>: score de salud financiera, patrones de gasto y recomendaciones.</li>
-      <li><b>Onboarding</b>: flujo guiado que crea cuentas automaticamente al importar.</li>
+      <li><b>Onboarding</b>: flujo guiado que crea cuentas automáticamente al importar.</li>
     `,
     "app.finanzas.a.title": "Auth & Seguridad",
-    "app.finanzas.a.desc": "Sistema de autenticacion propio con multiples capas de seguridad.",
+    "app.finanzas.a.desc": "Sistema de autenticación propio con múltiples capas de seguridad.",
     "app.finanzas.a.bullets": `
-      <li><b>Auth propio</b>: no usa Supabase Auth — control total del flujo de registro y verificacion.</li>
-      <li><b>Verificacion email</b>: codigo de 6 digitos hasheado con SHA-256 en BD. Expira en 1 hora.</li>
-      <li><b>JWT + HttpOnly cookies</b>: proteccion contra XSS. Token firmado con secreto del servidor.</li>
+      <li><b>Auth propio</b>: no usa Supabase Auth — control total del flujo de registro y verificación.</li>
+      <li><b>Verificación email</b>: código de 6 dígitos hasheado con SHA-256 en BD. Expira en 1 hora.</li>
+      <li><b>JWT + HttpOnly cookies</b>: protección contra XSS. Token firmado con secreto del servidor.</li>
       <li><b>Cloudflare Turnstile</b>: CAPTCHA invisible en registro (anti-bot).</li>
-      <li><b>bcrypt</b>: hash de contrasenas con salt automatico.</li>
-      <li><b>Rate limiting</b>: proteccion contra fuerza bruta en login.</li>
+      <li><b>bcrypt</b>: hash de contraseñas con salt automático.</li>
+      <li><b>Rate limiting</b>: protección contra fuerza bruta en login.</li>
       <li><b>Honeypot</b>: campo oculto para detectar bots en formularios.</li>
     `,
-    "app.finanzas.t.title": "Stack & Internacionalizacion",
-    "app.finanzas.t.desc": "Arquitectura tecnica y sistema de idiomas automatico.",
+    "app.finanzas.t.title": "Stack & Internacionalización",
+    "app.finanzas.t.desc": "Arquitectura técnica y sistema de idiomas automático.",
     "app.finanzas.t.bullets": `
       <li><b>Next.js 15</b> App Router + API Routes: SSR para SEO, API para auth y datos.</li>
       <li><b>PostgreSQL</b> (Supabase): transacciones, cuentas, tokens — todo relacional.</li>
-      <li><b>next-intl</b>: deteccion automatica del idioma via Accept-Language con q-values.</li>
+      <li><b>next-intl</b>: detección automática del idioma vía Accept-Language con q-values.</li>
       <li><b>Tema oscuro/claro</b>: toggle con persistencia en cookie, sin flash.</li>
       <li><b>Tailwind CSS + shadcn/ui</b>: componentes accesibles y responsive.</li>
-      <li><b>Vercel</b>: deploy automatico, subdominio floo.olivovilo.com.</li>
+      <li><b>Vercel</b>: deploy automático, subdominio floo.olivovilo.com.</li>
     `
   },
 
   en: {
+    "title.home": "Portfolio — Eric Noël",
+    "title.bi": "BI End-to-End — Eric Noël",
+    "title.olivovilo": "Olivovilo — Eric Noël",
+    "title.floo": "Floo — Eric Noël",
+
+    "aria.lang": "Language",
+    "aria.stages": "Stages",
+    "aria.sections": "Sections",
+
+    "chip.indexes": "Indexes",
+    "chip.mv": "Materialized Views",
+
+    "alt.olivovilo.landing": "Landing page",
+    "alt.olivovilo.features": "Features",
+    "alt.olivovilo.pricing": "Plans",
+    "alt.floo.landing": "Landing page",
+    "alt.floo.register": "Registration",
+    "alt.floo.verify": "Verification",
+    "alt.bi.activity": "Activity",
+    "alt.bi.n8n": "n8n",
+    "alt.bi.dashboard": "Dashboard",
+
+    "alt.bi.pgadmin.activity": "pgAdmin activity",
+    "alt.bi.pgadmin.objects": "pgAdmin objects",
+    "alt.bi.log.fail": "Failed connection log",
+    "alt.bi.log.ok": "Successful execution log",
+    "alt.bi.n8n.flow": "n8n flow",
+    "alt.bi.n8n.cron": "Cron trigger",
+    "alt.bi.n8n.postgres": "Postgres node",
+    "alt.bi.kpi": "Main KPI",
+    "alt.bi.sales": "Sales by category",
+    "alt.bi.filters": "Dashboard filters",
+
+    "alt.servicios.landing": "Olivovilo landing page",
+    "alt.servicios.features": "Features",
+    "alt.servicios.pricing": "Plans and pricing",
+
+    "alt.finanzas.landing": "Floo landing page",
+    "alt.finanzas.register": "Registration with Turnstile",
+    "alt.finanzas.verify": "Code verification",
+
     brand: "Home",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
@@ -257,7 +347,15 @@ const t = {
     "contact.email": "Email",
     "contact.message": "Message",
     "contact.send": "Send",
+    "contact.name.ph": "Your name",
+    "contact.email.ph": "you@example.com",
+    "contact.message.ph": "What do you need?",
+    "contact.linkedin.value": "View profile",
     "contact.privacy": "Your message will be sent via email. No third-party storage.",
+
+    "cta.live": "View live site",
+    "bi.source": "Source code:",
+    "bi.workflow": "view on GitHub",
 
     "bi.title": "BI End-to-End",
     "bi.lead": "One project, three stages: PostgreSQL DWH → n8n orchestration → Dashboard.",
@@ -362,6 +460,47 @@ const t = {
   },
 
   fr: {
+    "title.home": "Portfolio — Eric Noël",
+    "title.bi": "BI End-to-End — Eric Noël",
+    "title.olivovilo": "Olivovilo — Eric Noël",
+    "title.floo": "Floo — Eric Noël",
+
+    "aria.lang": "Langue",
+    "aria.stages": "Étapes",
+    "aria.sections": "Sections",
+
+    "chip.indexes": "Index",
+    "chip.mv": "Vues matérialisées",
+
+    "alt.olivovilo.landing": "Page d'accueil",
+    "alt.olivovilo.features": "Fonctionnalités",
+    "alt.olivovilo.pricing": "Tarifs",
+    "alt.floo.landing": "Page d'accueil",
+    "alt.floo.register": "Inscription",
+    "alt.floo.verify": "Vérification",
+    "alt.bi.activity": "Activité",
+    "alt.bi.n8n": "n8n",
+    "alt.bi.dashboard": "Dashboard",
+
+    "alt.bi.pgadmin.activity": "Activité pgAdmin",
+    "alt.bi.pgadmin.objects": "Objets pgAdmin",
+    "alt.bi.log.fail": "Log de connexion échouée",
+    "alt.bi.log.ok": "Log d'exécution OK",
+    "alt.bi.n8n.flow": "Flux n8n",
+    "alt.bi.n8n.cron": "Déclencheur cron",
+    "alt.bi.n8n.postgres": "Nœud Postgres",
+    "alt.bi.kpi": "KPI principal",
+    "alt.bi.sales": "Ventes par catégorie",
+    "alt.bi.filters": "Filtres du dashboard",
+
+    "alt.servicios.landing": "Page d'accueil Olivovilo",
+    "alt.servicios.features": "Fonctionnalités",
+    "alt.servicios.pricing": "Tarifs et plans",
+
+    "alt.finanzas.landing": "Page d'accueil Floo",
+    "alt.finanzas.register": "Inscription avec Turnstile",
+    "alt.finanzas.verify": "Vérification par code",
+
     brand: "Accueil",
     "nav.projects": "Projets",
     "nav.contact": "Contact",
@@ -369,8 +508,8 @@ const t = {
     "nav.cv": "CV",
 
     "hero.title": "Eric Noël — Data & BI",
-    "hero.lead": "Ingenieur donnees avec un Master en Big Data. Je concois des data warehouses, des pipelines ETL et des dashboards. J’automatise les flux et construis une infrastructure de donnees scalable.",
-    "hero.note": "Projets personnels, collaborations et missions clients. Pour l’experience complete, les roles et la formation, consultez mon CV ou LinkedIn.",
+    "hero.lead": "Ingénieur données avec un Master en Big Data. Je conçois des data warehouses, des pipelines ETL et des dashboards. J’automatise les flux et construis une infrastructure de données scalable.",
+    "hero.note": "Projets personnels, collaborations et missions clients. Pour l’expérience complète, les rôles et la formation, consultez mon CV ou LinkedIn.",
     "hero.quick.title": "En bref",
     "hero.quick.1": "Modélisation dimensionnelle & DWH (PostgreSQL / SQL Server) pensés pour la performance et la croissance.",
     "hero.quick.2": "Pipelines ETL incrémentiels & orchestration (SQL, cron, n8n, Visual Studio/SSIS) avec suivi et relances.",
@@ -380,13 +519,13 @@ const t = {
 
     "projects.title": "Projet principal",
     "projects.personal": "Projets personnels — apps en production",
-    "projects.personal.note": "Applications personnelles qui demontrent une capacite full-stack : architecture, deploiement, securite et operations.",
+    "projects.personal.note": "Applications personnelles qui démontrent une capacité full-stack : architecture, déploiement, sécurité et opérations.",
     "card.bi.title": "BI End-to-End (3 étapes)",
-    "card.bi.desc": "Data Warehouse PostgreSQL → orchestration n8n → Dashboard (Power BI/Qlik). Donnees de production, anonymisees.",
+    "card.bi.desc": "Data Warehouse PostgreSQL → orchestration n8n → Dashboard (Power BI/Qlik). Données de production, anonymisées.",
     "card.bi.cta": "Voir les étapes",
 
     "card.servicios.title": "Olivovilo — gestion d'entreprise",
-    "card.servicios.desc": "Paie, RH et depenses pour l'Equateur. Next.js + Supabase + Vercel.",
+    "card.servicios.desc": "Paie, RH et dépenses pour l'Équateur. Next.js + Supabase + Vercel.",
     "card.servicios.cta": "Voir le projet",
 
     "card.finanzas.title": "Floo — finances personnelles",
@@ -399,7 +538,15 @@ const t = {
     "contact.email": "Email",
     "contact.message": "Message",
     "contact.send": "Envoyer",
+    "contact.name.ph": "Votre nom",
+    "contact.email.ph": "vous@exemple.com",
+    "contact.message.ph": "De quoi avez-vous besoin ?",
+    "contact.linkedin.value": "Voir le profil",
     "contact.privacy": "Votre message sera envoyé par email. Aucune donnée n’est stockée chez des tiers.",
+
+    "cta.live": "Voir le site en ligne",
+    "bi.source": "Code source :",
+    "bi.workflow": "voir sur GitHub",
 
     "bi.title": "BI End-to-End",
     "bi.lead": "Un projet, trois étapes : DWH PostgreSQL → orchestration n8n → dashboard.",
@@ -407,7 +554,7 @@ const t = {
     "bi.tab2": "Étape 2 · Orchestration (n8n)",
     "bi.tab3": "Étape 3 · Dashboard",
     "bi.e1.title": "DWH & ETL (PostgreSQL)",
-    "bi.e1.desc": "Réplication contrôlée + procédures stockées avec logs par étape. Index + vues matérialisées.",
+    "bi.e1.desc": "Réplication contrôlée + procédures stockées avec logs par étape. Index + vues matérialisées pour une basse latence.",
     "bi.e1.bullets": `
       <li><b>PostgreSQL</b> : robuste, extensions (<code>dblink</code>) et <code>REFRESH MATERIALIZED VIEW CONCURRENTLY</code>.</li>
       <li><b>PL/pgSQL</b> : contrôle du flux + traçabilité (<code>dw_logs_procedures</code>).</li>
@@ -422,7 +569,7 @@ const t = {
       <li><b>Alternatives</b> : Airflow (puissant mais plus lourd), SSIS (lié à SQL Server).</li>
     `,
     "bi.e3.title": "Dashboard",
-    "bi.e3.desc": "KPI, comparatifs et filtres sur des vues matérialisées. Données anonymisées.",
+    "bi.e3.desc": "KPI, comparatifs et filtres sur des vues matérialisées (mv_ventas_dia/mes, mv_resumen_clientes_dia/mes). Données anonymisées.",
     "bi.e3.bullets": `
       <li><b>Power BI / Qlik</b> : prototypage rapide, écosystème riche.</li>
       <li><b>Alternatives</b> : Superset (open-source), Metabase (démarrage rapide).</li>
@@ -430,82 +577,82 @@ const t = {
     `,
 
     "app.servicios.title": "Olivovilo — gestion d’entreprise",
-    "app.servicios.lead": "Plateforme SaaS de paie, RH et depenses pour les entreprises en Equateur. En production.",
+    "app.servicios.lead": "Plateforme SaaS de paie, RH et dépenses pour les entreprises en Équateur. En production.",
     "app.servicios.tab1": "Produit",
     "app.servicios.tab2": "Stack & Architecture",
-    "app.servicios.tab3": "Securite & Infra",
+    "app.servicios.tab3": "Sécurité & Infra",
     "app.servicios.p.title": "Ce que fait Olivovilo",
-    "app.servicios.p.desc": "Plateforme tout-en-un pour la paie equatorienne, les employes, les depenses et les operations.",
+    "app.servicios.p.desc": "Plateforme tout-en-un pour la paie équatorienne, les employés, les dépenses et les opérations.",
     "app.servicios.p.bullets": `
-      <li><b>Paie equatorienne</b> : IESS (9,45% employe / 11,15% employeur), 13e & 14e salaire, fonds de reserve, heures sup.</li>
-      <li><b>Fiches de paie</b> : generation automatique avec detail des revenus, deductions et net a percevoir.</li>
-      <li><b>Employes</b> : inscription, contrats, departements, postes et statuts.</li>
-      <li><b>Depenses</b> : categories, statuts de paiement et rapports par periode.</li>
-      <li><b>Dashboard</b> : KPIs en temps reel avec graphiques interactifs (Recharts).</li>
-      <li><b>Multi-entreprise</b> : chaque compte peut gerer plusieurs entreprises.</li>
+      <li><b>Paie équatorienne</b> : IESS (9,45% employé / 11,15% employeur), 13e & 14e salaire, fonds de réserve, heures sup.</li>
+      <li><b>Fiches de paie</b> : génération automatique avec détail des revenus, déductions et net à percevoir.</li>
+      <li><b>Employés</b> : inscription, contrats, départements, postes et statuts.</li>
+      <li><b>Dépenses</b> : catégories, statuts de paiement et rapports par période.</li>
+      <li><b>Dashboard</b> : KPIs en temps réel avec graphiques interactifs (Recharts).</li>
+      <li><b>Multi-entreprise</b> : chaque compte peut gérer plusieurs entreprises.</li>
       <li><b>3 plans</b> : Semilla (15$/mois), Olivo (35$/mois), Cosecha (65$/mois).</li>
     `,
     "app.servicios.s.title": "Stack & Architecture",
-    "app.servicios.s.desc": "Decisions techniques cles et leurs justifications.",
+    "app.servicios.s.desc": "Décisions techniques clés et leurs justifications.",
     "app.servicios.s.bullets": `
-      <li><b>Next.js 15</b> App Router : SSR/SSG, Server Actions, performance et SEO optimise.</li>
+      <li><b>Next.js 15</b> App Router : SSR/SSG, Server Actions, performance et SEO optimisé.</li>
       <li><b>Supabase</b> : PostgreSQL + Auth + Storage. Row Level Security pour l’isolation par entreprise.</li>
-      <li><b>Tailwind CSS + shadcn/ui</b> : systeme de design coherent avec theme oklch personnalise.</li>
+      <li><b>Tailwind CSS + shadcn/ui</b> : système de design cohérent avec thème oklch personnalisé.</li>
       <li><b>Vercel</b> : CI/CD automatique depuis GitHub, preview par PR, Edge Functions.</li>
       <li><b>Recharts</b> : graphiques interactifs pour le dashboard et les rapports.</li>
     `,
-    "app.servicios.i.title": "Securite & Infrastructure",
-    "app.servicios.i.desc": "Configuration de securite et deploiement.",
+    "app.servicios.i.title": "Sécurité & Infrastructure",
+    "app.servicios.i.desc": "Configuration de sécurité et déploiement.",
     "app.servicios.i.bullets": `
-      <li><b>Cloudflare</b> : DNS, DNSSEC active, Domain Lock (protection contre le transfert).</li>
-      <li><b>Email</b> : Resend avec domaine propre + DKIM, SPF et DMARC configures.</li>
-      <li><b>Supabase RLS</b> : chaque requete filtree automatiquement par company_id au niveau BD.</li>
-      <li><b>HTTPS</b> : force sur tout le domaine via Cloudflare + Vercel.</li>
-      <li><b>Cookie consent</b> : banniere de cookies essentiels avec persistance localStorage.</li>
+      <li><b>Cloudflare</b> : DNS, DNSSEC activé, Domain Lock (protection contre le transfert).</li>
+      <li><b>Email</b> : Resend avec domaine propre + DKIM, SPF et DMARC configurés.</li>
+      <li><b>Supabase RLS</b> : chaque requête filtrée automatiquement par company_id au niveau BD.</li>
+      <li><b>HTTPS</b> : forcé sur tout le domaine via Cloudflare + Vercel.</li>
+      <li><b>Cookie consent</b> : bannière de cookies essentiels avec persistance localStorage.</li>
     `,
 
     "app.finanzas.title": "Floo — finances personnelles",
-    "app.finanzas.lead": "App multi-devises et multilingue pour gerer les depenses et revenus personnels. En production.",
+    "app.finanzas.lead": "App multi-devises et multilingue pour gérer les dépenses et revenus personnels. En production.",
     "app.finanzas.tab1": "Produit",
-    "app.finanzas.tab2": "Auth & Securite",
+    "app.finanzas.tab2": "Auth & Sécurité",
     "app.finanzas.tab3": "Stack & i18n",
     "app.finanzas.p.title": "Ce que fait Floo",
     "app.finanzas.p.desc": "App de finances personnelles avec multi-devises (USD, EUR, etc.), multilingue (EN/ES/FR) et import CSV.",
     "app.finanzas.p.bullets": `
       <li><b>Multi-devises</b> : USD, EUR et plus, avec conversion automatique entre devises.</li>
-      <li><b>Multilingue</b> : interface complete en anglais, espagnol et francais (next-intl).</li>
-      <li><b>Transactions</b> : depenses et revenus avec categories, etiquettes et filtres.</li>
-      <li><b>Import CSV</b> : chargement en masse depuis des releves bancaires de n’importe quelle banque.</li>
-      <li><b>Dashboard</b> : resume financier avec graphiques de tendance et repartition par categorie.</li>
-      <li><b>Insights</b> : score de sante financiere, habitudes de depenses et recommandations.</li>
-      <li><b>Onboarding</b> : parcours guide qui cree automatiquement les comptes a l’import.</li>
+      <li><b>Multilingue</b> : interface complète en anglais, espagnol et français (next-intl).</li>
+      <li><b>Transactions</b> : dépenses et revenus avec catégories, étiquettes et filtres.</li>
+      <li><b>Import CSV</b> : chargement en masse depuis des relevés bancaires de n’importe quelle banque.</li>
+      <li><b>Dashboard</b> : résumé financier avec graphiques de tendance et répartition par catégorie.</li>
+      <li><b>Insights</b> : score de santé financière, habitudes de dépenses et recommandations.</li>
+      <li><b>Onboarding</b> : parcours guidé qui crée automatiquement les comptes à l’import.</li>
     `,
-    "app.finanzas.a.title": "Auth & Securite",
-    "app.finanzas.a.desc": "Systeme d’authentification personnalise avec plusieurs couches de securite.",
+    "app.finanzas.a.title": "Auth & Sécurité",
+    "app.finanzas.a.desc": "Système d’authentification personnalisé avec plusieurs couches de sécurité.",
     "app.finanzas.a.bullets": `
-      <li><b>Auth personnalise</b> : pas Supabase Auth — controle total du flux d’inscription et de verification.</li>
-      <li><b>Verification email</b> : code a 6 chiffres hashe SHA-256 en BD. Expire en 1 heure.</li>
-      <li><b>JWT + cookies HttpOnly</b> : protection XSS. Token signe cote serveur.</li>
-      <li><b>Cloudflare Turnstile</b> : CAPTCHA invisible a l’inscription (anti-bot).</li>
+      <li><b>Auth personnalisé</b> : pas Supabase Auth — contrôle total du flux d’inscription et de vérification.</li>
+      <li><b>Vérification email</b> : code à 6 chiffres haché SHA-256 en BD. Expire en 1 heure.</li>
+      <li><b>JWT + cookies HttpOnly</b> : protection XSS. Token signé côté serveur.</li>
+      <li><b>Cloudflare Turnstile</b> : CAPTCHA invisible à l’inscription (anti-bot).</li>
       <li><b>bcrypt</b> : hashage des mots de passe avec salt automatique.</li>
       <li><b>Rate limiting</b> : protection contre la force brute au login.</li>
-      <li><b>Honeypot</b> : champ cache pour detecter les bots dans les formulaires.</li>
+      <li><b>Honeypot</b> : champ caché pour détecter les bots dans les formulaires.</li>
     `,
     "app.finanzas.t.title": "Stack & Internationalisation",
-    "app.finanzas.t.desc": "Architecture technique et systeme de langues automatique.",
+    "app.finanzas.t.desc": "Architecture technique et système de langues automatique.",
     "app.finanzas.t.bullets": `
-      <li><b>Next.js 15</b> App Router + API Routes : SSR pour le SEO, API pour l’auth et les donnees.</li>
-      <li><b>PostgreSQL</b> (Supabase) : transactions, comptes, tokens — entierement relationnel.</li>
-      <li><b>next-intl</b> : detection automatique de la langue via Accept-Language avec q-values.</li>
-      <li><b>Theme sombre/clair</b> : bascule avec persistance cookie, sans flash.</li>
+      <li><b>Next.js 15</b> App Router + API Routes : SSR pour le SEO, API pour l’auth et les données.</li>
+      <li><b>PostgreSQL</b> (Supabase) : transactions, comptes, tokens — entièrement relationnel.</li>
+      <li><b>next-intl</b> : détection automatique de la langue via Accept-Language avec q-values.</li>
+      <li><b>Thème sombre/clair</b> : bascule avec persistance cookie, sans flash.</li>
       <li><b>Tailwind CSS + shadcn/ui</b> : composants accessibles et responsifs.</li>
-      <li><b>Vercel</b> : deploy automatique, sous-domaine floo.olivovilo.com.</li>
+      <li><b>Vercel</b> : déploiement automatique, sous-domaine floo.olivovilo.com.</li>
     `
   }
 };
 
 function applyI18n(lang){
-  const dict = t[lang] || t.es;
+  const dict = t[lang] || t.fr;
   document.documentElement.lang = lang;
 
   // texto plano
@@ -518,13 +665,32 @@ function applyI18n(lang){
     const key = el.getAttribute('data-i18n-html');
     if (dict[key]) el.innerHTML = dict[key];
   });
+  // placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key]) el.placeholder = dict[key];
+  });
+  // alt
+  document.querySelectorAll('[data-i18n-alt]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-alt');
+    if (dict[key]) el.alt = dict[key];
+  });
+  // aria-label
+  document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-aria');
+    if (dict[key]) el.setAttribute('aria-label', dict[key]);
+  });
+  // page title
+  const page = document.body.getAttribute('data-page');
+  const titleKey = 'title.' + page;
+  if (dict[titleKey]) document.title = dict[titleKey];
 
   localStorage.setItem('lang', lang);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const select = document.getElementById('lang');
-  const saved = localStorage.getItem('lang') || 'es';
+  const saved = localStorage.getItem('lang') || 'fr';
   if (select){ select.value = saved; select.addEventListener('change', e=>applyI18n(e.target.value)); }
   applyI18n(saved);
 });
@@ -555,11 +721,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function localize(key){
-  const lang = localStorage.getItem('lang') || 'es';
+  const lang = localStorage.getItem('lang') || 'fr';
   const map = {
     es:{'form.ok':'¡Gracias! Te escribo pronto.','form.mail':'Abriendo tu cliente de correo…','form.err':'Ups, no se pudo enviar.'},
     en:{'form.ok':'Thanks! I’ll get back to you soon.','form.mail':'Opening your mail client…','form.err':'Oops, the message could not be sent.'},
     fr:{'form.ok':'Merci ! Je vous réponds bientôt.','form.mail':'Ouverture de votre client mail…','form.err':'Oups, envoi impossible.'}
   };
-  return (map[lang] && map[lang][key]) || map.es[key];
+  return (map[lang] && map[lang][key]) || map.fr[key];
 }

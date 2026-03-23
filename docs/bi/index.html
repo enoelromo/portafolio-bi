@@ -23,8 +23,8 @@
       </a>
       <div class="lang-wrap">
         <svg class="lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
-        <select id="lang" aria-label="Idioma">
-          <option value="es">ES</option><option value="en">EN</option><option value="fr">FR</option>
+        <select id="lang" aria-label="Idioma" data-i18n-aria="aria.lang">
+          <option value="fr">🇫🇷 FR</option><option value="es">🇪🇸 ES</option><option value="en">🇬🇧 EN</option>
         </select>
       </div>
     </nav>
@@ -36,14 +36,14 @@
   <p class="lead" data-i18n="bi.lead">Un solo proyecto en 3 etapas: DWH en PostgreSQL → Orquestación en n8n → Dashboard.</p>
   <div class="chips">
     <span class="chip">PostgreSQL</span><span class="chip">PL/pgSQL</span><span class="chip">n8n</span>
-    <span class="chip">Materialized Views</span><span class="chip">Power BI / Qlik</span>
-    <span class="chip">Índices</span><span class="chip">ETL Incremental</span><span class="chip">dblink</span>
+    <span class="chip" data-i18n="chip.mv">Materialized Views</span><span class="chip">Power BI / Qlik</span>
+    <span class="chip" data-i18n="chip.indexes">Indexes</span><span class="chip">ETL Incremental</span><span class="chip">dblink</span>
   </div>
 </div></section>
 
 <main class="container" data-tabs>
   <!-- Tabs accesibles -->
-  <div class="tabs" role="tablist" aria-label="Etapas">
+  <div class="tabs" role="tablist" aria-label="Etapas" data-i18n-aria="aria.stages">
     <button class="tab" id="tab-e1" role="tab" aria-controls="etapa-1" aria-selected="true" data-i18n="bi.tab1">Etapa 1 · DWH & ETL</button>
     <button class="tab" id="tab-e2" role="tab" aria-controls="etapa-2" aria-selected="false" data-i18n="bi.tab2">Etapa 2 · Orquestación (n8n)</button>
     <button class="tab" id="tab-e3" role="tab" aria-controls="etapa-3" aria-selected="false" data-i18n="bi.tab3">Etapa 3 · Dashboard</button>
@@ -61,16 +61,16 @@ CALL public.proc_month_bill_billdetail(0);
 --   (procedure_name, step, rows_affected, duration_ms)
 -- VALUES ('proc_month_bill_billdetail', 'upsert', 1247, 342);</code></pre>
       <p class="subtle">
-        Código fuente:
+        <span data-i18n="bi.source">Código fuente:</span>
         <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_1_DataWarehouse_ETL/sql/proc_month_bill_billdetail_anon.sql">Bill+Detail</a> ·
         <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_1_DataWarehouse_ETL/sql/proc_month_order_orderproduct_anon.sql">Order+OrderProduct</a> ·
         <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_1_DataWarehouse_ETL/sql/proc_refresh_all_views.sql">Refresh MVs</a>
       </p>
       <div class="gallery">
-        <img loading="lazy" src="/portafolio-bi/bi/img/06_pgadmin_activity.png" alt="Actividad en pgAdmin">
-        <img loading="lazy" src="/portafolio-bi/bi/img/07_pgadmin_objects.png" alt="Objetos en pgAdmin">
-        <img loading="lazy" src="/portafolio-bi/bi/img/04_logs_connection_issue.png" alt="Log de conexión fallida">
-        <img loading="lazy" src="/portafolio-bi/bi/img/05_logs_ok.png" alt="Log de ejecución OK">
+        <img loading="lazy" src="/portafolio-bi/bi/img/06_pgadmin_activity.png" alt="Actividad en pgAdmin" data-i18n-alt="alt.bi.pgadmin.activity">
+        <img loading="lazy" src="/portafolio-bi/bi/img/07_pgadmin_objects.png" alt="Objetos en pgAdmin" data-i18n-alt="alt.bi.pgadmin.objects">
+        <img loading="lazy" src="/portafolio-bi/bi/img/04_logs_connection_issue.png" alt="Log de conexión fallida" data-i18n-alt="alt.bi.log.fail">
+        <img loading="lazy" src="/portafolio-bi/bi/img/05_logs_ok.png" alt="Log de ejecución OK" data-i18n-alt="alt.bi.log.ok">
       </div>
     </section>
 
@@ -86,11 +86,11 @@ CALL public.proc_month_product_group(0);
 CALL public.proc_month_order_orderproduct(0);
 CALL public.proc_month_bill_billdetail(0);
 CALL public.proc_refresh_all_views();</code></pre>
-      <p class="subtle">Workflow JSON: <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_2_Orquestacion/n8n/workflow_etl.json">ver en GitHub</a></p>
+      <p class="subtle">Workflow JSON: <a target="_blank" href="https://github.com/enoelromo/portafolio-bi/blob/main/Proyecto_2_Orquestacion/n8n/workflow_etl.json" data-i18n="bi.workflow">ver en GitHub</a></p>
       <div class="gallery">
-        <img loading="lazy" src="/portafolio-bi/bi/img/01_n8n_flow.png" alt="Flujo n8n">
-        <img loading="lazy" src="/portafolio-bi/bi/img/02_n8n_cron.png" alt="Trigger cron">
-        <img loading="lazy" src="/portafolio-bi/bi/img/03_n8n_postgres_node.png" alt="Nodo Postgres">
+        <img loading="lazy" src="/portafolio-bi/bi/img/01_n8n_flow.png" alt="Flujo n8n" data-i18n-alt="alt.bi.n8n.flow">
+        <img loading="lazy" src="/portafolio-bi/bi/img/02_n8n_cron.png" alt="Trigger cron" data-i18n-alt="alt.bi.n8n.cron">
+        <img loading="lazy" src="/portafolio-bi/bi/img/03_n8n_postgres_node.png" alt="Nodo Postgres" data-i18n-alt="alt.bi.n8n.postgres">
       </div>
     </section>
 
@@ -105,9 +105,9 @@ REFRESH MATERIALIZED VIEW CONCURRENTLY mv_ventas_mes;
 REFRESH MATERIALIZED VIEW CONCURRENTLY mv_resumen_clientes_dia;
 REFRESH MATERIALIZED VIEW CONCURRENTLY mv_resumen_clientes_mes;</code></pre>
       <div class="gallery">
-        <img loading="lazy" src="/portafolio-bi/bi/img/kpi_principal.png" alt="KPI principal">
-        <img loading="lazy" src="/portafolio-bi/bi/img/ventas_por_categoria.png" alt="Ventas por categoría">
-        <img loading="lazy" src="/portafolio-bi/bi/img/filtros.png" alt="Filtros del dashboard">
+        <img loading="lazy" src="/portafolio-bi/bi/img/kpi_principal.png" alt="KPI principal" data-i18n-alt="alt.bi.kpi">
+        <img loading="lazy" src="/portafolio-bi/bi/img/ventas_por_categoria.png" alt="Ventas por categoría" data-i18n-alt="alt.bi.sales">
+        <img loading="lazy" src="/portafolio-bi/bi/img/filtros.png" alt="Filtros del dashboard" data-i18n-alt="alt.bi.filters">
       </div>
     </section>
   </div>

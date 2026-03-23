@@ -23,8 +23,8 @@
       </a>
       <div class="lang-wrap">
         <svg class="lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
-        <select id="lang" aria-label="Idioma">
-          <option value="es">ES</option><option value="en">EN</option><option value="fr">FR</option>
+        <select id="lang" aria-label="Idioma" data-i18n-aria="aria.lang">
+          <option value="fr">🇫🇷 FR</option><option value="es">🇪🇸 ES</option><option value="en">🇬🇧 EN</option>
         </select>
       </div>
     </nav>
@@ -39,9 +39,9 @@
     <div class="chips">
       <span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">SQL Server</span>
       <span class="chip">PL/pgSQL</span><span class="chip">BigQuery</span><span class="chip">dbt</span>
-      <span class="chip">Índices</span><span class="chip">Materialized Views</span>
+      <span class="chip" data-i18n="chip.indexes">Indexes</span><span class="chip" data-i18n="chip.mv">Materialized Views</span>
       <span class="chip">ETL</span><span class="chip">n8n</span><span class="chip">Power BI</span>
-      <span class="chip">Qlik</span><span class="chip">Omni</span><span class="chip">SAP BO</span><span class="chip">Excel (avanzado)</span>
+      <span class="chip">Qlik</span><span class="chip">Omni</span><span class="chip">SAP BO</span><span class="chip">Excel</span>
       <span class="chip">Google Apps Script</span><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase</span>
       <span class="chip">Windows / Linux</span>
     </div>
@@ -69,9 +69,9 @@
       <div class="card-media">
         <div class="carousel" data-autoplay="true">
           <div class="slides">
-            <img src="/portafolio-bi/apps/servicios/img/landing.png" alt="Landing">
-            <img src="/portafolio-bi/apps/servicios/img/features.png" alt="Funcionalidades">
-            <img src="/portafolio-bi/apps/servicios/img/pricing.png" alt="Planes">
+            <img src="/portafolio-bi/apps/servicios/img/landing.png" alt="Landing" data-i18n-alt="alt.olivovilo.landing">
+            <img src="/portafolio-bi/apps/servicios/img/features.png" alt="Funcionalidades" data-i18n-alt="alt.olivovilo.features">
+            <img src="/portafolio-bi/apps/servicios/img/pricing.png" alt="Planes" data-i18n-alt="alt.olivovilo.pricing">
           </div>
           <button class="prev">&#8249;</button><button class="next">&#8250;</button>
         </div>
@@ -89,9 +89,9 @@
       <div class="card-media">
         <div class="carousel" data-autoplay="true">
           <div class="slides">
-            <img src="/portafolio-bi/apps/finanzas/img/login.png" alt="Landing">
-            <img src="/portafolio-bi/apps/finanzas/img/register.png" alt="Registro">
-            <img src="/portafolio-bi/apps/finanzas/img/verify.png" alt="Verificacion">
+            <img src="/portafolio-bi/apps/finanzas/img/login.png" alt="Landing" data-i18n-alt="alt.floo.landing">
+            <img src="/portafolio-bi/apps/finanzas/img/register.png" alt="Registro" data-i18n-alt="alt.floo.register">
+            <img src="/portafolio-bi/apps/finanzas/img/verify.png" alt="Verificacion" data-i18n-alt="alt.floo.verify">
           </div>
           <button class="prev">&#8249;</button><button class="next">&#8250;</button>
         </div>
@@ -114,9 +114,9 @@
       <div class="card-media">
         <div class="carousel" data-autoplay="true">
           <div class="slides">
-            <img src="/portafolio-bi/bi/img/06_pgadmin_activity.png" alt="Actividad">
-            <img src="/portafolio-bi/bi/img/01_n8n_flow.png" alt="n8n">
-            <img src="/portafolio-bi/bi/img/kpi_principal.png" alt="Dashboard">
+            <img src="/portafolio-bi/bi/img/06_pgadmin_activity.png" alt="Actividad" data-i18n-alt="alt.bi.activity">
+            <img src="/portafolio-bi/bi/img/01_n8n_flow.png" alt="n8n" data-i18n-alt="alt.bi.n8n">
+            <img src="/portafolio-bi/bi/img/kpi_principal.png" alt="Dashboard" data-i18n-alt="alt.bi.dashboard">
           </div>
           <button class="prev">‹</button><button class="next">›</button>
         </div>
@@ -160,16 +160,16 @@
       <div class="form-grid">
         <div class="form-row">
           <label data-i18n="contact.name">Nombre</label>
-          <input type="text" name="name" required placeholder="Tu nombre">
+          <input type="text" name="name" required placeholder="Tu nombre" data-i18n-placeholder="contact.name.ph">
         </div>
         <div class="form-row">
           <label data-i18n="contact.email">Email</label>
-          <input type="email" name="email" required placeholder="tucorreo@ejemplo.com">
+          <input type="email" name="email" required placeholder="tucorreo@ejemplo.com" data-i18n-placeholder="contact.email.ph">
         </div>
       </div>
       <div class="form-row">
         <label data-i18n="contact.message">Mensaje</label>
-        <textarea name="message" rows="4" required placeholder="¿Qué necesitas?"></textarea>
+        <textarea name="message" rows="4" required placeholder="¿Qué necesitas?" data-i18n-placeholder="contact.message.ph"></textarea>
       </div>
       <div class="form-actions">
         <button class="btn" type="submit" data-i18n="contact.send">Enviar</button>
